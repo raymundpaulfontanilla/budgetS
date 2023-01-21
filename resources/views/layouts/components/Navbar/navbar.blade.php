@@ -36,6 +36,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <button class="btn btn-success btn-rounded-pill p-2">✚&nbsp;New Record</button>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
