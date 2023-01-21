@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="d-grid gap-2 d-md-block">
-                            <button type="submit" class="btn btn-success">
+                            <button type="submit" class="btn btn-success rounded-pill">
                                 {{ __('Login Now') }}
                             </button>
                             <span class="text-muted float-end">Account not found.&nbsp;<a href="{{ route('register') }}">{{ __('Create an account') }}</a></span>
