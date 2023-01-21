@@ -1,3 +1,4 @@
+@extends('layouts/components/Navbar.navbar')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    EXPENSES
+    
 </body>
 </html>
