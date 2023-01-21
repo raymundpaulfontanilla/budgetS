@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center mt-5 pt-4">
-        <div class="col-md-6">
+    <div class="row justify-content-center mt-5 pt-5">
+        <div class="col-lg-6 col-md-10">
             <div class="card">
                 <div class="card-header"></div>
 
