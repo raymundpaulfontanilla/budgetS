@@ -53,20 +53,11 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <button type="submit" class="btn btn-primary">
+                        <div class="d-grid gap-2 d-md-block">
+                            <button type="submit" class="btn btn-success">
                                 {{ __('Login Now') }}
                             </button>
-                            <span class="text-muted">Account not found.&nbsp;<a href="{{ route('register') }}">{{ __('Create an account') }}</a></span>
-                            <div class="col-md-8 offset-md-4">
-                                
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
+                            <span class="text-muted float-end">Account not found.&nbsp;<a href="{{ route('register') }}">{{ __('Create an account') }}</a></span>
                         </div>
                     </form>
                 </div>
