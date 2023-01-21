@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.register')
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5 pt-5">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Create an Account</div>
@@ -66,6 +66,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <a href="{{route("login")}}">Go back</a>
                             </div>
                         </div>
                     </form>
