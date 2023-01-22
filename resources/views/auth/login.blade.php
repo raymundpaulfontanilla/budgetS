@@ -57,7 +57,7 @@
                             <button type="submit" class="btn btn-success rounded-pill">
                                 {{ __('Login Now') }}
                             </button>
-                            <span class="text-muted float-end">Account not found.&nbsp;<a href="{{ route('register') }}">{{ __('Create an account') }}</a></span>
+                            <span class="text-muted float-end">No account? Click here.&nbsp;<a href="{{ route('register') }}">{{ __('Create an account') }}</a></span>
                         </div>
                     </form>
                 </div>
