@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/expenses', [App\Http\Controllers\HomeController::class, 'expenses'])->name('expenses');
-Route::get('/income', [App\Http\Controllers\HomeController::class, 'income'])->name('income');
-Route::get('/budget', [App\Http\Controllers\HomeController::class, 'budget'])->name('budget');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/expenses', [HomeController::class, 'expenses'])->name('expenses');
+Route::get('/income', [HomeController::class, 'income'])->name('income');
+Route::get('/budget', [HomeController::class, 'budget'])->name('budget');
