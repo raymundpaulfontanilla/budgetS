@@ -8,6 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
  
     <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="sidebar.css">
  
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -26,13 +27,25 @@
       <li class="nav-item {{ Request::is('/')? 'active': '' }}">
         <a href="/" class="nav-link" aria-current="page">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-         Home
+         Overview
+        </a>
+      </li>
+      <li>
+        <a href="{{ route('expenses') }}"class="nav-link text-white {{ Request::is('/dashboard/expenses')? 'active': '' }}">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          Expenses
+        </a>
+      </li>
+      <li>
+        <a href="{{ route('income') }}" class="nav-link text-white {{ Request::is('/dashboard/income')? 'active': '' }}">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
+          Income
         </a>
       </li>
       <li>
         <a href="{{url('budget') }}" class="nav-link text-white {{ Request::is('/dashboard/budget')? 'active': '' }}">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Budget
+          Transaction History
         </a>
       </li>
  
@@ -48,7 +61,15 @@
         <li><a class="dropdown-item" href="#">Settings</a></li>
         <li><a class="dropdown-item" href="#">Profile</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Sign out</a></li>
+        <li><a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+      </li>
       </ul>
     </div>
   </div>
@@ -59,3 +80,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
