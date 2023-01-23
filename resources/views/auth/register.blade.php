@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts/pages.register')
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center mt-5 pt-5">
+        <div class="col-lg-6 col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header text-success fw-bold">Create an Account</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -63,9 +63,10 @@
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-success">
                                     {{ __('Register') }}
                                 </button>
+                                <a href="{{route("login")}}">👈Go back</a>
                             </div>
                         </div>
                     </form>

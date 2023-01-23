@@ -16,7 +16,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar fixed-top navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'budgetS') }}
@@ -28,11 +28,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <a class="nav-link" href="{{ route('home') }}">{{ __('Overview') }}</a>
+                        <a class="nav-link" href="{{ route('expenses') }}">{{ __('Expenses') }}</a>
+                        <a class="nav-link" href="{{ route('income') }}">{{ __('Income') }}</a>
+                        <a class="nav-link" href="{{ route('budget') }}">{{ __('Budget') }}</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <button class="btn btn-success rounded-pill p-2">✚&nbsp;New Record</button>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -69,11 +73,10 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
     </div>
+    <main class="py-4">
+        @yield('content')
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
