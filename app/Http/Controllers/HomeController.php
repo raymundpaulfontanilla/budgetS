@@ -33,8 +33,8 @@ class HomeController extends Controller
     {
         return view('income');
     }
-    public function budget()
+    public function transact()
     {
-        return view('budget');
+        return view('transact');
     }
 }
