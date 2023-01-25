@@ -23,4 +23,4 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/expenses', [HomeController::class, 'expenses'])->name('expenses');
 Route::get('/income', [HomeController::class, 'income'])->name('income');
-Route::get('/budget', [HomeController::class, 'budget'])->name('budget');
+Route::get('/transact', [HomeController::class, 'transact'])->name('transact');

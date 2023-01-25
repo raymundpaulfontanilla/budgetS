@@ -43,7 +43,7 @@
         </a>
       </li>
       <li>
-        <a href="{{url('budget') }}" class="nav-link text-white {{ Request::is('/dashboard/budget')? 'active': '' }}">
+        <a href="{{('transact') }}" class="nav-link text-white {{ Request::is('/dashboard/transact')? 'active': '' }}">
           <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
           Transaction History
         </a>
