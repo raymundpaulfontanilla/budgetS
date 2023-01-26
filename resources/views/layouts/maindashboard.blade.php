@@ -42,6 +42,13 @@
                             <i class="fs-4 bi-house"></i> <span class="ms-1  text-dark fw-bold">Manage History</span>
                         </a>
                     </li>
+
+                    <div class="col py-3">
+           @yield('content')
+        </div>
+    </div>
+</div>
+</body>
     
 </body>
 </html>
