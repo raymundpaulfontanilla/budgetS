@@ -1,0 +1,21 @@
+#table {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    #example {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #button {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #recipients {
+        display: none;
+    }
+}
