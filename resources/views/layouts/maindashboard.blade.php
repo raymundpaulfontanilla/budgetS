@@ -165,7 +165,7 @@
                         <ul class="mt-12">
                             <li
                                 class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="javascript:void(0)"
+                                <a href="{{route('overview')}}"
                                     class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
                                         width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
@@ -182,7 +182,7 @@
                             </li>
                             <li
                                 class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="javascript:void(0)"
+                                <a href="{{route('income')}}"
                                     class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
                                         width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
@@ -198,7 +198,7 @@
                             </li>
                             <li
                                 class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="javascript:void(0)"
+                                <a href="{{route('expenses')}}"
                                     class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
                                         width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
@@ -209,12 +209,12 @@
                                             d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
                                         </path>
                                     </svg>
-                                    <span class="text-sm ml-2">Income</span>
+                                    <span class="text-sm ml-2">Expenses</span>
                                 </a>
                             </li>
                             <li
                                 class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="javascript:void(0)"
+                                <a href="{{route('history')}}"
                                     class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack"
                                         width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
@@ -273,7 +273,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="container mx-auto py-10 h-64 md:w-4/5 w-11/12 px-6">
+                <div class="container mx-auto py-10 h-64 md:w-4/5 w-11/12">
                     @yield('content')
                 </div>
             </div>

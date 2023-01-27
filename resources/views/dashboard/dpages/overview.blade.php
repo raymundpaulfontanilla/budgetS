@@ -134,6 +134,36 @@
               <td>12000</td>
               <td>12000</td>
             </tr>
+            <tr>
+              <td>Gas</td>
+              <td>Expenses</td>
+              <td>12000</td>
+              <td>12000</td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+              <td>Expenses</td>
+              <td>12000</td>
+              <td>12000</td>
+            </tr>
+            <tr>
+              <td>Computer</td>
+              <td>Expenses</td>
+              <td>15000</td>
+              <td>15000</td>
+            </tr>
+            <tr>
+              <td>Computer</td>
+              <td>Expenses</td>
+              <td>15000</td>
+              <td>15000</td>
+            </tr>
+            <tr>
+              <td>Computer</td>
+              <td>Expenses</td>
+              <td>15000</td>
+              <td>15000</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -156,13 +186,16 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script>
       $(document).ready(function() {
-
     var table = $('#example').DataTable({
-        responsive: true
-      })
-      .columns.adjust()
-      .responsive.recalc();
-  });
+        responsive: true,
+        lengthChange: false,
+        pageLength: 4
+    });
+
+    $('#entriesPerPage').on('change', function() {
+        table.page.len(this.value).draw();
+    });
+});
     </script>
 
 
