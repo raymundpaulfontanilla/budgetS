@@ -78,19 +78,6 @@
 <!--Datatables -->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-<script>
-  $(document).ready(function() {
-    var table = $('#example').DataTable({
-        responsive: true,
-        lengthChange: false,
-        pageLength: 5
-    });
-
-    $('#entriesPerPage').on('change', function() {
-        table.page.len(this.value).draw();
-    });
-});
-</script>
 
 
 @endsection
