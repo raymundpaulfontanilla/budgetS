@@ -73,11 +73,11 @@
         </div>
       </div>
     </div>
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6 w-60">
+    <div class="w-full md:w-1/2 xl:w-1/3">
       {{-- Chart --}}
-      <div class="shadow-lg rounded-lg overflow-hidden">
-        <h3 class="py-3 px-5 bg-gray-50">DATA REPORT
-        </h3>
+      <div class="shadow-lg rounded-lg ml-5">
+        <h1 class="py-3 px-5 bg-emerald-400">DATA REPORT
+        </h1>
         <canvas class="p-10 " id="chartPie"></canvas>
       </div>
       <script>
@@ -134,6 +134,36 @@
               <td>12000</td>
               <td>12000</td>
             </tr>
+            <tr>
+              <td>Gas</td>
+              <td>Expenses</td>
+              <td>12000</td>
+              <td>12000</td>
+            </tr>
+            <tr>
+              <td>Gas</td>
+              <td>Expenses</td>
+              <td>12000</td>
+              <td>12000</td>
+            </tr>
+            <tr>
+              <td>Computer</td>
+              <td>Expenses</td>
+              <td>15000</td>
+              <td>15000</td>
+            </tr>
+            <tr>
+              <td>Computer</td>
+              <td>Expenses</td>
+              <td>15000</td>
+              <td>15000</td>
+            </tr>
+            <tr>
+              <td>Computer</td>
+              <td>Expenses</td>
+              <td>15000</td>
+              <td>15000</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -156,13 +186,16 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script>
       $(document).ready(function() {
-
     var table = $('#example').DataTable({
-        responsive: true
-      })
-      .columns.adjust()
-      .responsive.recalc();
-  });
+        responsive: true,
+        lengthChange: false,
+        pageLength: 4
+    });
+
+    $('#entriesPerPage').on('change', function() {
+        table.page.len(this.value).draw();
+    });
+});
     </script>
 
 
