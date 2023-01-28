@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExpenseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IncomeController;
 
@@ -26,12 +27,10 @@ Route::get('/', function () {
     return view('dashboard.dpages.overview');
 })->name('overview');
 
-Route::get('/expenses', function () {
-    return view('dashboard.dpages.expenses');
-})->name('expenses');
 
 Route::get('/history', function () {
     return view('dashboard.dpages.history');
 })->name('history');
 
-Route::get('/income', [IncomeController::class,'displayincome'])->name('income');
+Route::get('/income', [IncomeController::class, 'displayincome'])->name('income');
+Route::get('/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
