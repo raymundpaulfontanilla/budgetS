@@ -33,6 +33,7 @@
           <th data-priority="2">Description</th>
           <th data-priority="3">Amount</th>
           <th data-priority="4">Total</th>
+          <th data-priority="5">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -41,66 +42,122 @@
           <td>Income</td>
           <td>140</td>
           <td>15000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
+
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -119,7 +176,7 @@
     var table = $('#example').DataTable({
         responsive: true,
         lengthChange: false,
-        pageLength: 9
+        pageLength: 5
     });
 
     $('#entriesPerPage').on('change', function() {

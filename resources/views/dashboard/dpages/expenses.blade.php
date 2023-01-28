@@ -31,6 +31,7 @@
           <th data-priority="2">Description</th>
           <th data-priority="3">Amount</th>
           <th data-priority="4">Total</th>
+          <th data-priority="5">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -39,12 +40,77 @@
           <td>Income</td>
           <td>140</td>
           <td>15000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
         <tr>
           <td>Gas</td>
           <td>Expenses</td>
           <td>30</td>
           <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Gas</td>
+          <td>Expenses</td>
+          <td>30</td>
+          <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Gas</td>
+          <td>Expenses</td>
+          <td>30</td>
+          <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Gas</td>
+          <td>Expenses</td>
+          <td>30</td>
+          <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Gas</td>
+          <td>Expenses</td>
+          <td>30</td>
+          <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
+        </tr>
+        <tr>
+          <td>Gas</td>
+          <td>Expenses</td>
+          <td>30</td>
+          <td>12000</td>
+          <td> <a href="{{route('history')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+            <a href="{{route('overview')}}"
+              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -60,13 +126,16 @@
 <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 <script>
   $(document).ready(function() {
-
     var table = $('#example').DataTable({
-        responsive: true
-      })
-      .columns.adjust()
-      .responsive.recalc();
-  });
+        responsive: true,
+        lengthChange: false,
+        pageLength: 5
+    });
+
+    $('#entriesPerPage').on('change', function() {
+        table.page.len(this.value).draw();
+    });
+});
 </script>
 
 
