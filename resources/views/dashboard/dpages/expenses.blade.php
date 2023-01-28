@@ -30,88 +30,22 @@
           <th data-priority="1">Name</th>
           <th data-priority="2">Description</th>
           <th data-priority="3">Amount</th>
-          <th data-priority="4">Total</th>
           <th data-priority="5">Actions</th>
         </tr>
       </thead>
       <tbody>
+        @foreach($expenses as $expense)
         <tr>
-          <td>Computer</td>
-          <td>Income</td>
-          <td>140</td>
-          <td>15000</td>
+          <td>{{$expense->name}}</td>
+          <td>{{$expense->description}}</td>
+          <td>{{$expense->amount}}</td>
           <td> <a href="{{route('history')}}"
               class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
             <a href="{{route('overview')}}"
               class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
           </td>
         </tr>
-        <tr>
-          <td>Gas</td>
-          <td>Expenses</td>
-          <td>30</td>
-          <td>12000</td>
-          <td> <a href="{{route('history')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-            <a href="{{route('overview')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Gas</td>
-          <td>Expenses</td>
-          <td>30</td>
-          <td>12000</td>
-          <td> <a href="{{route('history')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-            <a href="{{route('overview')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Gas</td>
-          <td>Expenses</td>
-          <td>30</td>
-          <td>12000</td>
-          <td> <a href="{{route('history')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-            <a href="{{route('overview')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Gas</td>
-          <td>Expenses</td>
-          <td>30</td>
-          <td>12000</td>
-          <td> <a href="{{route('history')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-            <a href="{{route('overview')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Gas</td>
-          <td>Expenses</td>
-          <td>30</td>
-          <td>12000</td>
-          <td> <a href="{{route('history')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-            <a href="{{route('overview')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
-          </td>
-        </tr>
-        <tr>
-          <td>Gas</td>
-          <td>Expenses</td>
-          <td>30</td>
-          <td>12000</td>
-          <td> <a href="{{route('history')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-            <a href="{{route('overview')}}"
-              class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
-          </td>
-        </tr>
+        @endforeach
       </tbody>
     </table>
   </div>
