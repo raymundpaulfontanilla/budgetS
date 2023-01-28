@@ -36,7 +36,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
-            <h3 class="font-bold text-3xl">15000</h3>
+            <h3 class="font-bold text-3xl">{{$totalincome}}</h3>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Expenses</h5>
-            <h3 class="font-bold text-3xl">1000 <span class="text-red-500"><i class="fas fa-caret-up"></i></span></h3>
+            <h3 class="font-bold text-3xl">{{$totalexpense}} <span class="text-red-500"><i class="fas fa-caret-up"></i></span></h3>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
-            <h3 class="font-bold text-3xl">14000 <span class="text-green-500"><i class="fas fa-caret-up"></i></span>
+            <h3 class="font-bold text-3xl">{{$totalbudget}} <span class="text-green-500"><i class="fas fa-caret-up"></i></span>
             </h3>
           </div>
         </div>
