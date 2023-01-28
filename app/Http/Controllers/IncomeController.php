@@ -22,7 +22,7 @@ class IncomeController extends Controller
         $incomes->amount = $request->amount;
         $incomes->save();
 
-        return redirect()->route('dashboard.dpages.income');
+        return redirect()->route('income');
 
     }
 
@@ -30,6 +30,6 @@ class IncomeController extends Controller
     {
         $income = Income::find($id);
         $income->delete();
-        return redirect()->route('dashboard.dpages.income');
+        return redirect()->route('income');
     }
 }
