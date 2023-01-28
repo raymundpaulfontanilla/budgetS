@@ -23,12 +23,6 @@ use App\Http\Controllers\IncomeController;
 // Route::get('/income', [HomeController::class, 'income'])->name('income');
 // Route::get('/transact', [HomeController::class, 'transact'])->name('transact');
 
-
-Route::get('/', function () {
-    return view('dashboard.dpages.overview');
-})->name('overview');
-
-
 Route::get('/history', function () {
     return view('dashboard.dpages.history');
 })->name('history');
