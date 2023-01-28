@@ -7,12 +7,20 @@ use App\Models\Income;
 
 class IncomeController extends Controller
 {
+    public function displayincome(){
+        return view('dashboard.dpages.income')
+        ->with('incomes', Income::orderByDesc('created_at')->get())
+        ->with('totalincome',Income::sum('amount'));
+    }
+
    public function createincome(Request $request){
     $incomes=new Income;
     $incomes->name = $request ->name;
     $incomes->desciption = $request ->desciption;
     $incomes->amount = $request ->amount;
     $incomes->save();
+
+    return redirect()->route('dashboard.dpages.income');
 
    }
 }
