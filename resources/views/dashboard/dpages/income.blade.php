@@ -58,7 +58,7 @@
           <td>{{$income->description}}</td>
           <td><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$income->amount}}</td>
 
-          <td> <a href="{{route('history')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+          <td> <a href="{{route('delete/{id}')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
             <a href="{{route('overview')}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
           </td>
 

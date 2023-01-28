@@ -30,3 +30,4 @@ Route::get('/history', function () {
 Route::get('/income', [IncomeController::class, 'displayincome'])->name('income');
 Route::get('/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
 Route::get('overview', [BudgetController::class, 'displayoverview'])->name('overview');
+Route::post('delete/{id}', [IncomeController::class, 'deleteincome'])->name('delete');
