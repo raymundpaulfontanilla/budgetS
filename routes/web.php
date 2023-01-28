@@ -24,17 +24,15 @@ use App\Http\Controllers\IncomeController;
 // Route::get('/transact', [HomeController::class, 'transact'])->name('transact');
 
 
-Route::get('/', function () {
-    return view('dashboard.dpages.overview');
-})->name('overview');
+
 
 
 Route::get('/history', function () {
     return view('dashboard.dpages.history');
 })->name('history');
 
-Route::get('/income', [IncomeController::class, 'displayincome'])->name('income');
-Route::get('/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
-Route::get('/', [BudgetController::class, 'displayoverview'])->name('overview');
-Route::get('delete/{id}', [IncomeController::class, 'deleteincome'])->name('deleteincome');
-Route::get('delete/{id}', [ExpenseController::class, 'deleteexpense'])->name('deleteexpense');
+Route::get('/income', [IncomeController::class,'displayincome'])->name('income');
+Route::get('/expense', [ExpenseController::class,'displayexpense'])->name('expense');
+Route::get('/', [BudgetController::class,'displayoverview'])->name('overview');
+Route::get('delete/{id}', [IncomeController::class,'deleteincome'])->name('deleteincome');
+Route::get('delete/{id}', [ExpenseController::class,'deleteexpense'])->name('deleteexpense');
