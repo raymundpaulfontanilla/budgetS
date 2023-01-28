@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('siebar.css') }}">
+    <script src="{{ asset('modal.js') }}"></script>
     <title>Main Layout</title>
 </head>
 
@@ -14,8 +15,8 @@
     <div class="w-full h-full">
         <dh-component>
             <div class="flex flex-no-wrap">
-                <div style="min-height: 716px"
-                    class="w-64 absolute sm:relative bg-emerald-400	 shadow md:h-full flex-col justify-between hidden sm:flex">
+                <div
+                    class="w-64 sm:relative bg-emerald-400 min-h-screen shadow md:h-full flex-col justify-between hidden sm:flex">
                     <div class="px-8">
                         <div class="h-16 w-full flex items-center">
                             <h1 class="text-2xl">budgetS</h1>
@@ -130,7 +131,8 @@
                     id="mobile-nav">
                     <button aria-label="toggle sidebar" id="openSideBar"
                         class="h-10 w-10 bg-emerald-400 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded focus:ring-gray-800"
-                        onclick="sidebarHandler(true)">
+                        onclick="sidebarHandler(true)" style="
+                        top: 500px;">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments"
                             width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none"
                             stroke-linecap="round" stroke-linejoin="round">

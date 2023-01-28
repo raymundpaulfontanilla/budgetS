@@ -10,9 +10,8 @@
 
   <!-- EXTERNAL CSS -->
   <link rel="stylesheet" href="{{ asset('homeblade.css') }}">
-  <link rel="stylesheet" href="{{ asset('table.css') }}">
-  <script src="https://cdn.tailwindcss.com"></script>
 
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
@@ -185,9 +184,7 @@
 
     <!-- jQuery -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-
     <!--Datatables -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script>
       $(document).ready(function() {

@@ -20,7 +20,7 @@
   {{-- <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-5" id="button">
     Add Expenses
   </button> --}}
-  <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-5 mb-2"
+  <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-14 mb-2"
     onclick="toggleExpensesModal()">Add Expenses</button>
   <div class="fixed z-10 overflow-y-auto top-0 w-full left-0 hidden" id="expensesmodal">
     <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
