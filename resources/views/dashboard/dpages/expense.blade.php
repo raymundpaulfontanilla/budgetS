@@ -59,9 +59,9 @@
           <td><i class="fa-sharp fa-solid fa-peso-sign">{{$expense->name}}</td>
           <td><i class="fa-sharp fa-solid fa-peso-sign">{{$expense->description}}</td>
           <td><i class="fa-sharp fa-solid fa-peso-sign">{{$expense->amount}}</td>
-          <td> <a href="{{route('history')}}"
+          <td> <a href="{{route('deleteexpense',$expense->id)}}"
               class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-            <a href="{{route('overview')}}"
+            <a href=""
               class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
           </td>
         </tr>
