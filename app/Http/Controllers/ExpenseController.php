@@ -7,10 +7,9 @@ use App\Models\Expense;
 
 class ExpenseController extends Controller
 {
-    public function displayExpense()
-    {
-        return view('dashboard.dpages.expenses')
+    public function displayexpense(){
+        return view('dashboard.dpages.expense')
         ->with('expenses', Expense::orderByDesc('created_at')->get())
-        ->with('totalexpense', Expense::sum('amount'));
+        ->with('totalexpense',Expense::sum('amount'));
     }
 }
