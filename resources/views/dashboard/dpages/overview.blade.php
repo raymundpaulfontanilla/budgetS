@@ -21,10 +21,10 @@
   <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload=display_ct();>
 
   <h1 class="text-2xl">Hello $USERNAME</h1>
-  <p>Daily Report- January 23, 2023 11:00:56</p>
+  <p><span id='ct'></span></p>
   <div class="flex flex-wrap">
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
       <!--Metric Card-->
@@ -198,6 +198,18 @@
 });
     </script>
 
+<script> 
+  function display_c(){
+  var refresh=1000;
+  mytime=setTimeout('display_ct()',refresh)
+  }
+
+  function display_ct() {
+  var x = new Date()
+  document.getElementById('ct').innerHTML = x;
+  display_c();
+   }
+  </script>
 
 
 </body>
