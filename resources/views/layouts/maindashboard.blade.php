@@ -11,7 +11,6 @@
 </head>
 
 <body>
-
     <div class="w-full h-full">
         <dh-component>
             <div class="flex flex-no-wrap">
