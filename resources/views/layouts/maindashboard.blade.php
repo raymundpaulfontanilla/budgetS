@@ -57,7 +57,7 @@
                             </li>
                             <li
                                 class="flex w-full justify-between text-black hover:text-white  cursor-pointer items-center mb-6">
-                                <a href="{{route('expenses')}}"
+                                <a href="{{route('expense')}}"
                                     class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
                                         width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
