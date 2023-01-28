@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\ExpenseController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IncomeController;
@@ -34,3 +35,4 @@ Route::get('/history', function () {
 
 Route::get('/income', [IncomeController::class, 'displayincome'])->name('income');
 Route::get('/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
+Route::get('overview', [BudgetController::class, 'displayoverview'])->name('overview');
