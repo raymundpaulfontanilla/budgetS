@@ -1,7 +1,3 @@
-#table {
-    display: block;
-}
-
 @media (max-width: 768px) {
     #example {
         display: none;
@@ -18,4 +14,8 @@
     #recipients {
         display: none;
     }
+}
+
+#recipients {
+    height: 420px;
 }
