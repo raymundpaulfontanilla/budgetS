@@ -38,7 +38,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
-            <h3 class="font-bold text-3xl">15000</h3>
+            <h3 class="font-bold text-3xl">{{$totalincome}}</h3>
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Expenses</h5>
-            <h3 class="font-bold text-3xl">1000 <span class="text-red-500"></span></h3>
+            <h3 class="font-bold text-3xl">{{$totalexpense}} <span class="text-red-500"></span></h3>
             {{-- <i class="fas fa-caret-up"></i> --}}
           </div>
         </div>
@@ -70,7 +70,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
-            <h3 class="font-bold text-3xl">14000 <span class="text-green-500"></span>
+            <h3 class="font-bold text-3xl">{{$totalbudget}} <span class="text-green-500"></span>
               {{-- <i class="fas fa-caret-up"></i> --}}
             </h3>
           </div>
@@ -87,26 +87,24 @@
       <script>
         const dataPie = {
           // labels: ["Total Income", "Total Expenses", "Total Budget"],
-          datasets: [
-            {
-             
-              data: [300, 50, 100],
-              backgroundColor: [
-                "rgb(0,0,255)",
-                "rgb(255, 0, 0)",
-                "rgb(0, 255, 0)",
-              ],
-              hoverOffset: 4,
-            },
-          ],
+          datasets: [{
+
+            data: [300, 50, 100],
+            backgroundColor: [
+              "rgb(0,0,255)",
+              "rgb(255, 0, 0)",
+              "rgb(0, 255, 0)",
+            ],
+            hoverOffset: 4,
+          }, ],
         };
-      
+
         const configPie = {
           type: "pie",
           data: dataPie,
           options: {},
         };
-      
+
         var chartBar = new Chart(document.getElementById("chartPie"), configPie);
       </script>
       {{-- End of Chart --}}
@@ -188,30 +186,30 @@
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
     <script>
       $(document).ready(function() {
-    var table = $('#example').DataTable({
-        responsive: true,
-        lengthChange: false,
-        pageLength: 4
-    });
+        var table = $('#example').DataTable({
+          responsive: true,
+          lengthChange: false,
+          pageLength: 4
+        });
 
-    $('#entriesPerPage').on('change', function() {
-        table.page.len(this.value).draw();
-    });
-});
+        $('#entriesPerPage').on('change', function() {
+          table.page.len(this.value).draw();
+        });
+      });
     </script>
 
-<script> 
-  function display_c(){
-  var refresh=1000;
-  mytime=setTimeout('display_ct()',refresh)
-  }
+    <script>
+      function display_c() {
+        var refresh = 1000;
+        mytime = setTimeout('display_ct()', refresh)
+      }
 
-  function display_ct() {
-  var x = new Date()
-  document.getElementById('ct').innerHTML = x;
-  display_c();
-   }
-  </script>
+      function display_ct() {
+        var x = new Date()
+        document.getElementById('ct').innerHTML = x;
+        display_c();
+      }
+    </script>
 
 
 </body>

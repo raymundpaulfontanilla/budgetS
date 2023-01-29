@@ -1,11 +1,10 @@
-$(document).ready(function() {
-    var table = $('#example').DataTable({
-        responsive: true,
-        lengthChange: false,
-        pageLength: 5
-    });
+function display_c() {
+    var refresh = 1000;
+    mytime = setTimeout('display_ct()', refresh)
+  }
 
-    $('#entriesPerPage').on('change', function() {
-        table.page.len(this.value).draw();
-    });
-});
+  function display_ct() {
+    var x = new Date()
+    document.getElementById('ct').innerHTML = x;
+    display_c();
+  }
