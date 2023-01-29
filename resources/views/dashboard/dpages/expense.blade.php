@@ -22,7 +22,7 @@
 
 <body>
   <div class="flex flex-wrap">
-    <div class="w-full md:w-1/2 xl:w-1/3">
+    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
       <h1 class="text-2xl">Expense Page</h1>
       <p>Daily Report- January 23, 2023 11:00:56</p>
       <!--Metric Card-->
@@ -37,16 +37,14 @@
           </div>
         </div>
       </div>
-      <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-3 mb-2"
-        onclick="toggleExpenseModal()">Add Expense</button>
     </div>
 
 
-
-
-    <div class="container w-full md:w-4/5 xl:w-3/5" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
       <!--Card-->
       <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white">
+        <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full"
+          onclick="toggleExpenseModal()">Add Expense</button>
         <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
           <thead>
             <tr>
