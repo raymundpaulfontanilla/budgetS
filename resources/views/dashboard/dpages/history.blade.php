@@ -19,11 +19,12 @@
     <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--Responsive Extension Datatables CSS-->
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
 </head>
 
-<body>
+<body onload=display_ct();>
     <h1 class="text-2xl">Transaction History</h1>
-    <p>Daily Report- January 23, 2023 11:00:56</p>
+    <p>Daily Report</p><span class="float-right" id='ct'></span>
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white">

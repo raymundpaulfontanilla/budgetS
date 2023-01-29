@@ -19,12 +19,13 @@
   <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
   <!--Responsive Extension Datatables CSS-->
   <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+  <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
 </head>
 
 <body onload=display_ct();>
 
   <h1 class="text-2xl ml-6">Hello $USERNAME</h1>
-  <p class="ml-6"><span id='ct'></span></p>
+  <p class="ml-6">Daily Report<span class="float-right" id='ct'></span></p>
   <div class="flex flex-wrap">
 
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
@@ -196,21 +197,6 @@
         });
       });
     </script>
-
-    <script>
-      function display_c() {
-        var refresh = 1000;
-        mytime = setTimeout('display_ct()', refresh)
-      }
-
-      function display_ct() {
-        var x = new Date()
-        document.getElementById('ct').innerHTML = x;
-        display_c();
-      }
-    </script>
-
-
 </body>
 
 </html>
