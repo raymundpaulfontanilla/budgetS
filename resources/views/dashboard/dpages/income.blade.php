@@ -90,21 +90,24 @@
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
             <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
               <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <form method="POST" action=/createincome>
+                @csrf
                 <h1 class="pb-5">INCOME FORM</h1>
                 <label>Name</label>
-                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3"  name="name"/>
                 <label>Description</label>
-                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" name="description"/>
                 <label>Amount</label>
-                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" name="amount" />
               </div>
               <div class="bg-gray-200 px-4 py-3 text-right">
                 <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="toggleIncomeModal()"><i class="fas fa-times"></i> Cancel</button>
-                <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i class="fas fa-plus"></i> Submit</button>
+                <button type="submit" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i class="fas fa-plus"></i> Submit</button>
               </div>
             </div>
           </div>
         </div>
+</form>
 
         {{-- Delete Modal --}}
         <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="deletemodal">
