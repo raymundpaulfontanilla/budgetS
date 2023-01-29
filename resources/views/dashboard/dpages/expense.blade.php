@@ -40,13 +40,12 @@
       </div>
     </div>
   </div>
-  
+
 
 
 
   <div class="container w-full md:w-4/5 xl:w-3/5" style="width:100%">
-  <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-3 mb-2"
-      onclick="toggleExpenseModal()">Add Expense</button>
+    <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-3 mb-2" onclick="toggleExpenseModal()">Add Expense</button>
     <!--Card-->
     <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
       <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
@@ -65,8 +64,8 @@
             <td>{{$expense->description}}</td>
             <td><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$expense->amount}}</td>
             <td>
-            <a href="{{route('deleteexpense',$expense->id)}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
-              
+              <a href="{{route('deleteexpense',$expense->id)}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+
               <a href="" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
             </td>
           </tr>
@@ -76,152 +75,135 @@
     </div>
     <!--/Card-->
   </div>
-<body>
-  <div class="pb-5">
 
-    {{-- Expense Modal --}}
-   
-    <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="expensemodal">
-      <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-        <div class="fixed inset-0 transition-opacity">
-          <div class="absolute inset-0 bg-gray-900 opacity-75">
-            <button
-              class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4"
-              onclick="toggleExpenseModal()">X</button>
-          </div>
-          <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-          <div
-            class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-            role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-            <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <h1 class="pb-5">EXPENSE FORM</h1>
-              <label>Name</label>
-              <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-              <label>Description</label>
-              <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-              <label>Amount</label>
-              <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
-            </div>
-            <div class="bg-gray-200 px-4 py-3 text-right">
-              <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                onclick="toggleExpenseModal()"><i class="fas fa-times"></i> Cancel</button>
-              <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
-                  class="fas fa-plus"></i> Submit</button>
-            </div>
-          </div>
-        </div>
-      </div>
-   
-      {{-- Delete Modal --}}
-      <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="deletemodal">
+  <body>
+    <div class="pb-5">
+
+      {{-- Expense Modal --}}
+
+      <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="expensemodal">
         <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
           <div class="fixed inset-0 transition-opacity">
             <div class="absolute inset-0 bg-gray-900 opacity-75">
-              <button
-                class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4"
-                onclick="toggleDeleteModal()">X</button>
+              <button class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4" onclick="toggleExpenseModal()">X</button>
             </div>
             <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-            <div
-              class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-              role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+            <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
               <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <h1 class="pb-5">WARNING</h1>
-              </div>
-              <div class="bg-gray-200 px-4 py-3 text-right">
-                <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                  onclick="toggleDeleteModal()"><i class="fas fa-times"></i> Cancel</button>
-                <button type="button" class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700 mr-2"><i
-                    class="fas fa-plus"></i>Sumbit</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {{-- EDIT MODAL --}}
-      <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="editmodal">
-        <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-          <div class="fixed inset-0 transition-opacity">
-            <div class="absolute inset-0 bg-gray-900 opacity-75">
-              <button
-                class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4"
-                onclick="toggleEditModal()">X</button>
-            </div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-            <div
-              class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-              role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-              <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                <h1 class="pb-5">RECORD</h1>
+                <h1 class="pb-5">EXPENSE FORM</h1>
                 <label>Name</label>
-                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
                 <label>Description</label>
-                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
                 <label>Amount</label>
-                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
+                <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" />
               </div>
               <div class="bg-gray-200 px-4 py-3 text-right">
-                <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                  onclick="toggleEditModal()"><i class="fas fa-times"></i> Cancel</button>
-                <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
-                    class="fas fa-plus"></i> Submit</button>
+                <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="toggleExpenseModal()"><i class="fas fa-times"></i> Cancel</button>
+                <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i class="fas fa-plus"></i> Submit</button>
               </div>
             </div>
           </div>
         </div>
+
+        {{-- Delete Modal --}}
+        <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="deletemodal">
+          <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity">
+              <div class="absolute inset-0 bg-gray-900 opacity-75">
+                <button class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4" onclick="toggleDeleteModal()">X</button>
+              </div>
+              <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+              <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <h1 class="pb-5">WARNING</h1>
+                </div>
+                <div class="bg-gray-200 px-4 py-3 text-right">
+                  <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="toggleDeleteModal()"><i class="fas fa-times"></i> Cancel</button>
+                  <button type="button" class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700 mr-2"><i class="fas fa-plus"></i>Sumbit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{-- EDIT MODAL --}}
+        <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="editmodal">
+          <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity">
+              <div class="absolute inset-0 bg-gray-900 opacity-75">
+                <button class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4" onclick="toggleEditModal()">X</button>
+              </div>
+              <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
+              <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                  <h1 class="pb-5">RECORD</h1>
+                  <label>Name</label>
+                  <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
+                  <label>Description</label>
+                  <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
+                  <label>Amount</label>
+                  <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
+                </div>
+                <div class="bg-gray-200 px-4 py-3 text-right">
+                  <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="toggleEditModal()"><i class="fas fa-times"></i> Cancel</button>
+                  <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i class="fas fa-plus"></i> Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{-- END OF EDIT MODAL --}}
       </div>
-      {{-- END OF EDIT MODAL --}}
-    </div>
 
       <!-- jQuery -->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
       <!--Datatables -->
       <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-        <script>
-      // Table JS
-              $(document).ready(function () {
-                  var table = $('#example').DataTable({
-                    responsive: true,
-                    lengthChange: false,
-                    pageLength: 5
-                  });
+      <script>
+        // Table JS
+        $(document).ready(function() {
+          var table = $('#example').DataTable({
+            responsive: true,
+            lengthChange: false,
+            pageLength: 5
+          });
 
-                  $('#entriesPerPage').on('change', function () {
-                    table.page.len(this.value).draw();
-                  });
-                });
+          $('#entriesPerPage').on('change', function() {
+            table.page.len(this.value).draw();
+          });
+        });
 
-            // Modal
+        // Modal
 
-            let currentModal = "expense";
+        let currentModal = "expense";
 
-            function toggleExpenseModal() {
-                document.getElementById('expensemodal').classList.toggle('hidden')
-                currentModal = "expense";
+        function toggleExpenseModal() {
+          document.getElementById('expensemodal').classList.toggle('hidden')
+          currentModal = "expense";
+        }
+
+        function toggleEditModal() {
+          document.getElementById('editmodal').classList.toggle('hidden')
+          currentModal = "edit";
+        }
+
+        function toggleDeleteModal() {
+          document.getElementById('deletemodal').classList.toggle('hidden');
+          currentModal = "delete";
+        }
+        document.addEventListener("keydown", function(event) {
+          if (event.key === "Escape") {
+            if (currentModal === "expense") {
+              toggleExpenseModal();
+            } else if (currentModal === "edit") {
+              toggleEditModal();
+            } else if (currentModal === "delete") {
+              toggleDeleteModal();
             }
-
-            function toggleEditModal() {
-                document.getElementById('editmodal').classList.toggle('hidden')
-                currentModal = "edit";
-            }
-
-            function toggleDeleteModal() {
-                document.getElementById('deletemodal').classList.toggle('hidden');
-                currentModal = "delete";
-            }
-            document.addEventListener("keydown", function (event) {
-                if (event.key === "Escape") {
-                    if (currentModal === "expense") {
-                        toggleExpenseModal();
-                    } else if (currentModal === "edit") {
-                        toggleEditModal();
-                    } else if (currentModal === "delete") {
-                        toggleDeleteModal();
-                    }
-                }
-            });
+          }
+        });
       </script>
 
 
-  @endsection
+      @endsection
