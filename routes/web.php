@@ -36,3 +36,6 @@ Route::get('/expense', [ExpenseController::class,'displayexpense'])->name('expen
 Route::get('/', [BudgetController::class,'displayoverview'])->name('overview');
 Route::get('deleteincome/{id}', [IncomeController::class,'deleteincome'])->name('deleteincome');
 Route::get('deleteexpense/{id}', [ExpenseController::class,'deleteexpense'])->name('deleteexpense');
+
+Route::post('/createincome', [IncomeController::class,'createincome'])->name('createincome');
+Route::post('/createexpense', [ExpenseController::class,'createexpense'])->name('createexpense');
