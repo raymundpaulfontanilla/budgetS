@@ -302,6 +302,8 @@
             </script>
 
         </dh-component>
+        <script src="time.js"></script>
+
     </div>
 </body>
 
