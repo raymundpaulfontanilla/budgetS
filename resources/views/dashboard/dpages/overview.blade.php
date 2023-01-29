@@ -38,7 +38,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
-            <h3 class="font-bold text-3xl">{{$totalincome}}</h3>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalincome}}</h3>
           </div>
         </div>
       </div>
@@ -49,13 +49,11 @@
       <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
-            <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i>
-            </div>
+            <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i></div>
           </div>
           <div class="flex-1 text-right md:text-center">
-            <h5 class="font-bold uppercase text-gray-600">Total Expenses</h5>
-            <h3 class="font-bold text-3xl">{{$totalexpense}} <span class="text-red-500"></span></h3>
-            {{-- <i class="fas fa-caret-up"></i> --}}
+            <h5 class="font-bold uppercase text-gray-600">Total Expense</h5>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalexpense}}</h3>
           </div>
         </div>
       </div>
@@ -70,7 +68,8 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
-            <h3 class="font-bold text-3xl">{{$totalbudget}} <span class="text-green-500"></span>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span
+                class="text-green-500"></span>
               {{-- <i class="fas fa-caret-up"></i> --}}
             </h3>
           </div>
