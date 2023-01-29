@@ -23,7 +23,7 @@
 <body>
 
   <div class="flex flex-wrap">
-    <div class="w-full md:w-1/2 xl:w-1/3">
+    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
       <h1 class="text-2xl">Income Page</h1>
       <p class="">Daily Report- January 23, 2023 11:00:56</p>
       <!--Metric Card-->
@@ -31,7 +31,8 @@
       p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
-            <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
+            <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-inverse"></i>
+            </div>
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
@@ -39,16 +40,17 @@
           </div>
         </div>
       </div>
-      <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-3 mb-2"
-        onclick="toggleIncomeModal()">Add Income</button>
     </div>
 
 
 
 
-    <div class="container w-full md:w-4/5 xl:w-3/5" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
+
       <!--Card-->
       <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white">
+        <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full"
+          onclick="toggleIncomeModal()">Add Income</button>
         <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
           <thead>
             <tr>

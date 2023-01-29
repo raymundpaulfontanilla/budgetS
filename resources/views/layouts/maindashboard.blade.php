@@ -8,7 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{{ asset('siebar.css') }}">
     <script src="{{ asset('modal.js') }}"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Main Layout</title>
 </head>
 
@@ -20,9 +22,9 @@
                     class="w-64 sm:relative bg-emerald-400 min-h-screen shadow md:h-full flex-col justify-between hidden sm:flex">
                     <div class="px-8">
                         <div class="h-16 w-full flex items-center">
-                            <h1 class="text-2xl">budgetS</h1>
+                            <img src="{{ asset('images/logo.png') }}" alt="logo" width="150" height="85" class="mt-16">
                         </div>
-                        <ul class="mt-12">
+                        <ul class="mt-28">
                             <li
                                 class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
                                 <a href="{{route('overview')}}"
@@ -37,11 +39,11 @@
                                         <rect x="4" y="14" width="6" height="6" rx="1"></rect>
                                         <rect x="14" y="14" width="6" height="6" rx="1"></rect>
                                     </svg>
-                                    <span class="text-sm ml-2">Overview</span>
+                                    <span class="ml-2">Overview</span>
                                 </a>
                             </li>
                             <li
-                                class="flex w-full justify-between text-black hover:text-white  cursor-pointer items-center mb-6">
+                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6 {{ request()->is('income') ? 'active' : '' }}">
                                 <a href="{{route('income')}}"
                                     class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
@@ -53,7 +55,7 @@
                                             d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
                                         </path>
                                     </svg>
-                                    <span class="text-sm ml-2">Income</span>
+                                    <span class=" ml-2">Income</span>
                                 </a>
                             </li>
                             <li
@@ -69,7 +71,7 @@
                                             d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
                                         </path>
                                     </svg>
-                                    <span class="text-sm ml-2">Expenses</span>
+                                    <span class=" ml-2">Expenses</span>
                                 </a>
                             </li>
                             <li
@@ -85,7 +87,7 @@
                                         <polyline points="4 12 12 16 20 12" />
                                         <polyline points="4 16 12 20 20 16" />
                                     </svg>
-                                    <span class="text-sm ml-2">Transaction History</span>
+                                    <span class=" ml-2">Transaction History</span>
                                 </a>
                             </li>
                             <li
@@ -101,7 +103,7 @@
                                             d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                         <circle cx="12" cy="12" r="3" />
                                     </svg>
-                                    <span class="text-sm ml-2">Settings</span>
+                                    <span class="ml-2">Settings</span>
                                 </a>
                             </li>
                         </ul>
@@ -121,7 +123,7 @@
                                             d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                                         <circle cx="12" cy="12" r="3" />
                                     </svg>
-                                    <span class="text-sm ml-2">Log Out</span>
+                                    <span class="ml-2">Log Out</span>
                                 </a>
                             </li>
                         </ul>
@@ -162,7 +164,7 @@
                     </button>
                     <div class="px-8">
                         <div class="h-16 w-full flex items-center">
-                            <h1 class="text-2xl">budgetS</h1>
+                            <img src="{{ asset('images/logo.png') }}" alt="logo" width="100" height="80" class="mt-8">
                         </div>
                         <ul class="mt-12">
                             <li
@@ -298,9 +300,7 @@
                     openSidebar.classList.remove("hidden");
                 }
             }
-
             </script>
-
         </dh-component>
         <script src="time.js"></script>
 

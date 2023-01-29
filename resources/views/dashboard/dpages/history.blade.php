@@ -24,9 +24,11 @@
 <body>
     <h1 class="text-2xl">Transaction History</h1>
     <p>Daily Report- January 23, 2023 11:00:56</p>
-    <div class="container w-full md:w-4/5 xl:w-3/5" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white">
+            <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full" onclick="">PDF
+                BUTTON</button>
             <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
                 <thead>
                     <tr>
@@ -34,7 +36,6 @@
                         <th data-priority="2">Description</th>
                         <th data-priority="3">Amount</th>
                         <th data-priority="4">Total</th>
-                        <th data-priority="5">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -43,96 +44,75 @@
                         <td>Income</td>
                         <td>140</td>
                         <td>15000</td>
-                        <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
+
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>Expenses</td>
                         <td>30</td>
                         <td>12000</td>
-                        <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
+
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>Expenses</td>
                         <td>30</td>
                         <td>12000</td>
-                        <td><button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
+
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>Expenses</td>
                         <td>30</td>
                         <td>12000</td>
-                        <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>Expenses</td>
                         <td>30</td>
                         <td>12000</td>
-                        <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>Expenses</td>
                         <td>30</td>
                         <td>12000</td>
-                        <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>Expenses</td>
                         <td>30</td>
                         <td>12000</td>
-                        <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
                     </tr>
                     <tr>
                         <td>Gas</td>
                         <td>Expenses</td>
                         <td>30</td>
                         <td>12000</td>
-                        <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleEditModal()">⚙️
-                                Edit</button>
-                            <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                                onclick="toggleDeleteModal()">🗑️ Delete</button>
-                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gas</td>
+                        <td>Expenses</td>
+                        <td>30</td>
+                        <td>12000</td>
+                    </tr>
+                    <tr>
+                        <td>Gas</td>
+                        <td>Expenses</td>
+                        <td>30</td>
+                        <td>12000</td>
+                    </tr>
+                    <tr>
+                        <td>Gas</td>
+                        <td>Expenses</td>
+                        <td>30</td>
+                        <td>12000</td>
+                    </tr>
+                    <tr>
+                        <td>Gas</td>
+                        <td>Expenses</td>
+                        <td>30</td>
+                        <td>12000</td>
                     </tr>
                 </tbody>
             </table>
@@ -210,7 +190,7 @@
             var table = $('#example').DataTable({
               responsive: true,
               lengthChange: false,
-              pageLength: 7
+              pageLength: 10
             });
   
             $('#entriesPerPage').on('change', function() {
@@ -246,3 +226,14 @@ document.addEventListener("keydown", function(event) {
 });
 </script>
 @endsection
+
+
+
+{{-- Incase if it's needed --}}
+{{-- 
+<td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
+    onclick="toggleEditModal()">⚙️
+    Edit</button>
+<button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
+    onclick="toggleDeleteModal()">🗑️ Delete</button>
+</td> --}}
