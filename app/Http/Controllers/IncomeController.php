@@ -18,7 +18,7 @@ class IncomeController extends Controller
     {
         $incomes = new Income;
         $incomes->name = $request->name;
-        $incomes->desciption = $request->desciption;
+        $incomes->description = $request->description;
         $incomes->amount = $request->amount;
         $incomes->save();
 
