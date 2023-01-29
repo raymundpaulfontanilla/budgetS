@@ -21,6 +21,7 @@
 </head>
 
 <div class="pb-5">
+<h1 class="text-2xl ml-6">Income Page</h1>
   <p>Daily Report- January 23, 2023 11:00:56</p>
 
 </div>
