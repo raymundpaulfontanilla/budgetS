@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\ExpenseController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IncomeController;
 
 
 /*
@@ -21,22 +24,15 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/transact', [HomeController::class, 'transact'])->name('transact');
 
 
-Route::get('/', function () {
-    return view('dashboard.dpages.expenses');
-})->name('maindashboard');
 
-Route::get('/expenses', function () {
-    return view('dashboard.dpages.expenses');
-})->name('expenses');
 
-Route::get('/income', function () {
-    return view('dashboard.dpages.income');
-})->name('income');
-
-Route::get('/overview', function () {
-    return view('dashboard.dpages.overview');
-})->name('overview');
 
 Route::get('/history', function () {
     return view('dashboard.dpages.history');
 })->name('history');
+
+Route::get('/income', [IncomeController::class,'displayincome'])->name('income');
+Route::get('/expense', [ExpenseController::class,'displayexpense'])->name('expense');
+Route::get('/', [BudgetController::class,'displayoverview'])->name('overview');
+Route::get('delete/{id}', [IncomeController::class,'deleteincome'])->name('deleteincome');
+Route::get('delete/{id}', [ExpenseController::class,'deleteexpense'])->name('deleteexpense');
