@@ -22,9 +22,7 @@
 
 <div class="pb-5">
   <p>Daily Report- January 23, 2023 11:00:56</p>
-  <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-5" id="button">
-    Add Income
-  </button>
+
 </div>
 <div class="flex flex-wrap">
   <div class="w-full md:w-1/2 xl:w-1/3 p-6">
@@ -42,10 +40,13 @@
       </div>
     </div>
   </div>
+  
 
 
 
   <div class="container w-full md:w-4/5 xl:w-3/5" style="width:100%">
+  <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-3 mb-2"
+      onclick="toggleIncomeModal()">Add Income</button>
     <!--Card-->
     <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
       <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
@@ -77,11 +78,9 @@
   </div>
 <body>
   <div class="pb-5">
-    <p>Daily Report- January 23, 2023 11:00:56</p>
 
     {{-- Income Modal --}}
-    <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-14 mb-2"
-      onclick="toggleIncomeModal()">Add Income</button>
+   
     <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="incomemodal">
       <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 transition-opacity">
@@ -112,164 +111,7 @@
           </div>
         </div>
       </div>
-      {{-- END OF INCOME Modal --}}
-    </div>
-    <div class="flex flex-wrap">
-      <div class="container w-full md:w-4/5 xl:w-3/5" style="width:100%">
-        <!--Card-->
-        <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow bg-white">
-          <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
-            <thead>
-              <tr>
-                <th data-priority="1">Name</th>
-                <th data-priority="2">Description</th>
-                <th data-priority="3">Amount</th>
-                <th data-priority="4">Total</th>
-                <th data-priority="5">Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Computer</td>
-                <td>Income</td>
-                <td>140</td>
-                <td>15000</td>
-                <td>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-              <tr>
-                <td>Gas</td>
-                <td>Expenses</td>
-                <td>30</td>
-                <td>12000</td>
-                <td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleEditModal()">⚙️
-                    Edit</button>
-                  <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                    onclick="toggleDeleteModal()">🗑️ Delete</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <!--/Card-->
-      </div>
-
+   
       {{-- Delete Modal --}}
       <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="deletemodal">
         <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
