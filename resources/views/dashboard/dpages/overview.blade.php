@@ -69,8 +69,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span
-                class="text-green-500"></span>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span class="text-green-500"></span>
               {{-- <i class="fas fa-caret-up"></i> --}}
             </h3>
           </div>
@@ -85,11 +84,16 @@
         <canvas class="p-10 " id="chartPie"></canvas>
       </div>
       <script>
+        let income = "{{$totalincome}}";
+        let expense = "{{$totalexpense}}";
+        let percentageincome = "{{$percentageincome}}"
+        let percentageexpense = "{{$percentageexpense}}"
+
         const dataPie = {
-          // labels: ["Total Income", "Total Expenses", "Total Budget"],
+          labels: ["Total Income" + percentageincome + "%", "Total Expense" + percentageexpense + "%"],
           datasets: [{
 
-            data: [300, 50, 100],
+            data: [income, expense, ],
             backgroundColor: [
               "rgb(0,0,255)",
               "rgb(255, 0, 0)",
@@ -97,6 +101,7 @@
             ],
             hoverOffset: 4,
           }, ],
+
         };
 
         const configPie = {
