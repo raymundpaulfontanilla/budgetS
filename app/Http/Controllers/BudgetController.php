@@ -12,9 +12,9 @@ class BudgetController extends Controller
     public function displayoverview()
     {
       
-        $income = DB::table('incomes')->get();
-        $expense = DB::table('expenses')->get();
-        $merges = $income->union($expense);
+        $income = Income::all();;
+        $expense = Expense::all();
+        $merges = $income->concat($expense);
         $totalincome = Income::sum('amount');
         $totalexpense = Expense::sum('amount');
         $totalbudget = $totalincome - $totalexpense;
