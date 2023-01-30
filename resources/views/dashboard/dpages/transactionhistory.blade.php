@@ -36,85 +36,16 @@
                         <th data-priority="1">Name</th>
                         <th data-priority="2">Description</th>
                         <th data-priority="3">Amount</th>
-                        <th data-priority="4">Total</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($merges as $merge)
                     <tr>
-                        <td>Computer</td>
-                        <td>Income</td>
-                        <td>140</td>
-                        <td>15000</td>
-
+                        <td>{{$merge->name}}</td>
+                        <td>{{$merge->description}}</td>
+                        <td>{{$merge->amount}}</td>
                     </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
-                    <tr>
-                        <td>Gas</td>
-                        <td>Expenses</td>
-                        <td>30</td>
-                        <td>12000</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
