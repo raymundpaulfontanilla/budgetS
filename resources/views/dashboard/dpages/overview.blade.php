@@ -125,52 +125,17 @@
               <th data-priority="1">Name</th>
               <th data-priority="2">Description</th>
               <th data-priority="3">Amount</th>
-              <th data-priority="4">Total</th>
             </tr>
           </thead>
           <tbody>
+          
+         @foreach($merges as $item)
             <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
+              <td>{{$item->name}}</td>
+              <td>{{$item->description}}</td>
+              <td>{{$item->amount}}</td>
             </tr>
-            <tr>
-              <td>Gas</td>
-              <td>Expenses</td>
-              <td>12000</td>
-              <td>12000</td>
-            </tr>
-            <tr>
-              <td>Gas</td>
-              <td>Expenses</td>
-              <td>12000</td>
-              <td>12000</td>
-            </tr>
-            <tr>
-              <td>Gas</td>
-              <td>Expenses</td>
-              <td>12000</td>
-              <td>12000</td>
-            </tr>
-            <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
-            </tr>
-            <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
-            </tr>
-            <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
-            </tr>
+         @endforeach
           </tbody>
         </table>
       </div>
