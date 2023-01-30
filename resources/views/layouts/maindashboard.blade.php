@@ -76,8 +76,8 @@
                             </li>
                             <li
                                 class="flex w-full justify-between text-black hover:text-white  cursor-pointer items-center mb-6">
-                                <a href="{{route('history')}}"
-                                    class="{{ request()->routeIs('history') ? 'text-white':'' }} flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                <a href="{{route('transactionhistory')}}"
+                                    class="{{ request()->routeIs('transactionhistory') ? 'text-white':'' }} flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack"
                                         width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
                                         stroke="currentColor" fill="none" stroke-linecap="round"
@@ -218,7 +218,7 @@
                             </li>
                             <li
                                 class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="{{route('history')}}"
+                                <a href="{{route('transactionhistory')}}"
                                     class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack"
                                         width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
