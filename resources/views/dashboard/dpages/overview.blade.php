@@ -25,17 +25,16 @@
 <body onload=display_ct();>
 
   <h1 class="text-2xl ml-6">Hello $USERNAME</h1>
-  <p class="ml-6">Daily Report<span class="float-right" id='ct'></span></p>
-  <div class="flex flex-wrap">
+  <p class="ml-6" id='ct'></p>
+  <div class="flex flex-wrap" id="bodyoverview">
 
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
 
       <!--Metric Card-->
-      <div class=" bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl
-      p-5">
+      <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
-            <div class="rounded-full p-5 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
+            <div class="rounded-full p-5 bg-green-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
@@ -61,15 +60,17 @@
     </div>
     <!--/Metric Card-->
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-      <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
+      <div class=" bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl
+      p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
-            <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i>
+            <div class="rounded-full p-5 bg-indigo-600"><i class="fa fa-wallet fa-2x fa-inverse"></i>
             </div>
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span class="text-green-500"></span>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span
+                class="text-green-500"></span>
               {{-- <i class="fas fa-caret-up"></i> --}}
             </h3>
           </div>
@@ -95,7 +96,7 @@
 
             data: [income, expense, ],
             backgroundColor: [
-              "rgb(0,0,255)",
+              "rgb(0,255,127)",
               "rgb(255, 0, 0)",
               "rgb(0, 255, 0)",
             ],
@@ -128,14 +129,14 @@
             </tr>
           </thead>
           <tbody>
-          
-         @foreach($merges as $item)
+
+            @foreach($merges as $item)
             <tr>
               <td>{{$item->name}}</td>
               <td>{{$item->description}}</td>
               <td>{{$item->amount}}</td>
             </tr>
-         @endforeach
+            @endforeach
           </tbody>
         </table>
       </div>

@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 509px) {
     #example {
         display: none;
     }
@@ -10,9 +10,27 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 509px) {
     #recipients {
         display: none;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #bodyoverview {
+        width: 50vh;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 635px) {
+    #bodyoverview {
+        width: 75vh;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1000px) {
+    #bodyoverview {
+        width: 100vh;
     }
 }
 
