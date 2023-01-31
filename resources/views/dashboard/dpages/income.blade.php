@@ -23,13 +23,14 @@
 </head>
 
 <body onload=display_ct();>
-
-  <div class="flex flex-wrap">
+  <h1 class="text-2xl" id='ct'>Income Page</h1>
+  <div class="flex flex-wrap" id="incomebody">
     <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
-      <h1 class="text-2xl">Income Page</h1>
+
       {{-- <p>Daily Report</p><span><small id='ct'></small></span> --}}
       <!--Metric Card-->
-      <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
+      <div
+        class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5 mt-6">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
             <div class="rounded-full p-5 bg-green-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
@@ -40,10 +41,22 @@
           </div>
         </div>
       </div>
+      <div
+        class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5 mt-6">
+        <div class="flex flex-row items-center">
+          <div class="flex-shrink pr-4">
+            <div class="rounded-full p-5 bg-green-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
+          </div>
+          <div class="flex-1 text-right md:text-center">
+            <h5 class="font-bold uppercase text-gray-600">Weekly Total Income</h5>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalincome}}</h3>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden ml-16 " style="
     width: 650px;">
-      <div class=" bg-gray-50" id='ct'>Daily Report</div>
+      {{-- <div class=" bg-gray-50">Daily Report</div> --}}
       <canvas class="" id="incomebarchart"></canvas>
     </div>
 
@@ -51,10 +64,10 @@
 
 
 
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:100%">
 
       <!--Card-->
-      <div id='recipients' class="p-5 lg:mt-0 rounded shadow bg-white">
+      <div id='recipients' class="p-5 lg:mt-0 rounded shadow bg-white mr-12">
         <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full"
           onclick="toggleIncomeModal()">Add Income</button>
         <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
@@ -184,15 +197,17 @@
           </div>
           {{-- END OF EDIT MODAL --}}
         </div>
-    </body>
+      </div>
+  </div>
+</body>
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-    <!--Datatables -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script>
-      // Table JS
+<!--Datatables -->
+<script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script>
+  // Table JS
         $(document).ready(function() {
           var table = $('#example').DataTable({
             responsive: true,
@@ -276,7 +291,7 @@ const saturday = "{{$saturday}}";
     document.getElementById("incomebarchart"),
     configBarChart
   );
-    </script>
+</script>
 
 
-    @endsection
+@endsection

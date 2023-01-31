@@ -22,15 +22,19 @@
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 635px) {
+/* @media screen and (min-width: 500px) and (max-width: 635px) {
     #bodyoverview {
         width: 75vh;
     }
-}
+} */
 
-@media screen and (min-width: 640px) and (max-width: 1000px) {
-    #bodyoverview {
-        width: 100vh;
+@media screen and (min-width: 640px) and (max-width: 1200px) {
+
+    #bodyoverview,
+    #ct,
+    #username {
+        margin-left: 100px;
+
     }
 }
 
