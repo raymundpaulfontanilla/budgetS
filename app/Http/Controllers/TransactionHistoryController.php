@@ -9,11 +9,19 @@ class TransactionHistoryController extends Controller
 {
     public function transactionhistory()
     {
+        $income = Income::get()->map(function ($income) {
+            $income['category'] = 'Income';
+            return $income;
+        });
 
-        $income = Income::all();
-        $expense = Expense::all();
+        $expense = Expense::get()->map(function ($expense) {
+            $expense['category'] = 'Expense';
+            return $expense;
+        });
+
         $merges = $income->concat($expense);
-        return view('dashboard.dpages.transactionhistory')
-            ->with('merges', $merges);
+        $merges = $merges->sortByDesc('created_at');
+
+        return view('dashboard.dpages.transactionhistory', compact('merges'));
     }
 }

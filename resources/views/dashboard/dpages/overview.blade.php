@@ -122,20 +122,19 @@
       <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
         <table id="example" class="stripe hover " style="width:100%">
           <thead>
-            <tr>
-              <th data-priority="1">Name</th>
-              <th data-priority="2">Description</th>
-              <th data-priority="3">Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-
-            @foreach($merges as $item)
-            <tr>
-              <td>{{$item->name}}</td>
-              <td>{{$item->description}}</td>
-              <td>{{$item->amount}}</td>
-            </tr>
+          <tr>
+                        <th data-priority="1">Category</th>
+                        <th data-priority="2">Name</th>
+                        <th data-priority="3">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($merges as $merge)
+                    <tr>
+                        <td>{{$merge->category}}</td>
+                        <td>{{$merge->name}}</td>
+                        <td>{{$merge->amount}}</td>
+                    </tr>
             @endforeach
           </tbody>
         </table>

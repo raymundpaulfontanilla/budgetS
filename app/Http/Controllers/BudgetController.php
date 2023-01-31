@@ -12,9 +12,18 @@ class BudgetController extends Controller
     public function displayoverview()
     {
       
-        $income = Income::all();;
-        $expense = Expense::all();
+        $income = Income::get()->map(function ($income) {
+            $income['category'] = 'Income';
+            return $income;
+        });
+
+        $expense = Expense::get()->map(function ($expense) {
+            $expense['category'] = 'Expense';
+            return $expense;
+        });
+
         $merges = $income->concat($expense);
+        $merges = $merges->sortByDesc('created_at');
         $totalincome = Income::sum('amount');
         $totalexpense = Expense::sum('amount');
         $totalbudget = $totalincome - $totalexpense;
