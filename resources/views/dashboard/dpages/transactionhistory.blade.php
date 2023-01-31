@@ -24,7 +24,7 @@
 
 <body onload=display_ct();>
     <h1 class="text-2xl">Transaction History</h1>
-    <p>Daily Report</p><span class="float-right" id='ct'></span>
+    <p id='ct'></p>
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white">

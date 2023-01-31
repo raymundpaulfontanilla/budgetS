@@ -18,8 +18,8 @@
     <div class="w-full h-full">
         <dh-component>
             <div class="flex flex-no-wrap">
-                <div
-                    class="w-64 sm:relative bg-emerald-400 min-h-screen shadow md:h-full flex-col justify-between hidden sm:flex">
+                <div class="w-64 sm:relative bg-emerald-400 shadow md:h-full flex-col justify-between hidden sm:flex"
+                    style="position:fixed;">
                     <div class="px-8">
                         <div class="h-16 w-full flex items-center">
                             <img src="{{ asset('images/logo.png') }}" alt="logo" width="150" height="85" class="mt-16">
@@ -277,7 +277,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="container mx-auto py-10 h-64 md:w-4/5 w-11/12">
+                <div class="container ml-auto px-2 py-10 h-64  md:w-4/5 w-11/12">
                     @yield('content')
                 </div>
             </div>
