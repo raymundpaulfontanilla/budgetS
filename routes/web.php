@@ -30,3 +30,11 @@ Route::post('/createexpense', [ExpenseController::class, 'createexpense'])->name
 Route::get('/transactionhistory', [TransactionHistoryController::class, 'transactionhistory'])->name('transactionhistory');
 
 Route::get('/generatepdf', [GeneratePDFController::class, 'generatepdf'])->name('generatepdf');
+
+Route::get('/landingpage', function(){
+    return view('layouts/landingpage');
+})->name('landingpage');
+
+Route::get('/about', function(){
+    return view('layouts/about');
+})->name('about');
