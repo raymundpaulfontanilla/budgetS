@@ -28,8 +28,8 @@
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white">
-            <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full" onclick="">PDF
-                BUTTON</button>
+            <a href={{route('generatepdf')}} target="_blank" class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">PDF
+                BUTTON</a>
             <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
                 <thead>
                     <tr>
