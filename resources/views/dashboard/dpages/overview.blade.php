@@ -24,7 +24,7 @@
 
 <body onload=display_ct();>
 
-  <h1 class="text-2xl ml-6">Hello $USERNAME</h1>
+  <h1 class="text-2xl ml-6" id="username">Hello $USERNAME</h1>
   <p class="ml-6" id='ct'></p>
   <div class="flex flex-wrap" id="bodyoverview">
 
@@ -34,7 +34,7 @@
       <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
-            <div class="rounded-full p-5 bg-green-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
+            <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i></div>
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
@@ -64,7 +64,8 @@
       p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
-            <div class="rounded-full p-5 bg-indigo-600"><i class="fa fa-wallet fa-2x fa-inverse"></i>
+            <div class="rounded-full p-5 bg-indigo-600">
+              <i class="fas fa-tasks fa-2x fa-inverse"></i>
             </div>
           </div>
           <div class="flex-1 text-right md:text-center">
@@ -122,19 +123,19 @@
       <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
         <table id="example" class="stripe hover " style="width:100%">
           <thead>
-          <tr>
-                        <th data-priority="1">Category</th>
-                        <th data-priority="2">Name</th>
-                        <th data-priority="3">Amount</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($merges as $merge)
-                    <tr>
-                        <td>{{$merge->category}}</td>
-                        <td>{{$merge->name}}</td>
-                        <td>{{$merge->amount}}</td>
-                    </tr>
+            <tr>
+              <th data-priority="1">Category</th>
+              <th data-priority="2">Name</th>
+              <th data-priority="3">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($merges as $merge)
+            <tr>
+              <td>{{$merge->category}}</td>
+              <td>{{$merge->name}}</td>
+              <td>{{$merge->amount}}</td>
+            </tr>
             @endforeach
           </tbody>
         </table>
