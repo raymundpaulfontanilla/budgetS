@@ -19,12 +19,13 @@
   <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
   <!--Responsive Extension Datatables CSS-->
   <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+  <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
 </head>
 
 <body onload=display_ct();>
 
   <h1 class="text-2xl ml-6">Hello $USERNAME</h1>
-  <p class="ml-6"><span id='ct'></span></p>
+  <p class="ml-6">Daily Report<span class="float-right" id='ct'></span></p>
   <div class="flex flex-wrap">
 
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">
@@ -68,8 +69,7 @@
           </div>
           <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span
-                class="text-green-500"></span>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span class="text-green-500"></span>
               {{-- <i class="fas fa-caret-up"></i> --}}
             </h3>
           </div>
@@ -84,11 +84,16 @@
         <canvas class="p-10 " id="chartPie"></canvas>
       </div>
       <script>
+        let income = "{{$totalincome}}";
+        let expense = "{{$totalexpense}}";
+        let percentageincome = "{{$percentageincome}}"
+        let percentageexpense = "{{$percentageexpense}}"
+
         const dataPie = {
-          // labels: ["Total Income", "Total Expenses", "Total Budget"],
+          labels: ["Total Income" + percentageincome + "%", "Total Expense" + percentageexpense + "%"],
           datasets: [{
 
-            data: [300, 50, 100],
+            data: [income, expense, ],
             backgroundColor: [
               "rgb(0,0,255)",
               "rgb(255, 0, 0)",
@@ -96,6 +101,7 @@
             ],
             hoverOffset: 4,
           }, ],
+
         };
 
         const configPie = {
@@ -119,52 +125,17 @@
               <th data-priority="1">Name</th>
               <th data-priority="2">Description</th>
               <th data-priority="3">Amount</th>
-              <th data-priority="4">Total</th>
             </tr>
           </thead>
           <tbody>
+          
+         @foreach($merges as $item)
             <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
+              <td>{{$item->name}}</td>
+              <td>{{$item->description}}</td>
+              <td>{{$item->amount}}</td>
             </tr>
-            <tr>
-              <td>Gas</td>
-              <td>Expenses</td>
-              <td>12000</td>
-              <td>12000</td>
-            </tr>
-            <tr>
-              <td>Gas</td>
-              <td>Expenses</td>
-              <td>12000</td>
-              <td>12000</td>
-            </tr>
-            <tr>
-              <td>Gas</td>
-              <td>Expenses</td>
-              <td>12000</td>
-              <td>12000</td>
-            </tr>
-            <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
-            </tr>
-            <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
-            </tr>
-            <tr>
-              <td>Computer</td>
-              <td>Expenses</td>
-              <td>15000</td>
-              <td>15000</td>
-            </tr>
+         @endforeach
           </tbody>
         </table>
       </div>
@@ -196,21 +167,6 @@
         });
       });
     </script>
-
-    <script>
-      function display_c() {
-        var refresh = 1000;
-        mytime = setTimeout('display_ct()', refresh)
-      }
-
-      function display_ct() {
-        var x = new Date()
-        document.getElementById('ct').innerHTML = x;
-        display_c();
-      }
-    </script>
-
-
 </body>
 
 </html>

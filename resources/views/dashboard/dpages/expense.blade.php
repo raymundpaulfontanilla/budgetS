@@ -18,13 +18,15 @@
   <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
   <!--Responsive Extension Datatables CSS-->
   <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+  <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
 </head>
 
-<body>
+<body onload=display_ct();>
+
   <div class="flex flex-wrap">
     <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
       <h1 class="text-2xl">Expense Page</h1>
-      <p>Daily Report- January 23, 2023 11:00:56</p>
+      <p>Daily Report</p><span><small id='ct'></small></span>
       <!--Metric Card-->
       <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
         <div class="flex flex-row items-center">
