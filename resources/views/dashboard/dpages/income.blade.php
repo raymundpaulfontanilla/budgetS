@@ -44,7 +44,7 @@
     <div class="shadow-lg rounded-lg overflow-hidden ml-16 " style="
     width: 650px;">
       <div class=" bg-gray-50" id='ct'>Daily Report</div>
-      <canvas class="" id="chartBar"></canvas>
+      <canvas class="" id="incomebarchart"></canvas>
     </div>
 
 
@@ -236,6 +236,14 @@
         });
 
         // BAR CHART
+const sunday = "{{$sunday}}";        
+const monday = "{{$monday}}";
+const tuesday = "{{$tuesday}}";
+const wednesday = "{{$wednesday}}";
+const thursday = "{{$thursday}}";
+const friday = "{{$friday}}";
+const saturday = "{{$saturday}}";
+
 
         const labelsBarChart = [
     "Sunday",
@@ -250,10 +258,10 @@
     labels: labelsBarChart,
     datasets: [
       {
-        label: "My First dataset",
+        label: "Income-Daily Report",
         backgroundColor: "hsl(140, 61.5%, 47.5%)",
-borderColor: "hsl(140, 61.5%, 47.5%)",
-        data: [0, 5, 10, 15, 20, 25, 30],
+        borderColor: "hsl(140, 61.5%, 47.5%)",
+        data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
       },
     ],
   };
@@ -265,7 +273,7 @@ borderColor: "hsl(140, 61.5%, 47.5%)",
   };
 
   var chartBar = new Chart(
-    document.getElementById("chartBar"),
+    document.getElementById("incomebarchart"),
     configBarChart
   );
     </script>

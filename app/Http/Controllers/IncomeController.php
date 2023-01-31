@@ -9,9 +9,17 @@ class IncomeController extends Controller
 {
     public function displayincome()
     {
-        return view('dashboard.dpages.income')
+        $monday = Income::whereRaw("WEEKDAY(created_at) = 0")->sum('amount');
+        $tuesday = Income::whereRaw("WEEKDAY(created_at) = 1")->sum('amount');
+        $wednesday = Income::whereRaw("WEEKDAY(created_at) = 2")->sum('amount');
+        $thursday = Income::whereRaw("WEEKDAY(created_at) = 3")->sum('amount');
+        $friday = Income::whereRaw("WEEKDAY(created_at) = 4")->sum('amount');
+        $saturday = Income::whereRaw("WEEKDAY(created_at) = 5")->sum('amount');
+        $sunday = Income::whereRaw("WEEKDAY(created_at) = 6")->sum('amount');
+        return view('dashboard.dpages.income',compact('monday','tuesday','wednesday','thursday','friday','saturday','sunday'))
             ->with('incomes', Income::orderByDesc('created_at')->get())
             ->with('totalincome', Income::sum('amount'));
+            
     }
 
     public function createincome(Request $request)

@@ -43,7 +43,7 @@
     <div class="shadow-lg rounded-lg overflow-hidden ml-16 " style="
     width: 650px;">
       <div class=" bg-gray-50" id='ct'>Daily Report</div>
-      <canvas class="" id="chartBar"></canvas>
+      <canvas class="" id="expensebarchart"></canvas>
     </div>
   </div>
 
@@ -51,8 +51,7 @@
   <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 shadow-xl" style="width:100%">
     <!--Card-->
     <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white">
-      <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full"
-        onclick="toggleExpenseModal()">Add Expense</button>
+      <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full" onclick="toggleExpenseModal()">Add Expense</button>
       <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
         <thead>
           <tr>
@@ -69,10 +68,8 @@
             <td>{{$expense->description}}</td>
             <td><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$expense->amount}}</td>
             <td>
-              <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-                onclick="toggleEditModal()">⚙️ Edit</button>
-              <a href="{{route('deleteexpense',$expense->id)}}"
-                class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
+              <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" onclick="toggleEditModal()">⚙️ Edit</button>
+              <a href="{{route('deleteexpense',$expense->id)}}" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">🗑️ Delete</a>
             </td>
           </tr>
           @endforeach
@@ -90,14 +87,10 @@
     <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
       <div class="fixed inset-0 transition-opacity">
         <div class="absolute inset-0 bg-gray-900 opacity-75">
-          <button
-            class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4"
-            onclick="toggleExpenseModal()">X</button>
+          <button class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4" onclick="toggleExpenseModal()">X</button>
         </div>
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-        <div
-          class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-          role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+        <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
           <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <form method="POST" action=/createexpense>
               @csrf
@@ -110,10 +103,8 @@
               <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" name="amount" />
           </div>
           <div class="bg-gray-200 px-4 py-3 text-right">
-            <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-              onclick="toggleExpenseModal()"><i class="fas fa-times"></i> Cancel</button>
-            <button type="submit" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
-                class="fas fa-plus"></i> Submit</button>
+            <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="toggleExpenseModal()"><i class="fas fa-times"></i> Cancel</button>
+            <button type="submit" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i class="fas fa-plus"></i> Submit</button>
           </div>
         </div>
       </div>
@@ -125,22 +116,16 @@
       <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 transition-opacity">
           <div class="absolute inset-0 bg-gray-900 opacity-75">
-            <button
-              class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4"
-              onclick="toggleDeleteModal()">X</button>
+            <button class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4" onclick="toggleDeleteModal()">X</button>
           </div>
           <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-          <div
-            class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-            role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+          <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <h1 class="pb-5">WARNING</h1>
             </div>
             <div class="bg-gray-200 px-4 py-3 text-right">
-              <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                onclick="toggleDeleteModal()"><i class="fas fa-times"></i> Cancel</button>
-              <button type="button" class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700 mr-2"><i
-                  class="fas fa-plus"></i>Sumbit</button>
+              <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="toggleDeleteModal()"><i class="fas fa-times"></i> Cancel</button>
+              <button type="button" class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700 mr-2"><i class="fas fa-plus"></i>Sumbit</button>
             </div>
           </div>
         </div>
@@ -151,14 +136,10 @@
       <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
         <div class="fixed inset-0 transition-opacity">
           <div class="absolute inset-0 bg-gray-900 opacity-75">
-            <button
-              class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4"
-              onclick="toggleEditModal()">X</button>
+            <button class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4" onclick="toggleEditModal()">X</button>
           </div>
           <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-          <div
-            class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-            role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+          <div class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
               <h1 class="pb-5">RECORD</h1>
               <label>Name</label>
@@ -169,10 +150,8 @@
               <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
             </div>
             <div class="bg-gray-200 px-4 py-3 text-right">
-              <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-                onclick="toggleEditModal()"><i class="fas fa-times"></i> Cancel</button>
-              <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
-                  class="fas fa-plus"></i> Submit</button>
+              <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2" onclick="toggleEditModal()"><i class="fas fa-times"></i> Cancel</button>
+              <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i class="fas fa-plus"></i> Submit</button>
             </div>
           </div>
         </div>
@@ -188,51 +167,59 @@
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
   // Table JS
-        $(document).ready(function() {
-          var table = $('#example').DataTable({
-            responsive: true,
-            lengthChange: false,
-            pageLength: 5
-          });
+  $(document).ready(function() {
+    var table = $('#example').DataTable({
+      responsive: true,
+      lengthChange: false,
+      pageLength: 5
+    });
 
-          $('#entriesPerPage').on('change', function() {
-            table.page.len(this.value).draw();
-          });
-        });
+    $('#entriesPerPage').on('change', function() {
+      table.page.len(this.value).draw();
+    });
+  });
 
-        // Modal
+  // Modal
 
-        let currentModal = "expense";
+  let currentModal = "expense";
 
-        function toggleExpenseModal() {
-          document.getElementById('expensemodal').classList.toggle('hidden')
-          currentModal = "expense";
-        }
+  function toggleExpenseModal() {
+    document.getElementById('expensemodal').classList.toggle('hidden')
+    currentModal = "expense";
+  }
 
-        function toggleEditModal() {
-          document.getElementById('editmodal').classList.toggle('hidden')
-          currentModal = "edit";
-        }
+  function toggleEditModal() {
+    document.getElementById('editmodal').classList.toggle('hidden')
+    currentModal = "edit";
+  }
 
-        function toggleDeleteModal() {
-          document.getElementById('deletemodal').classList.toggle('hidden');
-          currentModal = "delete";
-        }
-        document.addEventListener("keydown", function(event) {
-          if (event.key === "Escape") {
-            if (currentModal === "expense") {
-              toggleExpenseModal();
-            } else if (currentModal === "edit") {
-              toggleEditModal();
-            } else if (currentModal === "delete") {
-              toggleDeleteModal();
-            }
-          }
-        });
+  function toggleDeleteModal() {
+    document.getElementById('deletemodal').classList.toggle('hidden');
+    currentModal = "delete";
+  }
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      if (currentModal === "expense") {
+        toggleExpenseModal();
+      } else if (currentModal === "edit") {
+        toggleEditModal();
+      } else if (currentModal === "delete") {
+        toggleDeleteModal();
+      }
+    }
+  });
 
-        // Bar Chart
+  // Bar Chart
 
-         const labelsBarChart = [
+  const sunday = "{{$sunday}}";
+  const monday = "{{$monday}}";
+  const tuesday = "{{$tuesday}}";
+  const wednesday = "{{$wednesday}}";
+  const thursday = "{{$thursday}}";
+  const friday = "{{$friday}}";
+  const saturday = "{{$saturday}}";
+
+  const labelsBarChart = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -243,14 +230,12 @@
   ];
   const dataBarChart = {
     labels: labelsBarChart,
-    datasets: [
-      {
-        label: "My First dataset",
-        backgroundColor: "hsl(348, 83%, 47%)",
-        borderColor: "hsl(348, 83%, 47%))",
-        data: [0, 5, 10, 15, 20, 25, 30],
-      },
-    ],
+    datasets: [{
+      label: "Expense- Daily Report",
+      backgroundColor: "hsl(348, 83%, 47%)",
+      borderColor: "hsl(348, 83%, 47%))",
+      data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
+    }, ],
   };
 
   const configBarChart = {
@@ -260,7 +245,7 @@
   };
 
   var chartBar = new Chart(
-    document.getElementById("chartBar"),
+    document.getElementById("expensebarchart"),
     configBarChart
   );
 </script>
