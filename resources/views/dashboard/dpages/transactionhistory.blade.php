@@ -31,6 +31,9 @@
             <button href={{route('generatepdf')}} target="_blank"
                 class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">PDF
                 BUTTON</button>
+                <a href={{route('sendemail')}}
+                class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">Send
+                Email</a>
             <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
                 <thead>
                     <tr>
