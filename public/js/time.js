@@ -5,6 +5,8 @@ function display_c() {
 
 function display_ct() {
     var x = new Date();
-    document.getElementById("ct").innerHTML = x;
-    display_c();
+    var localDateString = x.toDateString();
+    var localTimeString = x.toLocaleTimeString();
+    document.getElementById("ct").innerHTML = localDateString + " " + localTimeString;
+    tt = display_c();
 }
