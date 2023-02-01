@@ -24,7 +24,7 @@
 
 <body onload=display_ct();>
   <div>
-    <h1 class="text-2xl" id='ct'>Expense Page</h1>
+    <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Expense Page</h1>
     <div>
       <div class="flex flex-wrap">
         <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
@@ -40,19 +40,12 @@
               </div>
             </div>
           </div>
-          <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5 mt-6">
-            <div class="flex flex-row items-center">
-              <div class="flex-shrink pr-4">
-                <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i></div>
-              </div>
-              <div class="flex-1 text-right md:text-center">
-                <h5 class="font-bold uppercase text-gray-600">Weekly Total Expense</h5>
-                <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalexpense}}</h3>
-              </div>
-            </div>
+          <div class="shadow-lg rounded-lg overflow-hidden mt-5">
+            {{-- <div class="py-3 px-5 bg-gray-50">Line chart</div> --}}
+            <canvas class="" id="chartLine"></canvas>
           </div>
         </div>
-        <div class="shadow-lg rounded-lg overflow-hidden ml-16" style="
+        <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5" style="
     width: 650px;">
           <canvas class="" id="expensebarchart"></canvas>
         </div>
@@ -265,7 +258,7 @@
     datasets: [{
       label: "Expense- Daily Report",
       backgroundColor: "hsl(348, 83%, 47%)",
-      borderColor: "hsl(348, 83%, 47%))",
+      borderColor: "hsl(348, 83%, 47%)",
       data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
     }, ],
   };
@@ -279,6 +272,38 @@
   var chartBar = new Chart(
     document.getElementById("expensebarchart"),
     configBarChart
+  );
+
+  // Line Chart
+
+  const labels = [  "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"];
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Income Daily-Report",
+        backgroundColor: "hsl(348, 83%, 47%)",
+      borderColor: "hsl(348, 83%, 47%)",
+        data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
+      },
+    ],
+  };
+
+  const configLineChart = {
+    type: "line",
+    data,
+    options: {},
+  };
+
+  var chartLine = new Chart(
+    document.getElementById("chartLine"),
+    configLineChart
   );
 </script>
 
