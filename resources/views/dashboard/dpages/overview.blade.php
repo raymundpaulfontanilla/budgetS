@@ -25,7 +25,7 @@
 <body onload=display_ct();>
 
   <h1 class="text-2xl ml-6" id="username">Hello $USERNAME</h1>
-  <p class="ml-6" id='ct'></p>
+  <p class="ml-6 text-lg" id='ct'></p>
   <div class="flex flex-wrap" id="bodyoverview">
 
     <div class="w-full md:w-1/2 xl:w-1/3 p-6">

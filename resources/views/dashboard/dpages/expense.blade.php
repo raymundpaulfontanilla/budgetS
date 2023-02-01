@@ -24,9 +24,24 @@
 
 <body onload=display_ct();>
   <div>
-    <h1 class="text-2xl" id='ct'>Expense Page</h1>
+    <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Expense Page</h1>
     <div>
       <div class="flex flex-wrap">
+        @if (session()->has('expense'))
+        <div class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full mr-16"
+          role="alert" id="alert-message">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
+            class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor"
+              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z">
+            </path>
+          </svg>
+          <strong>{{session()->get('expense')}}</strong>
+          <button type="button"
+            class="btn-close box-content w-4 h-4 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
           <!--Metric Card-->
           <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5 mt-6">
@@ -40,21 +55,15 @@
               </div>
             </div>
           </div>
-          <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5 mt-6">
-            <div class="flex flex-row items-center">
-              <div class="flex-shrink pr-4">
-                <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i></div>
-              </div>
-              <div class="flex-1 text-right md:text-center">
-                <h5 class="font-bold uppercase text-gray-600">Weekly Total Expense</h5>
-                <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalexpense}}</h3>
-              </div>
-            </div>
+          <div class="shadow-lg rounded-lg overflow-hidden mt-5">
+            {{-- <div class="py-3 px-5 bg-gray-50">Line chart</div> --}}
+
+            <canvas class="" id="expensebarchart"></canvas>
           </div>
         </div>
-        <div class="shadow-lg rounded-lg overflow-hidden ml-16" style="
+        <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5" style="
     width: 650px;">
-          <canvas class="" id="expensebarchart"></canvas>
+          <canvas class="" id="chartLine"></canvas>
         </div>
       </div>
 
@@ -252,20 +261,25 @@
   const saturday = "{{$saturday}}";
 
   const labelsBarChart = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
   ];
   const dataBarChart = {
     labels: labelsBarChart,
     datasets: [{
-      label: "Expense- Daily Report",
+      label: "Expense Monthly Report",
       backgroundColor: "hsl(348, 83%, 47%)",
-      borderColor: "hsl(348, 83%, 47%))",
+      borderColor: "hsl(348, 83%, 47%)",
       data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
     }, ],
   };
@@ -280,6 +294,42 @@
     document.getElementById("expensebarchart"),
     configBarChart
   );
+
+  // Line Chart
+
+  const labels = [  "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"];
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Expense Daily Report",
+        backgroundColor: "hsl(348, 83%, 47%)",
+      borderColor: "hsl(348, 83%, 47%)",
+        data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
+      },
+    ],
+  };
+
+  const configLineChart = {
+    type: "line",
+    data,
+    options: {},
+  };
+
+  var chartLine = new Chart(
+    document.getElementById("chartLine"),
+    configLineChart
+  );
+
+  setTimeout(function() {
+    $('#alert-message').fadeOut('slow');
+  }, 10000); // 10 seconds
 </script>
 
 
