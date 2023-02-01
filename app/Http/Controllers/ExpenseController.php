@@ -17,7 +17,7 @@ class ExpenseController extends Controller
         $friday = Expense::whereRaw("WEEKDAY(created_at) = 4")->sum('amount');
         $saturday = Expense::whereRaw("WEEKDAY(created_at) = 5")->sum('amount');
         $sunday = Expense::whereRaw("WEEKDAY(created_at) = 6")->sum('amount');
-        return view('dashboard.dpages.expense',compact('monday','tuesday','wednesday','thursday','friday','saturday','sunday'))
+        return view('dashboard.dpages.expense', compact('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'))
             ->with('expenses', Expense::orderByDesc('created_at')->get())
             ->with('totalexpense', Expense::sum('amount'));
     }
@@ -29,7 +29,7 @@ class ExpenseController extends Controller
         $expenses->description = $request->description;
         $expenses->amount = $request->amount;
         $expenses->save();
-
+        $request->session()->flash('expense', 'Expense Recorded Successfully!');
         return redirect()->route('expense');
     }
 

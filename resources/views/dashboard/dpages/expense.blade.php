@@ -27,6 +27,21 @@
     <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Expense Page</h1>
     <div>
       <div class="flex flex-wrap">
+        @if (session()->has('expense'))
+        <div class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full mr-16"
+          role="alert" id="alert-message">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
+            class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor"
+              d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z">
+            </path>
+          </svg>
+          <strong>{{session()->get('expense')}}</strong>
+          <button type="button"
+            class="btn-close box-content w-4 h-4 p-1 ml-auto text-yellow-900 border-none rounded-none opacity-50 focus:shadow-none focus:outline-none focus:opacity-100 hover:text-yellow-900 hover:opacity-75 hover:no-underline"
+            data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
         <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
           <!--Metric Card-->
           <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5 mt-6">
@@ -311,6 +326,10 @@
     document.getElementById("chartLine"),
     configLineChart
   );
+
+  setTimeout(function() {
+    $('#alert-message').fadeOut('slow');
+  }, 10000); // 10 seconds
 </script>
 
 

@@ -23,11 +23,23 @@
 </head>
 
 <body onload=display_ct();>
+
   <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Income Page</h1>
   <div class="flex flex-wrap" id="incomebody">
+    @if (session()->has('income'))
+    <div id="alert-message"
+      class="d-none bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full mr-16"
+      role="alert" id="alert-message">
+      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
+        class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="currentColor"
+          d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+        </path>
+      </svg>
+      <strong>{{session()->get('income')}}</strong>
+    </div>
+    @endif
     <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
-
-      {{-- <p>Daily Report</p><span><small id='ct'></small></span> --}}
       <!--Metric Card-->
       <div
         class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5 mt-6">
@@ -178,7 +190,8 @@
                   <div class="bg-gray-200 px-4 py-3 text-right">
                     <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
                       onclick="toggleEditModal()"><i class="fas fa-times"></i> Cancel</button>
-                    <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
+                    <button id="submit-button" type="submit"
+                      class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
                         class="fas fa-plus"></i> Submit</button>
                   </div>
                 </div>
@@ -318,6 +331,11 @@ const saturday = "{{$saturday}}";
     document.getElementById("chartLine"),
     configLineChart
   );
+
+
+  setTimeout(function() {
+    $('#alert-message').fadeOut('slow');
+  }, 10000); // 10 seconds
 </script>
 
 
