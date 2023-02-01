@@ -42,14 +42,12 @@
         </div>
       </div>
       <div class="shadow-lg rounded-lg overflow-hidden mt-5">
-        {{-- <div class="py-3 px-5 bg-gray-50">Line chart</div> --}}
-        <canvas class="" id="chartLine"></canvas>
+        <canvas class="" id="incomebarchart"></canvas>
       </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5" style="
     width: 650px;">
-      {{-- <div class=" bg-gray-50">Daily Report</div> --}}
-      <canvas class="" id="incomebarchart"></canvas>
+      <canvas class="" id="chartLine"></canvas>
     </div>
 
 
@@ -253,19 +251,24 @@ const saturday = "{{$saturday}}";
 
 
         const labelsBarChart = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
   ];
   const dataBarChart = {
     labels: labelsBarChart,
     datasets: [
       {
-        label: "Income-Daily Report",
+        label: "Monthly Income Report",
         backgroundColor: "hsl(140, 61.5%, 47.5%)",
         borderColor: "hsl(140, 61.5%, 47.5%)",
         data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
@@ -297,7 +300,7 @@ const saturday = "{{$saturday}}";
     labels: labels,
     datasets: [
       {
-        label: "Income Daily-Report",
+        label: "Income Daily Report",
         backgroundColor: "hsl(140, 61.5%, 47.5%)",
         borderColor: "hsl(140, 61.5%, 47.5%)",
         data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
