@@ -6,6 +6,8 @@ use App\Http\Controllers\GeneratePDFController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\TransactionHistoryController;
+use App\Http\Controllers\SendEmailController;
+
 
 
 /*
@@ -31,10 +33,12 @@ Route::get('/transactionhistory', [TransactionHistoryController::class, 'transac
 
 Route::get('/generatepdf', [GeneratePDFController::class, 'generatepdf'])->name('generatepdf');
 
-Route::get('/landingpage', function(){
+Route::get('/landingpage', function () {
     return view('layouts/landingpage');
 })->name('landingpage');
 
-Route::get('/about', function(){
+Route::get('/about', function () {
     return view('layouts/about');
 })->name('about');
+
+Route::get('sendemail', [SendEmailController::class, 'sendemail'])->name('sendemail');
