@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+    <!--Regular Datatables CSS-->
+    <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
+    <!--Responsive Extension Datatables CSS-->
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
+    <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
+    <link rel="stylesheet" href="{{ asset('table.css') }}">
     <link rel="stylesheet" href="{{ asset('siebar.css') }}">
     <script src="{{ asset('modal.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -16,7 +25,6 @@
 </head>
 
 <body>
-
     <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
         type="button" class="inline-flex items-center p-2 mt-2 ml-3 rounded-lg md:hidden">
         <svg viewBox="0 0 100 80" width="40" height="40">
@@ -30,7 +38,7 @@
         aria-label="Sidebar">
         <div class="h-full px-3 py-4 overflow-y-auto bg-emerald-400">
             <a href="{{route('overview')}}" class="flex items-center pl-2.5 mb-5">
-                <img src="{{ asset('images/logo.png') }}" alt="logo" width="100" height="85" />
+                <img src="{{ asset('images/logo.png') }}" alt="logo" width="110" />
             </a>
             <ul class="space-y-2">
                 <li>
@@ -119,7 +127,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="time.js"></script>
-</body>
 
 </body>
 

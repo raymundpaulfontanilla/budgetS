@@ -1,4 +1,4 @@
-@media (max-width: 509px) {
+/* @media (max-width: 509px) {
     #example {
         display: none;
     }
@@ -14,7 +14,7 @@
     #recipients {
         display: none;
     }
-}
+} */
 
 @media only screen and (max-width: 500px) {
     #bodyoverview {

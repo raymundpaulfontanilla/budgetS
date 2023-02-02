@@ -37,6 +37,7 @@ class ExpenseController extends Controller
     {
         $expense = Expense::find($id);
         $expense->delete();
+        session()->flash('message', 'Expense successfully deleted');
         return redirect()->route('expense');
     }
 }

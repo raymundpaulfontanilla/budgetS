@@ -3,23 +3,7 @@
 @section('content')
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
 
-    <!-- EXTERNAL CSS -->
-
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <!--Regular Datatables CSS-->
-    <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
-    <!--Responsive Extension Datatables CSS-->
-    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-    <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
 </head>
 
 <body onload=display_ct();>
@@ -163,14 +147,3 @@
     });
 </script>
 @endsection
-
-
-
-{{-- Incase if it's needed --}}
-{{--
-<td> <button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-    onclick="toggleEditModal()">⚙️
-    Edit</button>
-<button class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
-    onclick="toggleDeleteModal()">🗑️ Delete</button>
-</td> --}}

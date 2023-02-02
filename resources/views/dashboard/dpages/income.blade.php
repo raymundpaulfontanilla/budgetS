@@ -2,28 +2,10 @@
 @section('content')
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-
-
-  <link rel="stylesheet" href="{{ asset('table.css') }}">
   <link rel="stylesheet" href="{{ asset('income.css') }}">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-  <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!--Regular Datatables CSS-->
-  <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
-  <!--Responsive Extension Datatables CSS-->
-  <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
-  <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
 </head>
 
 <body onload=display_ct();>
-
   <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Income Page</h1>
   <div class="flex flex-wrap" id="incomebody">
     @php
@@ -88,7 +70,7 @@
               <td>
                 <a href="" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">⚙️ Edit</a>
                 <a href="{{route('deleteincome',$income->id)}}"
-                  class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" id="delete-link"
+                  class="flex items-center focus:outline-none focus:ring-2 focus:ring-white"
                   onclick="return confirm('Are you sure you want to delete this record?');">🗑️ Delete</a>
               </td>
             </tr>
@@ -99,7 +81,6 @@
       <!--/Card-->
     </div>
   </div>
-
   {{-- INCOME MODAL --}}
   <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
     class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
@@ -126,19 +107,19 @@
           <form class="space-y-6" method="POST" action=/createincome>
             @csrf
             <div>
-              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
+              <label class="block mb-2 text-base font-medium text-white">Name</label>
               <input name="name" type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 required />
             </div>
             <div>
-              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
+              <label class="block mb-2 text-base font-medium text-white">Description</label>
               <input name="description" type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 required />
             </div>
             <div>
-              <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount</label>
+              <label class="block text-base font-medium text-white">Amount</label>
               <input name="amount" type="text"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
                 required />
