@@ -16,10 +16,10 @@ class IncomeController extends Controller
         $friday = Income::whereRaw("WEEKDAY(created_at) = 4")->sum('amount');
         $saturday = Income::whereRaw("WEEKDAY(created_at) = 5")->sum('amount');
         $sunday = Income::whereRaw("WEEKDAY(created_at) = 6")->sum('amount');
-        return view('dashboard.dpages.income',compact('monday','tuesday','wednesday','thursday','friday','saturday','sunday'))
+        return view('dashboard.dpages.income', compact('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'))
             ->with('incomes', Income::orderByDesc('created_at')->get())
             ->with('totalincome', Income::sum('amount'));
-            
+
     }
 
     public function createincome(Request $request)
@@ -29,8 +29,9 @@ class IncomeController extends Controller
         $incomes->description = $request->description;
         $incomes->amount = $request->amount;
         $incomes->save();
-
+        $request->session()->flash('income', 'Income Recorded Successfully!');
         return redirect()->route('income');
+
 
     }
 
@@ -40,4 +41,6 @@ class IncomeController extends Controller
         $income->delete();
         return redirect()->route('income');
     }
+
+
 }
