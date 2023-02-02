@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('siebar.css') }}">
     <script src="{{ asset('modal.js') }}"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -15,292 +16,109 @@
 </head>
 
 <body>
-    <div class="w-full h-full">
-        <dh-component>
-            <div class="flex flex-no-wrap">
-                <div class="w-64 sm:fixed bg-emerald-400 shadow md:h-full flex-col justify-between hidden sm:flex"
-                    style="position:fixed;">
-                    <div class="px-8">
-                        <div class="h-16 w-full flex items-center">
-                            <img src="{{ asset('images/logo.png') }}" alt="logo" width="150" height="85" class="mt-16">
-                        </div>
-                        <ul class="mt-28">
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6 ">
-                                <a href="{{route('overview')}}"
-                                    class="{{ request()->routeIs('overview') ? 'text-white':'' }} flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <rect x="4" y="4" width="6" height="6" rx="1"></rect>
-                                        <rect x="14" y="4" width="6" height="6" rx="1"></rect>
-                                        <rect x="4" y="14" width="6" height="6" rx="1"></rect>
-                                        <rect x="14" y="14" width="6" height="6" rx="1"></rect>
-                                    </svg>
-                                    <span class="ml-2">Overview</span>
-                                </a>
-                            </li>
-                            <li
-                                class=" flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6 {{ request()->is('income') ? 'active' : '' }}">
-                                <a href="{{route('income')}}"
-                                    class=" {{ request()->routeIs('income') ? 'text-white':'' }} flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <path
-                                            d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
-                                        </path>
-                                    </svg>
-                                    <span class=" ml-2">Income</span>
-                                </a>
-                            </li>
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white  cursor-pointer items-center mb-6">
-                                <a href="{{route('expense')}}"
-                                    class="{{ request()->routeIs('expense') ? 'text-white':'' }} flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <path
-                                            d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
-                                        </path>
-                                    </svg>
-                                    <span class=" ml-2">Expenses</span>
-                                </a>
-                            </li>
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white  cursor-pointer items-center mb-6">
-                                <a href="{{route('transactionhistory')}}"
-                                    class="{{ request()->routeIs('transactionhistory') ? 'text-white':'' }} flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <polyline points="12 4 4 8 12 12 20 8 12 4" />
-                                        <polyline points="4 12 12 16 20 12" />
-                                        <polyline points="4 16 12 20 20 16" />
-                                    </svg>
-                                    <span class=" ml-2">Transaction History</span>
-                                </a>
-                            </li>
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white  cursor-pointer items-center">
-                                <a href="javascript:void(0)"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-settings" width="18" height="18"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <path
-                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                        <circle cx="12" cy="12" r="3" />
-                                    </svg>
-                                    <span class="ml-2">Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="px-8 border-t bg-emerald-400 pb-5 pt-5">
-                        <ul class="w-full flex items-center justify-between bg-emerald-400">
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white  cursor-pointer items-center">
-                                <a href="javascript:void(0)"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-log-out">
-                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                        <polyline points="16 17 21 12 16 7"></polyline>
-                                        <line x1="21" y1="12" x2="9" y2="12"></line>
-                                    </svg>
-                                    <span class="ml-2">Log Out</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                {{-- Mobile View --}}
-                <div class="w-64 z-40 fixed bg-emerald-400 shadow md:h-full flex-col justify-between sm:hidden transition duration-150 ease-in-out"
-                    id="mobile-nav">
-                    <button aria-label="toggle sidebar" id="openSideBar"
-                        class="h-10 w-10 bg-emerald-400 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded focus:ring-gray-800"
-                        onclick="sidebarHandler(true)" style="
-                        top: 500px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments"
-                            width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <circle cx="6" cy="10" r="2" />
-                            <line x1="6" y1="4" x2="6" y2="8" />
-                            <line x1="6" y1="12" x2="6" y2="20" />
-                            <circle cx="12" cy="16" r="2" />
-                            <line x1="12" y1="4" x2="12" y2="14" />
-                            <line x1="12" y1="18" x2="12" y2="20" />
-                            <circle cx="18" cy="7" r="2" />
-                            <line x1="18" y1="4" x2="18" y2="5" />
-                            <line x1="18" y1="9" x2="18" y2="20" />
+
+    <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
+        type="button" class="inline-flex items-center p-2 mt-2 ml-3 rounded-lg md:hidden">
+        <svg viewBox="0 0 100 80" width="40" height="40">
+            <rect width="100" height="20"></rect>
+            <rect y="30" width="100" height="20"></rect>
+            <rect y="60" width="100" height="20"></rect>
+        </svg>
+    </button>
+    <aside id="logo-sidebar"
+        class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+        aria-label="Sidebar">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-emerald-400">
+            <a href="{{route('overview')}}" class="flex items-center pl-2.5 mb-5">
+                <img src="{{ asset('images/logo.png') }}" alt="logo" width="100" height="85" />
+            </a>
+            <ul class="space-y-2">
+                <li>
+                    <a href="{{route('overview')}}"
+                        class="{{ request()->routeIs('overview') ? 'text-white':'' }} flex items-center p-2 font-medium hover:text-white cursor-pointer">
+                        <svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
                         </svg>
-                    </button>
-                    <button aria-label="Close sidebar" id="closeSideBar"
-                        class="hidden h-10 w-10 bg-emerald-400 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer text-white"
-                        onclick="sidebarHandler(false)">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20"
-                            height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <line x1="18" y1="6" x2="6" y2="18" />
-                            <line x1="6" y1="6" x2="18" y2="18" />
+                        <span class="ml-3">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('income')}}"
+                        class=" {{ request()->routeIs('income') ? 'text-white':'' }} flex items-center p-2 font-medium hover:text-white cursor-pointer">
+                        <svg aria-hidden=" true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                            </path>
+                            <path
+                                d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                            </path>
                         </svg>
-                    </button>
-                    <div class="px-8">
-                        <div class="h-16 w-full flex items-center">
-                            <img src="{{ asset('images/logo.png') }}" alt="logo" width="100" height="80" class="mt-8">
-                        </div>
-                        <ul class="mt-12">
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="{{route('overview')}}"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-grid"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <rect x="4" y="4" width="6" height="6" rx="1"></rect>
-                                        <rect x="14" y="4" width="6" height="6" rx="1"></rect>
-                                        <rect x="4" y="14" width="6" height="6" rx="1"></rect>
-                                        <rect x="14" y="14" width="6" height="6" rx="1"></rect>
-                                    </svg>
-                                    <span class="text-sm ml-2">Overview</span>
-                                </a>
-                            </li>
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="{{route('income')}}"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <path
-                                            d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
-                                        </path>
-                                    </svg>
-                                    <span class="text-sm ml-2">Income</span>
-                                </a>
-                            </li>
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="{{route('expense')}}"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-puzzle"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z"></path>
-                                        <path
-                                            d="M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1">
-                                        </path>
-                                    </svg>
-                                    <span class="text-sm ml-2">Expenses</span>
-                                </a>
-                            </li>
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center mb-6">
-                                <a href="{{route('transactionhistory')}}"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-stack"
-                                        width="18" height="18" viewBox="0 0 24 24" stroke-width="1.5"
-                                        stroke="currentColor" fill="none" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <polyline points="12 4 4 8 12 12 20 8 12 4" />
-                                        <polyline points="4 12 12 16 20 12" />
-                                        <polyline points="4 16 12 20 20 16" />
-                                    </svg>
-                                    <span class="text-sm ml-2">Transaction History</span>
-                                </a>
-                            </li>
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center">
-                                <a href="javascript:void(0)"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="icon icon-tabler icon-tabler-settings" width="18" height="18"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none"
-                                        stroke-linecap="round" stroke-linejoin="round">
-                                        <path stroke="none" d="M0 0h24v24H0z" />
-                                        <path
-                                            d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                                        <circle cx="12" cy="12" r="3" />
-                                    </svg>
-                                    <span class="text-sm ml-2">Settings</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="flex justify-center mt-48 mb-4 w-full">
-                            <div class="relative">
-                                <div class="text-gray-300 absolute ml-4 inset-0 m-auto w-4 h-4">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="px-8 border-t border-emeral-400 pt-5 pb-5">
-                        <ul class="w-full flex items-center justify-between bg-emerald-400">
-                            <li
-                                class="flex w-full justify-between text-black hover:text-white cursor-pointer items-center">
-                                <a href="javascript:void(0)"
-                                    class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-log-out">
-                                        <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                                        <polyline points="16 17 21 12 16 7"></polyline>
-                                        <line x1="21" y1="12" x2="9" y2="12"></line>
-                                    </svg>
-                                    <span class="text-sm ml-2">Log Out</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="container ml-auto py-10 h-64 md:w-4/5 w-11/12">
-                    @yield('content')
-                </div>
-            </div>
+                        <span class="flex-1 ml-3 w">Income</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('expense')}}"
+                        class="{{ request()->routeIs('expense') ? 'text-white':'' }} flex items-center p-2 font-medium hover:text-white cursor-pointer">
+                        <svg aria-hidden=" true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z">
+                            </path>
+                            <path
+                                d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z">
+                            </path>
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Expense</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('transactionhistory')}}"
+                        class="{{ request()->routeIs('transactionhistory') ? 'text-white':'' }} flex items-center p-2 font-medium hover:text-white cursor-pointer">
+                        <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Transaction History</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="flex items-center p-2 font-medium text-black hover:text-white cursor-pointer">
+                        <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center p-2 font-medium text-black hover:text-white cursor-pointer">
+                        <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Log-Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
 
-
-            <script>
-                var sideBar = document.getElementById("mobile-nav");
-            var openSidebar = document.getElementById("openSideBar");
-            var closeSidebar = document.getElementById("closeSideBar");
-            sideBar.style.transform = "translateX(-260px)";
-
-            function sidebarHandler(flag) {
-                if (flag) {
-                    sideBar.style.transform = "translateX(0px)";
-                    openSidebar.classList.add("hidden");
-                    closeSidebar.classList.remove("hidden");
-                } else {
-                    sideBar.style.transform = "translateX(-260px)";
-                    closeSidebar.classList.add("hidden");
-                    openSidebar.classList.remove("hidden");
-                }
-            }
-            </script>
-        </dh-component>
-        <script src="time.js"></script>
-
+    <div class="container ml-auto py-10 h-64 md:w-4/5 w-11/12">
+        @yield('content')
     </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
+    <script src="time.js"></script>
 </body>
 
 </body>
