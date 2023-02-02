@@ -39,6 +39,7 @@ class IncomeController extends Controller
     {
         $income = Income::find($id);
         $income->delete();
+        session()->flash('message', 'Income record successfully deleted');
         return redirect()->route('income');
     }
 
