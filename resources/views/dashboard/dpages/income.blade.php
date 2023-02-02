@@ -47,12 +47,12 @@
       <canvas class="" id="chartLine"></canvas>
     </div>
 
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:200%">
       <!--Card-->
       <div id='recipients' class="p-5 lg:mt-0 rounded shadow bg-white mr-12">
         <button data-modal-target="staticModal" data-modal-toggle="staticModal"
           class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">Add Income</button>
-        <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
+        <table id="example" class="stripe hover md:w-4/5 xl:w-3/5">
           <thead>
             <tr>
               <th data-priority="1">Name</th>

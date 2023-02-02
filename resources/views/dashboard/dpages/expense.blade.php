@@ -7,7 +7,7 @@
 
 <body onload=display_ct();>
   <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Expense Page</h1>
-  <div class="flex flex-wrap">
+  <div class="flex flex-wrap" id="expensebody">
     @php
     $key = session()->has('expense') ? 'expense' : 'message';
     @endphp
@@ -45,10 +45,7 @@
     width: 650px;">
       <canvas class="" id="chartLine"></canvas>
     </div>
-
-
-
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:200%">
       <!--Card-->
       <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white mr-12">
         <button data-modal-target="staticModal" data-modal-toggle="staticModal"

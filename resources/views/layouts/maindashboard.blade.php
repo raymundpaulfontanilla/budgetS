@@ -118,8 +118,8 @@
             </ul>
         </div>
     </aside>
-
-    <div class="container ml-auto py-10 h-64 md:w-4/5 w-11/12">
+    {{-- <div class="container ml-auto"> --}}
+    <div class="container ml-auto py-10 md:w-4/5 w-11/12">
         @yield('content')
     </div>
     </div>
