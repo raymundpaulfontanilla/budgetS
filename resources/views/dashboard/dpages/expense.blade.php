@@ -38,12 +38,12 @@
         </div>
       </div>
       <div class="shadow-lg rounded-lg overflow-hidden mt-5">
-        <canvas class="" id="expensebarchart"></canvas>
+        <canvas class="" id="chartLine"></canvas>
       </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5" style="
     width: 650px;">
-      <canvas class="" id="chartLine"></canvas>
+      <canvas class="" id="expensebarchart"></canvas>
     </div>
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:200%">
       <!--Card-->
@@ -79,43 +79,6 @@
       </div>
       <!--/Card-->
     </div>
-  </div>
-
-  {{-- EDIT MODAL --}}
-  <div class="fixed z-10 overflow-y-auto top-0 w-full  hidden" id="editmodal">
-    <div class="flex items-center justify-center min-height-100vh pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-      <div class="fixed inset-0 transition-opacity">
-        <div class="absolute inset-0 bg-gray-900 opacity-75">
-          <button
-            class="bg-white hover:bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-full absolute top-0 right-0 m-4"
-            onclick="toggleEditModal()">X</button>
-        </div>
-        <span class="hidden sm:inline-block sm:align-middle sm:h-screen">&#8203;</span>
-        <div
-          class="inline-block align-center bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
-          role="dialog" aria-modal="true" aria-labelledby="modal-headline">
-          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-            <h1 class="pb-5">RECORD</h1>
-            <label>Name</label>
-            <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
-            <label>Description</label>
-            <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
-            <label>Amount</label>
-            <input type="text" class="w-full bg-gray-100 p-2 mt-2 mb-3" placeholder="KUNWARI MAY RECORD" />
-          </div>
-          <div class="bg-gray-200 px-4 py-3 text-right">
-            <button type="button" class="py-2 px-4 bg-gray-500 text-white rounded hover:bg-gray-700 mr-2"
-              onclick="toggleEditModal()"><i class="fas fa-times"></i> Cancel</button>
-            <button type="button" class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-700 mr-2"><i
-                class="fas fa-plus"></i> Submit</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {{-- END OF EDIT MODAL --}}
-  </div>
-  </div>
   </div>
   {{-- EXPENSE MODAL --}}
   <div id="staticModal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true"
@@ -168,6 +131,7 @@
           <button data-modal-hide="staticModal" type="button"
             class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
         </div>
+        </form>
       </div>
     </div>
   </div>
@@ -202,23 +166,18 @@
   const saturday = "{{$saturday}}";
 
   const labelsBarChart = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
   ];
   const dataBarChart = {
     labels: labelsBarChart,
     datasets: [{
-      label: "Expense Monthly Report",
+      label: "Expense Daily Report",
       backgroundColor: "hsl(348, 83%, 47%)",
       borderColor: "hsl(348, 83%, 47%)",
       data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
@@ -238,18 +197,23 @@
 
   // Line Chart
 
-  const labels = [  "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"];
+  const labels = ["January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"  ];
   const data = {
     labels: labels,
     datasets: [
       {
-        label: "Expense Daily Report",
+        label: "Expense Monthly Report",
         backgroundColor: "hsl(348, 83%, 47%)",
       borderColor: "hsl(348, 83%, 47%)",
         data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
