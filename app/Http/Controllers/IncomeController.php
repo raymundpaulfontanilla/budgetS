@@ -37,6 +37,7 @@ class IncomeController extends Controller
 
     public function deleteincome($id)
     {
+
         $income = Income::find($id);
         $income->delete();
         session()->flash('message', 'Income record successfully deleted');
