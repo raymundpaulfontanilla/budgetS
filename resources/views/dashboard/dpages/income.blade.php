@@ -3,11 +3,13 @@
 
 <head>
   <link rel="stylesheet" href="{{ asset('income.css') }}">
+  <link rel="stylesheet" href="{{ asset('general.css') }}">
 </head>
 
 <body onload=display_ct();>
-  <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Income Page</h1>
-  <div class="flex flex-wrap" id="incomebody">
+
+  <div class="flex flex-wrap incomebody" id="incomebody">
+    <h1 class="text-2xl mb-2 ml-3.5 w-full" id='ct'>Income Page</h1>
     @php
     $key = session()->has('income') ? 'income' : 'message';
     @endphp

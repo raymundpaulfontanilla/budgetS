@@ -1,6 +1,8 @@
-@media screen and (min-width: 640px) and (max-width: 1000px) {
+/* @media screen and (min-width: 640px) and (max-width: 1000px) {
 
     #incomebody {
         margin-left: 100px;
     }
-}
+} */
+
+@media (max-width: 1200px) {}
