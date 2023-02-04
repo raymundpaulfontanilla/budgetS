@@ -1,8 +1,44 @@
-/* @media screen and (min-width: 640px) and (max-width: 1000px) {
+@media (max-width: 1280px) {
+    .incomeparent {
+
+        width: 100%;
+    }
+
+    .incomechilds2 {
+        margin: 0 auto 20px;
+        width: 50%;
+        display: block;
+    }
+
+    .monthlyreport {
+        display: block;
+        margin: 0 auto;
+        width: 650px;
+
+    }
 
     #incomebody {
-        margin-left: 100px;
+        justify-content: center;
     }
-} */
 
-@media (max-width: 1200px) {}
+    #alert-message {
+        margin-left: 15px;
+    }
+}
+
+@media (max-width:768px) {
+    .barchart {
+        margin-left: 0.875rem;
+    }
+
+    .recipientcontainer {
+        margin-left: 0.875rem;
+    }
+
+    #recipients {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width:500px) {}
