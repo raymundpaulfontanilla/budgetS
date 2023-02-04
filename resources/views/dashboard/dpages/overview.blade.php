@@ -62,7 +62,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full md:w-1/2 xl:w-1/3">
+    <div class="w-full md:w-1/2 xl:w-1/3 piegraph">
       {{-- Chart --}}
       <div class="shadow-lg rounded-lg ml-5">
         <h1 class="py-3 px-5 ">DATA REPORT
@@ -102,7 +102,7 @@
     </div>
 
 
-    <div class="container w-full md:w-4/5 xl:w-3/5  mx-auto px-2">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mx-auto px-2 tableview">
       <!--Card-->
       <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
         <table id="example" class="stripe hover " style="width:100%">
@@ -134,13 +134,14 @@
           Add Expense
         </button></button></span> --}}
     </div>
+  </div>
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!--Datatables -->
-    <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script>
-      $(document).ready(function() {
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <!--Datatables -->
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script>
+    $(document).ready(function() {
         var table = $('#example').DataTable({
           responsive: true,
           lengthChange: false,
@@ -151,7 +152,7 @@
           table.page.len(this.value).draw();
         });
       });
-    </script>
+  </script>
 </body>
 
 </html>

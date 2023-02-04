@@ -1,43 +1,35 @@
-/* @media (max-width: 509px) {
-    #example {
-        display: none;
+@media (max-width: 1280px) {
+    .piegraph {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto 20px;
     }
+
+    .tableview {
+        width: 100%;
+
+    }
+
 }
 
-@media (max-width: 768px) {
-    #button {
-        display: none;
-    }
-}
+@media (max-width: 700px) {
 
-@media (max-width: 509px) {
-    #recipients {
-        display: none;
-    }
-} */
-
-@media only screen and (max-width: 500px) {
-    #bodyoverview {
-        width: 50vh;
-    }
-}
-
-/* @media screen and (min-width: 500px) and (max-width: 635px) {
-    #bodyoverview {
-        width: 75vh;
-    }
-} */
-
-@media screen and (min-width: 640px) and (max-width: 1200px) {
-
-    #bodyoverview,
-    #ct,
-    #username {
-        margin-left: 100px;
+    .tableview {
+        padding: 0 1.5rem 0;
 
     }
+
+    .piegraph .ml-5 {
+        margin: 0;
+
+    }
+
+    .piegraph {
+        padding: 1.5rem 1.5rem 0;
+    }
+
 }
 
 #recipients {
-    height: 420px;
+    height: auto;
 }
