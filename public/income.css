@@ -41,4 +41,22 @@
     }
 }
 
-@media (max-width:500px) {}
+@media (max-width:700px) {
+
+    .monthlyreport,
+    .incomechilds2 {
+        width: 100%;
+    }
+}
+
+@media (max-width:500px) {
+    #incomebody {
+        padding: 0 15px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1300px) {
+    .recipientcontainer {
+        padding-left: 50px;
+    }
+}
