@@ -3,16 +3,16 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center mt-5 pt-5">
-        <div class="col-lg-6 col-md-10">
+        <div class="col-lg-6 col-md-10"> 
             <div class="card">
-                <div class="card-header"></div>
-
-                <div class="card-body">
+                <div class="text-center pt-5">
+                    <img src="{{ asset('images/logo.png') }}" alt="logo" width="110" />
+                </div>
+                <div class="card-body"></div>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        <h2 class="text-success fw-bold">budgetS</h2>
-                        <p class="fw-bold">Welcome Back</p>
-                        <p class="text-muted">A beatutiful and powerful system crafted specifically for income and expense</p>
+                        <hr>
+                        <h2 class="text-center">Sign In</h2>
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
@@ -53,11 +53,12 @@
                             </div>
                         </div>
 
-                        <div class="d-grid gap-2 d-md-block">
+                        <div class="text-center">
                             <button type="submit" class="btn btn-success rounded-pill">
                                 {{ __('Login Now') }}
                             </button>
-                            <span class="text-muted float-end">No account? Click here.&nbsp;<a href="{{ route('register') }}">{{ __('Create an account') }}</a></span>
+                            <br/>
+                            <a href="{{ route('register') }}">{{ __('Create an account') }}</a>
                         </div>
                     </form>
                 </div>
