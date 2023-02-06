@@ -1,4 +1,4 @@
-@extends('layouts/pages.register')
+@extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -66,7 +66,7 @@
                                 <button type="submit" class="btn btn-primary btn-success">
                                     {{ __('Register') }}
                                 </button>
-                                <a href="{{route("login")}}">👈Go back</a>
+                                <a href="{{route('login')}}">Already Have An Account?</a>
                             </div>
                         </div>
                     </form>
