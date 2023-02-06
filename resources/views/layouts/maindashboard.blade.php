@@ -218,7 +218,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#"
+                        {{-- <a href="#"
                             class="flex items-center p-2 font-medium text-black hover:text-white cursor-pointer">
                             <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor"
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -227,7 +227,19 @@
                                     clip-rule="evenodd"></path>
                             </svg>
                             <span class="flex-1 ml-3 whitespace-nowrap">Log-Out</span>
-                        </a>
+                        </a> --}}
+
+                        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div>
