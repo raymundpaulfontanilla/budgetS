@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -17,6 +18,39 @@
     <style>
         .navbar-toggler-icon.dark {
             background-color: #333;
+        }
+
+        .motto {
+            position: absolute;
+            width: 599px;
+            height: 226px;
+
+            font-family: 'Lato';
+            font-style: normal;
+            font-size: 45px;
+            align-items: flex-end;
+            text-align: center;
+            color: #1B6202;
+        }
+
+        .boy {
+            position: absolute;
+            width: 900px;
+            height: 556px;
+        }
+
+        .sample {
+            position: absolute;
+            width: 249px;
+            height: 191px;
+            left: 0px;
+            top: 500px;
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 44px;
+        }
+
+        body {
+            background-color: #F2FFEE;
         }
     </style>
 </head>
@@ -46,6 +80,7 @@
         @yield('content')
     </main>
     </div>
+    @include('dashboard.components.footer')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 
