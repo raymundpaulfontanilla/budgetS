@@ -9,7 +9,9 @@
 <body onload=display_ct();>
 
   <div class="flex flex-wrap incomebody" id="incomebody">
-    <h1 class="text-2xl mb-2 ml-3.5 w-full" id='ct'>Income Page</h1>
+    <div class="time">
+      <h1 class="text-2xl mb-2 ml-3.5 w-full" id='ct'>Income Page</h1>
+    </div>
     {{-- @php
     $key = session()->has('income') ? 'income' : 'message';
     @endphp
@@ -335,7 +337,7 @@ const saturday = "{{$saturday}}";
 
   // setTimeout(function() {
   //   $('#alert-message').fadeOut('slow');
-  // }, 10000); // 10 seconds
+  // }, 4000); 
 </script>
 
 

@@ -1,34 +1,55 @@
-@media (max-width: 1280px) {
-    .incomeparent {
-
-        width: 100%;
-    }
-
-    .incomechilds2 {
-        margin: 0 auto 20px;
-        width: 50%;
-        display: block;
-    }
-
-    .monthlyreport {
-        display: block;
-        margin: 0 auto;
-        width: 650px;
-
-    }
-
-    #incomebody {
-        justify-content: center;
-    }
-
+@media (min-width: 320px) {
     #alert-message {
-        margin-left: 15px;
+        margin-right: 0px;
+
+    }
+
+    #example {
+        overflow-x: scroll;
     }
 }
 
-@media (max-width:768px) {
+@media (min-width: 375px) {
+    #alert-message {
+        margin-right: 0px;
+    }
+
+}
+
+@media (max-width: 384px) {
+    #alert-message {
+        margin-right: 0px;
+    }
+
+
+    #example {
+        overflow-x: scroll;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    #alert-message {
+        margin-right: 0px;
+    }
+
     .barchart {
-        margin-left: 0.875rem;
+        margin-left: 35px;
+        margin-right: 25px;
+    }
+
+
+    #example {
+        overflow-x: scroll;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .barchart {
+        margin-left: 50px;
+        margin-right: 35px;
     }
 
     .recipientcontainer {
@@ -39,24 +60,81 @@
         margin: 0;
         width: 100%;
     }
+
+
 }
 
-@media (max-width:700px) {
+@media (max-width:768px) {
+    #incomebody {
+        justify-content: center;
+    }
 
-    .monthlyreport,
-    .incomechilds2 {
+    .incomeparent {
+        width: 85%;
+    }
+
+    .barchart {
+        margin-left: 50px;
+        margin-right: 35px;
+    }
+
+    .recipientcontainer {
+        margin-left: 0.875rem;
+    }
+
+    #recipients {
+        margin: 0;
         width: 100%;
     }
+
+
 }
 
-@media (max-width:500px) {
+@media screen and (min-width: 800px) and (max-width: 1023px) {
     #incomebody {
-        padding: 0 15px;
+        justify-content: center;
     }
+
+    .incomeparent {
+        width: 85%;
+    }
+
+    .recipientcontainer {
+        margin-left: 0.875rem;
+    }
+
+    #recipients {
+        margin: 0;
+        width: 100%;
+    }
+
 }
 
-@media screen and (min-width: 768px) and (max-width: 1300px) {
+@media screen and (min-width: 1024px) and (max-width: 1260px) {
+    .incomeparent {
+        margin-left: 300px;
+    }
+
+    .barchart {
+        margin-left: 300px;
+
+    }
+
+    .incomeparent {
+        width: 64%;
+    }
+
     .recipientcontainer {
-        padding-left: 50px;
+        width: 200%;
+        margin-left: 300px;
+    }
+
+    #alert-message {
+        margin-left: 300px;
+        margin-right: 65px;
+    }
+
+    .time {
+        margin-left: 300px;
     }
 }
