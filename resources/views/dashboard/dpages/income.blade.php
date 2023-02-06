@@ -3,15 +3,17 @@
 
 <head>
   <link rel="stylesheet" href="{{ asset('income.css') }}">
+  <link rel="stylesheet" href="{{ asset('general.css') }}">
 </head>
 
 <body onload=display_ct();>
-  <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Income Page</h1>
-  <div class="flex flex-wrap" id="incomebody">
-    @php
+
+  <div class="flex flex-wrap incomebody" id="incomebody">
+    <h1 class="text-2xl mb-2 ml-3.5 w-full" id='ct'>Income Page</h1>
+    {{-- @php
     $key = session()->has('income') ? 'income' : 'message';
     @endphp
-    @if (session()->has($key))
+    @if (session()->has($key)) --}}
     <div id="alert-message"
       class="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-base text-blue-700 inline-flex items-center w-full mr-16"
       role="alert" id="alert-message">
@@ -21,13 +23,13 @@
           d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
         </path>
       </svg>
-      <strong>{{session()->get($key)}}</strong>
+      {{-- <strong>{{session()->get($key)}}</strong> --}}
     </div>
-    @endif
-    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5">
+    {{-- @endif --}}
+    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 incomeparent">
       <!--Metric Card-->
       <div
-        class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5 mt-6">
+        class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5 mt-6 incomechild incomechilds2">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
             <div class="rounded-full p-5 bg-green-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
@@ -38,16 +40,16 @@
           </div>
         </div>
       </div>
-      <div class="shadow-lg rounded-lg overflow-hidden mt-5">
+      <div class="shadow-lg rounded-lg overflow-hidden mt-5 incomechild monthlyreport">
         <canvas class="" id="chartLine"></canvas>
       </div>
     </div>
-    <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5" style="
+    <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5 barchart" style="
     width: 650px;">
       <canvas class="" id="incomebarchart"></canvas>
     </div>
 
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:200%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 recipientcontainer" style="width:200%">
       <!--Card-->
       <div id='recipients' class="p-5 lg:mt-0 rounded shadow bg-white mr-12">
         <button data-modal-target="incomeModal" data-modal-toggle="incomeModal"
@@ -331,9 +333,9 @@ const saturday = "{{$saturday}}";
   );
 
 
-  setTimeout(function() {
-    $('#alert-message').fadeOut('slow');
-  }, 10000); // 10 seconds
+  // setTimeout(function() {
+  //   $('#alert-message').fadeOut('slow');
+  // }, 10000); // 10 seconds
 </script>
 
 

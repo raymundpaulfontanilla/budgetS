@@ -3,11 +3,12 @@
 
 <head>
   <link rel="stylesheet" href="{{ asset('expense.css') }}">
+  <link rel="stylesheet" href="{{ asset('general.css') }}">
 </head>
 
 <body onload=display_ct();>
-  <h1 class="text-2xl mb-2 ml-3.5" id='ct'>Expense Page</h1>
   <div class="flex flex-wrap" id="expensebody">
+    <h1 class="text-2xl mb-2 ml-3.5 w-full" id='ct'>Expense Page</h1>
     @php
     $key = session()->has('expense') ? 'expense' : 'message';
     @endphp
