@@ -8,7 +8,7 @@
 
 <body onload=display_ct();>
 
-  <h1 class="text-2xl ml-6" id="username">Hello $USERNAME</h1>
+  <h1 class="text-2xl ml-6" id="username">Hello, {{ Auth::user()->name }}</h1>
   <p class="ml-6 text-lg" id='ct'></p>
   <div class="flex flex-wrap" id="bodyoverview">
 
