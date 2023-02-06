@@ -5,12 +5,13 @@
     <div class="row justify-content-center mt-5 pt-5">
         <div class="col-lg-6 col-md-8">
             <div class="card">
-                <div class="card-header text-success fw-bold">Create an Account</div>
-
+                <div class="text-center pt-5">
+                    <img src="{{ asset('images/logo.png') }}" alt="logo" width="110" />
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        <hr>
+                        <h2 class="text-center">Sign Up</h2>
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
@@ -61,11 +62,11 @@
                             </div>
                         </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                        <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-success">
                                     {{ __('Register') }}
                                 </button>
+                                <br/>
                                 <a href="{{route('login')}}">Already Have An Account?</a>
                             </div>
                         </div>
