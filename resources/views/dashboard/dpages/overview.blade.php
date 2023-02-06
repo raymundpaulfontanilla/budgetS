@@ -4,23 +4,27 @@
 
 <head>
   <link rel="stylesheet" href="{{ asset('homeblade.css') }}">
+  <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
 </head>
 
 <body onload=display_ct();>
 
-  <h1 class="text-2xl ml-6" id="username">Hello, {{ Auth::user()->name }}</h1>
-  <p class="ml-6 text-lg" id='ct'></p>
+
+
+  <div class="header">
+    {{-- <h1 class="text-2xl ml-6" id="username">Hello,$USERNAME</h1> --}}
+    <h1 class="text-2xl ml-6" id="username">Hello, {{ Auth::user()->name }}</h1>
+    <p class="ml-6 text-lg" id='ct'></p>
+  </div>
   <div class="flex flex-wrap" id="bodyoverview">
-
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
-
+    <div class="w-full md:w-1/2 xl:w-1/3 p-6 green">
       <!--Metric Card-->
       <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
             <div class="rounded-full p-5 bg-green-600"><i class="fa fa-wallet fa-2x fa-inverse"></i></div>
           </div>
-          <div class="flex-1 text-right md:text-center">
+          <div class="flex-1 text-right md:text-center greentext">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
             <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalincome}}</h3>
           </div>
@@ -29,13 +33,13 @@
     </div>
     <!--/Metric Card-->
     <!--Metric Card-->
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+    <div class="w-full md:w-1/2 xl:w-1/3 p-6 red">
       <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
             <div class="rounded-full p-5 bg-red-600"><i class="fas fa-inbox fa-2x fa-inverse"></i></div>
           </div>
-          <div class="flex-1 text-right md:text-center">
+          <div class="flex-1 text-right md:text-center redtext">
             <h5 class="font-bold uppercase text-gray-600">Total Expense</h5>
             <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalexpense}}</h3>
           </div>
@@ -43,7 +47,7 @@
       </div>
     </div>
     <!--/Metric Card-->
-    <div class="w-full md:w-1/2 xl:w-1/3 p-6">
+    <div class="w-full md:w-1/2 xl:w-1/3 p-6 blue">
       <div class=" bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl
       p-5">
         <div class="flex flex-row items-center">
@@ -52,7 +56,7 @@
               <i class="fas fa-tasks fa-2x fa-inverse"></i>
             </div>
           </div>
-          <div class="flex-1 text-right md:text-center">
+          <div class="flex-1 text-right md:text-center bluetext">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
             <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span
                 class="text-green-500"></span>
@@ -145,7 +149,7 @@
         var table = $('#example').DataTable({
           responsive: true,
           lengthChange: false,
-          pageLength: 4
+          pageLength: 5
         });
 
         $('#entriesPerPage').on('change', function() {

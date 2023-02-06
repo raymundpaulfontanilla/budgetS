@@ -1,4 +1,4 @@
-@media (max-width: 1280px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
     .piegraph {
         width: 100%;
         max-width: 700px;
@@ -7,12 +7,29 @@
 
     .tableview {
         width: 100%;
+        padding-left: 20px;
+        padding-right: 0px;
+    }
 
+    #bodyoverview {
+        margin-left: 200px;
+    }
+
+    .header {
+        margin-left: 200px;
+    }
+
+    .green,
+    .red,
+    .blue,
+    .tableview {
+        width: 100%;
     }
 
 }
 
-@media (max-width: 700px) {
+
+@media (max-width: 1000px) {
 
     .tableview {
         padding: 0 1.5rem 0;
@@ -21,15 +38,35 @@
 
     .piegraph .ml-5 {
         margin: 0;
+        width: 100%;
 
     }
 
     .piegraph {
         padding: 1.5rem 1.5rem 0;
+        width: 100%;
     }
+
+    .green,
+    .red,
+    .blue,
+    .tableview {
+        width: 100%;
+    }
+
+
 
 }
 
 #recipients {
     height: auto;
+}
+
+@media screen and (min-width: 375px) and (max-width: 640px) {
+
+    .greentext,
+    .redtext,
+    .bluetext {
+        text-align: center;
+    }
 }

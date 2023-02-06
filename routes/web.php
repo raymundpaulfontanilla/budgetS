@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\TransactionHistoryController;
 use App\Http\Controllers\SendEmailController;
+
 use Illuminate\Support\Facades\Auth;
 
 
