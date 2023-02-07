@@ -4,11 +4,14 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('general.css') }}">
+    <link rel="stylesheet" href="{{ asset('transaction.css') }}">
 </head>
 
 <body onload=display_ct();>
-    <h1 class="text-2xl w-full" id='ct'>Transaction History</h1>
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5" style="width:100%">
+    <div class="time">
+        <h1 class="text-2xl w-full" id='ct'>Transaction History</h1>
+    </div>
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 tableviews" style="width:100%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white mr-6">
             <a href={{route('generatepdf')}} target="_blank"

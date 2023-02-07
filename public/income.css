@@ -4,9 +4,7 @@
 
     }
 
-    #example {
-        overflow-x: scroll;
-    }
+
 }
 
 @media (min-width: 375px) {
@@ -22,9 +20,12 @@
     }
 
 
-    #example {
-        overflow-x: scroll;
+
+
+    .textgreen {
+        text-align: center;
     }
+
 }
 
 @media only screen and (max-width: 414px) {
@@ -38,9 +39,12 @@
     }
 
 
-    #example {
-        overflow-x: scroll;
+
+
+    .textgreen {
+        text-align: center;
     }
+
 
 }
 
@@ -60,6 +64,16 @@
         margin: 0;
         width: 100%;
     }
+
+    .textgreen {
+        text-align: center;
+    }
+
+
+    #recipients {
+        overflow-x: scroll;
+    }
+
 
 
 }
@@ -87,6 +101,9 @@
         width: 100%;
     }
 
+    .textgreen {
+        text-align: center;
+    }
 
 }
 
@@ -107,6 +124,11 @@
         margin: 0;
         width: 100%;
     }
+
+    .textgreen {
+        text-align: center;
+    }
+
 
 }
 
@@ -137,4 +159,10 @@
     .time {
         margin-left: 300px;
     }
+
+    .textgreen {
+        text-align: center;
+    }
+
+
 }

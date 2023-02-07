@@ -1,6 +1,163 @@
-@media screen and (min-width: 640px) and (max-width: 1000px) {
+@media (min-width: 320px) {
+    #alert-message {
+        margin-right: 0px;
 
+    }
+
+
+}
+
+@media (min-width: 375px) {
+    #alert-message {
+        margin-right: 0px;
+    }
+
+    .textred {
+        text-align: center;
+    }
+
+
+}
+
+@media (max-width: 384px) {
+    #alert-message {
+        margin-right: 0px;
+    }
+
+
+    .textred {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    #alert-message {
+        margin-right: 0px;
+    }
+
+    .expbarchart {
+        margin-left: 35px;
+        margin-right: 25px;
+    }
+
+    .textred {
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+
+    .expbarchart {
+        margin-left: 50px;
+        margin-right: 35px;
+    }
+
+    .recipientcontainer {
+        margin-left: 0.875rem;
+    }
+
+    #recipients {
+        margin: 0;
+        width: 100%;
+    }
+
+    .textred {
+        text-align: center;
+    }
+
+
+    #recipients {
+        overflow-x: scroll;
+    }
+
+
+}
+
+@media (max-width:768px) {
     #expensebody {
-        margin-left: 100px;
+        justify-content: center;
+    }
+
+    .expenseparent {
+        width: 85%;
+    }
+
+    .expbarchart {
+        margin-left: 50px;
+        margin-right: 35px;
+    }
+
+    .recipientcontainer {
+        margin-left: 0.875rem;
+    }
+
+    #recipients {
+        margin: 0;
+        width: 100%;
+    }
+
+    .textred {
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (min-width: 800px) and (max-width: 1023px) {
+    #expensebody {
+        justify-content: center;
+    }
+
+    .expenseparent {
+        width: 85%;
+    }
+
+    .recipientcontainer {
+        margin-left: 0.875rem;
+    }
+
+    #recipients {
+        margin: 0;
+        width: 100%;
+    }
+
+    .textred {
+        text-align: center;
+    }
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1260px) {
+    .expenseparent {
+        margin-left: 300px;
+    }
+
+    .expbarchart {
+        margin-left: 300px;
+
+    }
+
+    .expenseparent {
+        width: 64%;
+    }
+
+    .recipientcontainer {
+        width: 200%;
+        margin-left: 300px;
+    }
+
+    #alert-message {
+        margin-left: 300px;
+        margin-right: 65px;
+    }
+
+    .time {
+        margin-left: 300px;
+    }
+
+    .textred {
+        text-align: center;
     }
 }

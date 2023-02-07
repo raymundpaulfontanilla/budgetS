@@ -4,6 +4,7 @@
 <head>
   <link rel="stylesheet" href="{{ asset('income.css') }}">
   <link rel="stylesheet" href="{{ asset('general.css') }}">
+  <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
 </head>
 
 <body onload=display_ct();>
@@ -18,7 +19,7 @@
     @if (session()->has($key)) --}}
     <div id="alert-message"
       class="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-base text-blue-700 inline-flex items-center w-full mr-16"
-      role="alert" id="alert-message">
+      role="alert">
       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
         class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
         <path fill="currentColor"
@@ -28,7 +29,7 @@
       {{-- <strong>{{session()->get($key)}}</strong> --}}
     </div>
     {{-- @endif --}}
-    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 incomeparent">
+    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 incomeparent ">
       <!--Metric Card-->
       <div
         class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5 mt-6 incomechild incomechilds2">
@@ -36,7 +37,7 @@
           <div class="flex-shrink pr-4">
             <div class="rounded-full p-5 bg-green-600"><i class="fas fa-tasks fa-2x fa-inverse"></i></div>
           </div>
-          <div class="flex-1 text-right md:text-center">
+          <div class="flex-1 text-right md:text-center textgreen">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
             <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalincome}}</h3>
           </div>
