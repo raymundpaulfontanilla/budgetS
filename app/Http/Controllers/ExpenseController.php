@@ -9,7 +9,8 @@ use App\Models\Expense;
 class ExpenseController extends Controller
 {
     public function displayexpense()
-    {   $january = Expense::whereRaw("MONTH(created_at) = 1")->sum('amount');
+    {
+        $january = Expense::whereRaw("MONTH(created_at) = 1")->sum('amount');
         $february = Expense::whereRaw("MONTH(created_at) = 2")->sum('amount');
         $march = Expense::whereRaw("MONTH(created_at) = 3")->sum('amount');
         $april = Expense::whereRaw("MONTH(created_at) = 4")->sum('amount');
@@ -28,7 +29,7 @@ class ExpenseController extends Controller
         $friday = Expense::whereRaw("WEEKDAY(created_at) = 4")->sum('amount');
         $saturday = Expense::whereRaw("WEEKDAY(created_at) = 5")->sum('amount');
         $sunday = Expense::whereRaw("WEEKDAY(created_at) = 6")->sum('amount');
-        return view('dashboard.dpages.expense', compact('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday','january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
+        return view('dashboard.dpages.expense', compact('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
             ->with('expenses', Expense::orderByDesc('created_at')->get())
             ->with('totalexpense', Expense::sum('amount'));
     }
@@ -55,12 +56,14 @@ class ExpenseController extends Controller
         return redirect()->route('expense');
     }
 
-    public function editexpense(Request $request){
+    public function editexpense(Request $request)
+    {
         $expense = Expense::find($request->id);
         $expense->name = $request->name;
         $expense->description = $request->description;
         $expense->amount = $request->amount;
         $expense->save();
+        session()->flash('update', 'Expense record successfully updated');
         return redirect()->route('expense');
     }
 

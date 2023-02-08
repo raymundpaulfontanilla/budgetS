@@ -56,11 +56,13 @@
 
     .recipientcontainer {
         margin-left: 0.875rem;
+        overflow-x: scroll;
     }
 
     #recipients {
         margin: 0;
         width: 100%;
+        overflow-x: scroll;
     }
 
     .textred {
@@ -68,9 +70,6 @@
     }
 
 
-    #recipients {
-        overflow-x: scroll;
-    }
 
 
 }
