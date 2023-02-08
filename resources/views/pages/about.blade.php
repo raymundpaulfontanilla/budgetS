@@ -1,3 +1,4 @@
+<title>About</title>
 @extends('layouts.app')
 
 @section('content')
