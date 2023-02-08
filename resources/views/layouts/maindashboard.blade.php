@@ -109,8 +109,8 @@
                     </li>
                     <li>
                         <a href="{{ route('logout') }}"
-                    class="flex items-center p-2 font-medium text-black hover:text-white cursor-pointer"
-                    onclick="event.preventDefault();
+                            class="flex items-center p-2 font-medium text-black hover:text-white cursor-pointer"
+                            onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -123,7 +123,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </aside>

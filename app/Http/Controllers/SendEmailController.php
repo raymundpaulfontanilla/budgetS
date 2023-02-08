@@ -31,6 +31,8 @@ class SendEmailController extends Controller
             'subject' => 'The PHP SDK is awesome!',
             'text' => $text
         ]);
+
+        session()->flash('success', 'Email sent successfully!');
         return redirect()->route('transactionhistory');
     }
 }

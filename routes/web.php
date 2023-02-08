@@ -9,7 +9,7 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\TransactionHistoryController;
 use App\Http\Controllers\SendEmailController;
 
-// use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -25,7 +25,7 @@ use App\Http\Controllers\SendEmailController;
 */
 Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
 Route::get('/dashboard/income', [IncomeController::class, 'displayincome'])->name('income');
 Route::get('/dashboard/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
 Route::get('/dashboard/overview', [BudgetController::class, 'displayoverview'])->name('overview');
