@@ -1,5 +1,5 @@
+<title>Register</title>
 @extends('layouts.app')
-
 @section('content')
 <div class = "container-fluid vh-100 mt-5 pt-5 mb-5">
     <div class = "row bg-light shadow-lg m-0" style ="border-radius: 30px;">
