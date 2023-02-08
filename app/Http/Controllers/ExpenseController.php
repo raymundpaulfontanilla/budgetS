@@ -40,4 +40,15 @@ class ExpenseController extends Controller
         session()->flash('message', 'Expense successfully deleted');
         return redirect()->route('expense');
     }
+
+    public function editexpense(Request $request){
+        $expense = Expense::find($request->id);
+        $expense->name = $request->name;
+        $expense->description = $request->description;
+        $expense->amount = $request->amount;
+        $expense->save();
+        return redirect()->route('expense');
+    }
+
+
 }

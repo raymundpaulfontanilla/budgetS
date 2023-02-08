@@ -44,5 +44,14 @@ class IncomeController extends Controller
         return redirect()->route('income');
     }
 
+    public function editincome(Request $request){
+        $income = Income::find($request->id);
+        $income->name = $request->name;
+        $income->description = $request->description;
+        $income->amount = $request->amount;
+        $income->save();
+        return redirect()->route('income');
+    }
+
 
 }
