@@ -344,9 +344,22 @@
     configBarChart
   );
 
-  // Line Chart
+  const january = "{{$january}}";
+  const february = "{{$february}}";
+  const march = "{{$march}}";
+  const april = "{{$april}}";
+  const may = "{{$may}}";
+  const june = "{{$june}}";
+  const july = "{{$july}}";
+  const august = "{{$august}}";
+  const september = "{{$september}}";
+  const october = "{{$october}}";
+  const november = "{{$november}}";
+  const december = "{{$december}}";
 
-  const labels = ["January",
+
+  const labels = [
+    "January",
     "February",
     "March",
     "April",
@@ -357,17 +370,18 @@
     "September",
     "October",
     "November",
-    "December"  ];
+    "December"
+  ];
+
+  
   const data = {
     labels: labels,
-    datasets: [
-      {
-        label: "Expense Monthly Report",
-        backgroundColor: "hsl(348, 83%, 47%)",
-      borderColor: "hsl(348, 83%, 47%)",
-        data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
-      },
-    ],
+    datasets: [{
+      label: "Monthly Income Report",
+      backgroundColor: "hsl(140, 61.5%, 47.5%)",
+      borderColor: "hsl(140, 61.5%, 47.5%)",
+      data: [january, february, march, april, may, june, july, august, september, october, november, december],
+    }, ],
   };
 
   const configLineChart = {
