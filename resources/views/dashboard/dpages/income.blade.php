@@ -189,7 +189,7 @@
   </div>
   {{-- INCOME MODAL --}}
   <div id="incomeModal" data-modal-backdrop="static" tabindex="-1"
-    class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
+    class="show-error-modal fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
     <div class="relative w-full h-full max-w-lg md:h-auto">
       <!-- Modal content -->
       <div class="relative bg-white rounded-lg shadow bg-emerald-300">
@@ -253,12 +253,12 @@
       </form>
     </div>
   </div>
-  {{-- @if ($errors->any())
+  @if ($errors->any())
   <script>
     let modal = document.querySelector("#incomeModal");
     modal.classList.remove("hidden");
   </script>
-  @endif --}}
+  @endif
 </body>
 
 <!-- jQuery -->
