@@ -212,7 +212,7 @@
         </div>
         <!-- Modal body -->
         <div class="p-6 mb-6">
-          <form class="space-y-6" method="POST" action=/dashboard/createincome>
+          <form class="space-y-6" method="POST" action="{{route('createincome')}}">
             @csrf
             <div>
               <label for="incomename" class="block mb-2 text-base font-medium text-black">Select Income
@@ -230,7 +230,7 @@
               <label class="block mb-2 text-base font-medium text-black">Description</label>
               <input name="description" type="text"
                 class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
-                required />
+                required value="{{ old('description') }}"/>
             </div>
             <div>
               <label class="block text-base font-medium text-black">Amount</label>
@@ -238,6 +238,9 @@
                 class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                 required />
             </div>
+            @if ($errors->has('amount'))
+            <div class="text-red-500 text-sm mt-2 ">{{ $errors->first('amount') }}</div>
+            @endif
         </div>
         <!-- Modal footer -->
         <div class="flex items-center p-6 space-x-2 border-t rounded-b border-white">
@@ -250,6 +253,14 @@
       </form>
     </div>
   </div>
+  @if ($errors->any())
+   <script>
+      // Keep the modal open if there are errors
+      let modal = document.querySelector("#incomeModal");
+      modal.classList.remove("hidden");
+
+   </script>
+@endif
 </body>
 
 <!-- jQuery -->
