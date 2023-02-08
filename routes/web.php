@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Auth;
 */
 Auth::routes();
 
-// Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
 Route::get('/dashboard/income', [IncomeController::class, 'displayincome'])->name('income');
 Route::get('/dashboard/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
 Route::get('/dashboard/overview', [BudgetController::class, 'displayoverview'])->name('overview');
