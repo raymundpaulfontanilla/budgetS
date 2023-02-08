@@ -107,7 +107,7 @@
                             <span class="flex-1 ml-3 whitespace-nowrap">Profile</span>
                         </a>
                     </li>
-                    <li>
+                    {{-- <li>
                         <a href="{{ route('logout') }}"
                     class="flex items-center p-2 font-medium text-black hover:text-white cursor-pointer"
                     onclick="event.preventDefault();
@@ -123,7 +123,7 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </aside>

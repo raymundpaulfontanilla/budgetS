@@ -23,9 +23,9 @@ use App\Http\Controllers\SendEmailController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+// Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
+// Route::middleware(['auth'])->group(function () {
 Route::get('/dashboard/income', [IncomeController::class, 'displayincome'])->name('income');
 Route::get('/dashboard/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
 Route::get('/dashboard/overview', [BudgetController::class, 'displayoverview'])->name('overview');
@@ -39,7 +39,7 @@ Route::get('/dashboard/sendemail', [SendEmailController::class, 'sendemail'])->n
 Route::post('/dashboard/editincome/{id}', [IncomeController::class, 'editincome'])->name('editincome');
 Route::post('/dashboard/editexpense/{id}', [ExpenseController::class, 'editexpense'])->name('editexpense');
 
-});
+// });
 
 Route::get('/', function () {
     return view('pages.home');

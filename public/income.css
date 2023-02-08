@@ -19,9 +19,6 @@
         margin-right: 0px;
     }
 
-
-
-
     .textgreen {
         text-align: center;
     }
@@ -37,9 +34,6 @@
         margin-left: 35px;
         margin-right: 25px;
     }
-
-
-
 
     .textgreen {
         text-align: center;
@@ -58,9 +52,11 @@
 
     .recipientcontainer {
         margin-left: 0.875rem;
+        overflow-x: scroll;
     }
 
     #recipients {
+        overflow-x: scroll;
         margin: 0;
         width: 100%;
     }
@@ -69,10 +65,8 @@
         text-align: center;
     }
 
-    /* 
-    #recipients {
-        overflow-x: scroll;
-    } */
+
+
 
 
 

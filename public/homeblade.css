@@ -53,13 +53,17 @@
     .tableview {
         width: 100%;
     }
-
-
-
 }
 
-#recipients {
+/* #recipients {
     height: auto;
+} */
+
+@media only screen and (max-width: 600px) {
+    #recipients {
+        overflow-x: scroll;
+    }
+
 }
 
 @media screen and (min-width: 375px) and (max-width: 640px) {
