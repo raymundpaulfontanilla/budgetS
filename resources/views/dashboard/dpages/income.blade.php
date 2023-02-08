@@ -12,7 +12,7 @@
   <div class="flex flex-wrap" id="incomebody">
     <h1 class="text-2xl mb-2 ml-3.5 w-full time" id='ct'>Income Page</h1>
     @php
-    $key = session()->has('income') ? 'income' : 'message';
+    $key = session()->has('update') ? 'update' : (session()->has('income') ? 'income' : 'message');
     @endphp
     @if (session()->has($key))
     <div id="alert-message"
@@ -230,7 +230,7 @@
               <label class="block mb-2 text-base font-medium text-black">Description</label>
               <input name="description" type="text"
                 class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
-                required value="{{ old('description') }}"/>
+                required value="{{ old('description') }}" />
             </div>
             <div>
               <label class="block text-base font-medium text-black">Amount</label>
@@ -253,14 +253,12 @@
       </form>
     </div>
   </div>
-  @if ($errors->any())
-   <script>
-      // Keep the modal open if there are errors
-      let modal = document.querySelector("#incomeModal");
-      modal.classList.remove("hidden");
-
-   </script>
-@endif
+  {{-- @if ($errors->any())
+  <script>
+    let modal = document.querySelector("#incomeModal");
+    modal.classList.remove("hidden");
+  </script>
+  @endif --}}
 </body>
 
 <!-- jQuery -->

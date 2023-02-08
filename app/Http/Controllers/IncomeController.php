@@ -28,7 +28,7 @@ class IncomeController extends Controller
         $friday = Income::whereRaw("WEEKDAY(created_at) = 4")->sum('amount');
         $saturday = Income::whereRaw("WEEKDAY(created_at) = 5")->sum('amount');
         $sunday = Income::whereRaw("WEEKDAY(created_at) = 6")->sum('amount');
-        return view('dashboard.dpages.income', compact('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday','january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
+        return view('dashboard.dpages.income', compact('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
             ->with('incomes', Income::orderByDesc('created_at')->get())
             ->with('totalincome', Income::sum('amount'));
 
@@ -36,12 +36,14 @@ class IncomeController extends Controller
 
     public function createincome(Request $request)
     {
+
+
         $incomes = new Income;
         $incomes->name = $request->name;
         $incomes->description = $request->description;
         $incomes->amount = $request->amount;
         $request->validate([
-            'amount' => 'numeric',
+            'amount' => 'required|numeric',
         ]);
         $incomes->save();
         $request->session()->flash('income', 'Income Recorded Successfully!');
@@ -59,12 +61,14 @@ class IncomeController extends Controller
         return redirect()->route('income');
     }
 
-    public function editincome(Request $request){
+    public function editincome(Request $request)
+    {
         $income = Income::find($request->id);
         $income->name = $request->name;
         $income->description = $request->description;
         $income->amount = $request->amount;
         $income->save();
+        session()->flash('update', 'Income record successfully updated');
         return redirect()->route('income');
     }
 

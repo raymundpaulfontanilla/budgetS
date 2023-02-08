@@ -13,7 +13,6 @@
 
   <div class="header">
     <h1 class="text-2xl ml-6" id="username">Hello, <strong>{{ ucfirst(Auth::user()->name) }}</strong></h1>
-    {{-- <h1 class="text-2xl ml-6" id="username">Hello, {{ Auth::user()->name }}</h1> --}}
     <p class="ml-6 text-lg" id='ct'></p>
   </div>
   <div class="flex flex-wrap" id="bodyoverview">
