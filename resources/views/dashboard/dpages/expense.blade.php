@@ -223,7 +223,7 @@
         </div>
         <!-- Modal body -->
         <div class="p-6 mb-6">
-          <form class="space-y-6" method="POST" action=/dashboard/createexpense>
+          <form class="space-y-6" method="POST" action="{{route('createexpense')}}">
             @csrf
             <div>
               <label for="expensename" class="block mb-2 text-base font-medium text-black">Select Expense
@@ -253,13 +253,16 @@
               <label class="block mb-2 text-base font-medium text-black">Description</label>
               <input name="description" type="text"
                 class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
-                required />
+                required value="{{ old('description') }}" />
             </div>
             <div>
               <label class="block mb-2 text-base font-medium text-black">Amount</label>
               <input name="amount" type="text"
                 class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                 required />
+                @if ($errors->has('amount'))
+                <div class="text-red-500 text-sm mt-2 ">{{ $errors->first('amount') }}</div>
+                @endif
             </div>
         </div>
         <!-- Modal footer -->
@@ -273,6 +276,14 @@
       </div>
     </div>
   </div>
+  @if ($errors->any())
+  <script>
+     // Keep the modal open if there are errors
+     let modal = document.querySelector("#expenseModal");
+     modal.classList.remove("hidden");
+
+  </script>
+@endif
 </body>
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
