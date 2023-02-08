@@ -28,6 +28,9 @@ class ExpenseController extends Controller
         $expenses->name = $request->name;
         $expenses->description = $request->description;
         $expenses->amount = $request->amount;
+        $request->validate([
+            'amount' => 'numeric',
+        ]);
         $expenses->save();
         $request->session()->flash('expense', 'Expense Recorded Successfully!');
         return redirect()->route('expense');
