@@ -28,6 +28,9 @@ class IncomeController extends Controller
         $incomes->name = $request->name;
         $incomes->description = $request->description;
         $incomes->amount = $request->amount;
+        $request->validate([
+            'amount' => 'numeric',
+        ]);
         $incomes->save();
         $request->session()->flash('income', 'Income Recorded Successfully!');
         return redirect()->route('income');
