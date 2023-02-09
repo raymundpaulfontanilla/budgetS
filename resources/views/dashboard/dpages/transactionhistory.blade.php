@@ -1,13 +1,11 @@
 <title>Transaction History</title>
 @extends('layouts.maindashboard')
 @section('content')
-
 <head>
     <link rel="stylesheet" href="{{ asset('general.css') }}">
     <link rel="stylesheet" href="{{ asset('transaction.css') }}">
     <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
 </head>
-
 <body onload=display_ct();>
     <div class="time">
         <h1 class="text-2xl w-full" id='ct'>Transaction History</h1>
@@ -60,30 +58,10 @@
         <!--/Card-->
     </div>
 </body>
-
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <!--Datatables -->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-
-
-<script>
-    // Table JS
-    $(document).ready(function() {
-        var table = $('#example').DataTable({
-            responsive: true,
-            lengthChange: false,
-            pageLength: 10
-        });
-
-        $('#entriesPerPage').on('change', function() {
-            table.page.len(this.value).draw();
-        });
-    });
-
-    setTimeout(function() {
-    $('#alert-message').fadeOut('slow');
-  }, 6000); 
-
-</script>
+<script src="{{ asset('jquery/transaction-table.js') }}"></script>
+<script src="{{ asset('js/transact-timeout.js') }}"></script>
 @endsection
