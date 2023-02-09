@@ -66,7 +66,7 @@ Route::middleware(['auth'])->group(function () {
     //PDF Controller
     Route::get('/dashboard/generatepdf', [GeneratePDFController::class, 'generatepdf'])->name('generatepdf');
 
-    //Sendemail Controlle
+    //Sendemail Controller
     Route::get('/dashboard/sendemail', [SendEmailController::class, 'sendemail'])->name('sendemail');
 });
 
