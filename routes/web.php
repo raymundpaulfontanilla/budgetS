@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Http\Controllers\BudgetController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\GeneratePDFController;
@@ -12,8 +11,6 @@ use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Auth;
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,24 +21,8 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
 
-Route::middleware(['auth'])->group(function () {
-Route::get('/dashboard/income', [IncomeController::class, 'displayincome'])->name('income');
-Route::get('/dashboard/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
-Route::get('/dashboard/overview', [BudgetController::class, 'displayoverview'])->name('overview');
-Route::get('/dashboard/deleteincome/{id}', [IncomeController::class, 'deleteincome'])->name('deleteincome');
-Route::get('/dashboard/deleteexpense/{id}', [ExpenseController::class, 'deleteexpense'])->name('deleteexpense');
-Route::post('/dashboard/createincome', [IncomeController::class, 'createincome'])->name('createincome');
-Route::post('/dashboard/createexpense', [ExpenseController::class, 'createexpense'])->name('createexpense');
-Route::get('/dashboard/transactionhistory', [TransactionHistoryController::class, 'transactionhistory'])->name('transactionhistory');
-Route::get('/dashboard/generatepdf', [GeneratePDFController::class, 'generatepdf'])->name('generatepdf');
-Route::get('/dashboard/sendemail', [SendEmailController::class, 'sendemail'])->name('sendemail');
-Route::post('/dashboard/editincome/{id}', [IncomeController::class, 'editincome'])->name('editincome');
-Route::post('/dashboard/editexpense/{id}', [ExpenseController::class, 'editexpense'])->name('editexpense');
-Route::get('/dashboard/userprofile', [UserController::class, 'displayuserprofile'])->name('userprofile');
-Route::post('/dashboard/edituserprofile', [UserController::class, 'edituserprofile'])->name('edituserprofile');
-});
+Auth::routes();
 
 Route::get('/', function () {
     return view('pages.home');
@@ -58,3 +39,36 @@ Route::get('/getstarted', function () {
 Route::fallback(function () {
     return redirect()->route('login');
 });
+
+Route::middleware(['auth'])->group(function () {
+    //Income Controllers
+    Route::get('/dashboard/income', [IncomeController::class, 'displayincome'])->name('income');
+    Route::post('/dashboard/createincome', [IncomeController::class, 'createincome'])->name('createincome');
+    Route::get('/dashboard/deleteincome/{id}', [IncomeController::class, 'deleteincome'])->name('deleteincome');
+    Route::post('/dashboard/editincome/{id}', [IncomeController::class, 'editincome'])->name('editincome');
+
+    //Expense Controllers
+    Route::get('/dashboard/expense', [ExpenseController::class, 'displayexpense'])->name('expense');
+    Route::post('/dashboard/createexpense', [ExpenseController::class, 'createexpense'])->name('createexpense');
+    Route::get('/dashboard/deleteexpense/{id}', [ExpenseController::class, 'deleteexpense'])->name('deleteexpense');
+    Route::post('/dashboard/editexpense/{id}', [ExpenseController::class, 'editexpense'])->name('editexpense');
+
+    //User Controllers
+    Route::get('/dashboard/userprofile', [UserController::class, 'displayuserprofile'])->name('userprofile');
+    Route::post('/dashboard/edituserprofile', [UserController::class, 'edituserprofile'])->name('edituserprofile');
+
+    //Budget Controller
+    Route::get('/dashboard/overview', [BudgetController::class, 'displayoverview'])->name('overview');
+
+    //Transaction History Controller
+    Route::get('/dashboard/transactionhistory', [TransactionHistoryController::class, 'transactionhistory'])->name('transactionhistory');
+
+    //PDF Controller
+    Route::get('/dashboard/generatepdf', [GeneratePDFController::class, 'generatepdf'])->name('generatepdf');
+
+    //Sendemail Controller
+    Route::get('/dashboard/sendemail', [SendEmailController::class, 'sendemail'])->name('sendemail');
+});
+
+
+    
