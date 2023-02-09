@@ -57,22 +57,23 @@
           </div>
         </div>
       </div>
-      <div class="w-full md:w-1/2 xl:w-1/3 piegraph">
-        {{-- Chart --}}
-        <div class="shadow-lg rounded-lg ml-5">
-          <h1 class="py-3 px-5 ">DATA REPORT</h1>
-          <canvas class="p-10 " id="chartPie"></canvas>
-        </div>
-        <script>
-          let income = "{{$totalincome}}";
-          let expense = "{{$totalexpense}}";
-          let percentageincome = "{{$percentageincome}}"
-          let percentageexpense = "{{$percentageexpense}}"
-          const dataPie = {
-            labels: ["Total Income" + percentageincome + "%", "Total Expense" + percentageexpense + "%"],
-            datasets: [{
-
-            data: [income, expense,],
+    </div>
+    <div class="w-full md:w-1/2 xl:w-1/3 piegraph">
+      {{-- Chart --}}
+      <div class="shadow-lg rounded-lg text-center mt-5">
+        <strong class="py-3 px-5 text-center">BUDGET ANALYSIS
+        </strong>
+        <canvas class="p-10 " id="chartPie"></canvas>
+      </div>
+      <script>
+        let income = "{{$totalincome}}";
+        let expense = "{{$totalexpense}}";
+        let percentageincome = "{{$percentageincome}}"
+        let percentageexpense = "{{$percentageexpense}}"
+        const dataPie = {
+          labels: ["Total Income" + percentageincome + "%", "Total Expense" + percentageexpense + "%"],
+          datasets: [{
+            data: [income, expense, ],
             backgroundColor: [
                 "rgb(0,255,127)",
                 "rgb(255, 0, 0)",

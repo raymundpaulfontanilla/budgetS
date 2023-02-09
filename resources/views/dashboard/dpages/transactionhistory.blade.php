@@ -23,15 +23,15 @@
         <strong>{{ session()->get('success') }}</strong>
     </div>
     @endif
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 tableviews" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 tableviews" style="width:95%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white mr-6">
             <a href={{route('generatepdf')}} target="_blank"
-                class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">PDF
-                BUTTON</a>
+                class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full"><span>Download
+                </span><i class="fa-solid fa-file-pdf fa-xl"></i></a>
             <a href={{route('sendemail')}}
                 class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">Send
-                Email</a>
+                Email <i class="fa-regular fa-envelope fa-xl"></i></a>
             <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
                 <thead>
                     <tr>
