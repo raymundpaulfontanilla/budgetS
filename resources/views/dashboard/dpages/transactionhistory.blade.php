@@ -1,5 +1,5 @@
+<title>Transaction History</title>
 @extends('layouts.maindashboard')
-
 @section('content')
 
 <head>

@@ -7,8 +7,10 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Welcome to {{ config('app.name', 'Laravel') }}</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -48,11 +50,26 @@
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             border-radius: 44px;
         }
+
+        section.hero {
+            margin: 4rem 0;
+        }
+
+        .item {
+            transition: .35s;
+        }
+        
+       .item:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top d-flex " style="background-color:#F2FFEE">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top d-flex " style="background-color:#DAFFC3">
         <div class="container-fluid">
             <a class="navbar-brand text-dark" href="{{ route('home')}}">
                 <img src="{{ ('images/logo.png') }}" class="img-fluid" style="width: 60px">

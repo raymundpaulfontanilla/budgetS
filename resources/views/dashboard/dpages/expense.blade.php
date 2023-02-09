@@ -1,3 +1,4 @@
+<title>Expense</title>
 @extends('layouts.maindashboard')
 @section('content')
 

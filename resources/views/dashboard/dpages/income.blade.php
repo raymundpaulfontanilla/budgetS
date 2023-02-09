@@ -1,3 +1,4 @@
+<title>Income</title>
 @extends('layouts.maindashboard')
 @section('content')
 
