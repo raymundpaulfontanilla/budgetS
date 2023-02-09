@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Expense;
 
-
 class ExpenseController extends Controller
 {
     public function displayexpense()
@@ -33,7 +32,6 @@ class ExpenseController extends Controller
             ->with('expenses', Expense::orderByDesc('created_at')->get())
             ->with('totalexpense', Expense::sum('amount'));
     }
-
     public function createexpense(Request $request)
     {
         $expenses = new Expense;
@@ -47,7 +45,6 @@ class ExpenseController extends Controller
         $request->session()->flash('expense', 'Expense Recorded Successfully!');
         return redirect()->route('expense');
     }
-
     public function deleteexpense($id)
     {
         $expense = Expense::find($id);
@@ -55,7 +52,6 @@ class ExpenseController extends Controller
         session()->flash('message', 'Expense successfully deleted');
         return redirect()->route('expense');
     }
-
     public function editexpense(Request $request)
     {
         $expense = Expense::find($request->id);
@@ -66,6 +62,4 @@ class ExpenseController extends Controller
         session()->flash('update', 'Expense record successfully updated');
         return redirect()->route('expense');
     }
-
-
 }
