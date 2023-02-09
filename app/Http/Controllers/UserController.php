@@ -13,23 +13,21 @@ class UserController extends Controller
         $user = Auth::user();
         return view('dashboard.dpages.userprofile', ['name' => $user->name, 'email' => $user->email,'password' => $user->password]);
     }
-
     public function edituserprofile(Request $request)
-{
-    $user = Auth::user();
+    {
+        $user = Auth::user();
 
-    $request->validate([
-        'password' => 'required|confirmed',
-    ]);
-
-    $user->name = $request->input('name');
-    $user->email = $request->input('email');
-    if ($request->input('password')) {
-        $user->password = Hash::make($request->input('password'));
+        $request->validate([
+            'password' => 'required|confirmed',
+        ]);
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        if ($request->input('password')) {
+            $user->password = Hash::make($request->input('password'));
+        }
+        $user->save();
+        return redirect()->route('userprofile');
     }
-    $user->save();
-    return redirect()->route('userprofile');
-}
 }
 
 
