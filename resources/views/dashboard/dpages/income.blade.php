@@ -140,15 +140,14 @@
                       </button>
                     </div>
                     <!-- Modal body -->
-                    <div class="px-6 py-6 lg:px-8">
+                    <div class="p-6 mb-6">
                       <form class="space-y-6" method="POST" action="{{route('editincome',$income->id)}}">
                         @csrf
                         <div>
-                          <label for="editincomename"
-                            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Income
+                          <label for="editincomename" class="block mb-2 text-base font-medium text-black">Select Income
                             Category</label>
                           <select id="editincomename" name="name" value="{{$income->name}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                             <option value="Awards">Awards</option>
                             <option value="Coupons">Coupons</option>
                             <option value="Grants">Grants</option>
@@ -170,17 +169,18 @@
                         </div>
                     </div>
                     <!-- Modal footer -->
-                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b border-white">
+                    <div class="flex items-center p-6 space-x-2 border-t rounded-b border-white">
                       <button data-modal-hide="" type="submit" href="{{route('editincome',$income->id)}}"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update
-                        Data</button>
+                      </button>
                       <button data-modal-hide="editmodal{{ $income->id }}" type="button"
                         class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
                     </div>
                   </div>
-                  </form>
+
                 </div>
               </div>
+              </form>
             </tr>
             @endforeach
           </tbody>
@@ -219,7 +219,7 @@
               <label for="incomename" class="block mb-2 text-base font-medium text-black">Select Income
                 Category</label>
               <select id="incomename" name="name"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                 <option value="Awards">Awards</option>
                 <option value="Coupons">Coupons</option>
                 <option value="Grants">Grants</option>
