@@ -1,12 +1,10 @@
 <title>Expense</title>
 @extends('layouts.maindashboard')
 @section('content')
-
 <head>
   <link rel="stylesheet" href="{{ asset('expense.css') }}">
   <link rel="stylesheet" href="{{ asset('general.css') }}">
 </head>
-
 <body onload=display_ct();>
   <div class="flex flex-wrap" id="expensebody">
     <h1 class="text-2xl mb-2 ml-3.5 w-full time" id='ct'>Expense Page</h1>
@@ -43,8 +41,7 @@
         <canvas class="" id="chartLine"></canvas>
       </div>
     </div>
-    <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5 expbarchart" style="
-    width: 650px;">
+    <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5 expbarchart" style="width: 650px;">
       <canvas class="" id="expensebarchart"></canvas>
     </div>
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 recipientcontainer" style="width:200%">
@@ -68,12 +65,12 @@
               <td>{{$expense->description}}</td>
               <td><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$expense->amount}}</td>
               <td>
-                <button data-modal-target="editmodal{{ $expense->id }}" data-modal-toggle="editmodal{{ $expense->id }}"
-                  type="button">⚙️
-                  Edit</button>
-                <button data-modal-target="deletemodal{{ $expense->id }}"
-                  data-modal-toggle="deletemodal{{ $expense->id }}" type="button">
-                  🗑️ Delete</button>
+                <button data-modal-target="editmodal{{ $expense->id }}" data-modal-toggle="editmodal{{ $expense->id }}" type="button">⚙️
+                  Edit
+                </button>
+                <button data-modal-target="deletemodal{{ $expense->id }}" data-modal-toggle="deletemodal{{ $expense->id }}" type="button">
+                  🗑️ Delete
+                </button>
               </td>
               {{-- Delete Modal --}}
               <div id="deletemodal{{ $expense->id }}" tabindex="-1"
@@ -87,7 +84,8 @@
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                           d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                          clip-rule="evenodd"></path>
+                          clip-rule="evenodd">
+                        </path>
                       </svg>
                       <span class="sr-only">Close modal</span>
                     </button>
@@ -95,20 +93,18 @@
                       <svg aria-hidden="true" class="mx-auto mb-4 text-gray-400 w-14 h-14 dark:text-gray-200"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                          d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                        </path>
                       </svg>
-                      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to
-                        remove
-                        this
-                        record?</h3>
-                      <a href="{{route('deleteexpense',$expense->id)}}"><button data-modal-hide="popup-modal"
-                          type="button"
-                          class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2">
-                          Yes, I'm sure
-                        </button></a>
+                      <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to remove this record?</h3>
+                      <a href="{{route('deleteexpense',$expense->id)}}">
+                        <button data-modal-hide="popup-modal" type="button"
+                        class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"> Yes, I'm sure
+                        </button>
+                      </a>
                       <button data-modal-hide="deletemodal{{ $expense->id }}" type="button"
-                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,
-                        cancel</button>
+                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">No,cancel
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -121,9 +117,7 @@
                   <div class="relative bg-white rounded-lg shadow bg-emerald-300">
                     <!-- Modal header -->
                     <div class=" flex items-center justify-between p-5 border-b rounded-t border-white">
-                      <h3 class="text-xl font-medium text-black">
-                        Edit Form
-                      </h3>
+                      <h3 class="text-xl font-medium text-black">Edit Form</h3>
                       <button type="button"
                         class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
                         data-modal-hide="editmodal{{ $expense->id }}">
@@ -131,7 +125,8 @@
                           xmlns="http://www.w3.org/2000/svg">
                           <path fill-rule="evenodd"
                             d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
+                            clip-rule="evenodd">
+                          </path>
                         </svg>
                         <span class="sr-only">Close modal</span>
                       </button>
@@ -142,9 +137,7 @@
                         @csrf
                         <div>
                           <div>
-                            <label for="editexpensename" class="block mb-2 text-base font-medium text-black">Select
-                              Income
-                              Category</label>
+                            <label for="editexpensename" class="block mb-2 text-base font-medium text-black">Select Income Category</label>
                             <select id="editexpensename" name="name" value="{{$expense->name}}"
                               class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                               <option value="Baby">Baby</option>
@@ -184,8 +177,11 @@
                     <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b border-white">
                       <button data-modal-hide="" type="submit" href="{{route('editexpense',$expense->id)}}"
                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
+                       outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit
+                      </button>
                       <button data-modal-hide="editmodal{{ $expense->id }}" type="button"
-                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
+                        class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel
+                      </button>
                     </div>
                   </div>
                   </form>
@@ -207,9 +203,7 @@
       <div class="relative bg-white rounded-lg shadow bg-emerald-300">
         <!-- Modal header -->
         <div class="flex items-center justify-between p-5 border-b rounded-t border-white">
-          <h3 class=" text-xl font-medium text-black">
-            Expense Form
-          </h3>
+          <h3 class=" text-xl font-medium text-black">Expense Form</h3>
           <button type="button"
             class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
             data-modal-hide="expenseModal">
@@ -217,7 +211,8 @@
               xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd"
                 d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                clip-rule="evenodd"></path>
+                clip-rule="evenodd">
+              </path>
             </svg>
             <span class="sr-only">Close modal</span>
           </button>
@@ -269,44 +264,28 @@
         <!-- Modal footer -->
         <div class="flex items-center p-6 space-x-2 border-t rounded-b border-white">
           <button data-modal-hide="" type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit
+          </button>
           <button data-modal-hide="expenseModal" type="button"
-            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
+            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel
+          </button>
         </div>
         </form>
       </div>
     </div>
   </div>
   @if ($errors->any())
-  <script>
-    // Keep the modal open if there are errors
-     let modal = document.querySelector("#expenseModal");
-     modal.classList.remove("hidden");
-
-  </script>
+  <script src="{{ asset('js/expense-modal-validation.js') }}"></script>
   @endif
 </body>
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <!--Datatables -->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="{{ asset('jquery/expense-table.js') }}"></script>
+<script src="{{ asset('js/expense-timeout.js') }}"></script>
 <script>
-  // Table JS
-  $(document).ready(function() {
-    var table = $('#example').DataTable({
-      responsive: true,
-      lengthChange: false,
-      pageLength: 5
-    });
-
-    $('#entriesPerPage').on('change', function() {
-      table.page.len(this.value).draw();
-    });
-  });
-
-
   // Bar Chart
-
   const sunday = "{{$sunday}}";
   const monday = "{{$monday}}";
   const tuesday = "{{$tuesday}}";
@@ -314,7 +293,6 @@
   const thursday = "{{$thursday}}";
   const friday = "{{$friday}}";
   const saturday = "{{$saturday}}";
-
   const labelsBarChart = [
     "Sunday",
     "Monday",
@@ -333,18 +311,15 @@
       data: [sunday, monday, tuesday, wednesday, thursday, friday, saturday],
     }, ],
   };
-
   const configBarChart = {
     type: "bar",
     data: dataBarChart,
     options: {},
   };
-
   var chartBar = new Chart(
     document.getElementById("expensebarchart"),
     configBarChart
   );
-
   const january = "{{$january}}";
   const february = "{{$february}}";
   const march = "{{$march}}";
@@ -357,8 +332,6 @@
   const october = "{{$october}}";
   const november = "{{$november}}";
   const december = "{{$december}}";
-
-
   const labels = [
     "January",
     "February",
@@ -373,8 +346,6 @@
     "November",
     "December"
   ];
-
-  
   const data = {
     labels: labels,
     datasets: [{
@@ -395,11 +366,5 @@
     document.getElementById("chartLine"),
     configLineChart
   );
-
-  setTimeout(function() {
-    $('#alert-message').fadeOut('slow');
-  }, 6000);
 </script>
-
-
 @endsection
