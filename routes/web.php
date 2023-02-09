@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\TransactionHistoryController;
 use App\Http\Controllers\SendEmailController;
+use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Auth;
 
@@ -38,7 +39,8 @@ Route::get('/dashboard/generatepdf', [GeneratePDFController::class, 'generatepdf
 Route::get('/dashboard/sendemail', [SendEmailController::class, 'sendemail'])->name('sendemail');
 Route::post('/dashboard/editincome/{id}', [IncomeController::class, 'editincome'])->name('editincome');
 Route::post('/dashboard/editexpense/{id}', [ExpenseController::class, 'editexpense'])->name('editexpense');
-
+Route::get('/dashboard/userprofile', [UserController::class, 'displayuserprofile'])->name('userprofile');
+Route::post('/dashboard/edituserprofile', [UserController::class, 'edituserprofile'])->name('edituserprofile');
 });
 
 Route::get('/', function () {
