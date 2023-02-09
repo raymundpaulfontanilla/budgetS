@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Models\Income;
 use App\Models\Expense;
 use Illuminate\Support\Facades\DB;
