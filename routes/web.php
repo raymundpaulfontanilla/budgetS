@@ -54,3 +54,7 @@ Route::get('/about', function () {
 Route::get('/getstarted', function () {
     return view('pages.getstarted');
 })->name('getstarted');
+
+Route::fallback(function () {
+    return redirect()->route('login');
+});
