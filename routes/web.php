@@ -8,7 +8,7 @@ use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\TransactionHistoryController;
 use App\Http\Controllers\SendEmailController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\ChangePasswordController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -69,10 +69,8 @@ Route::middleware(['auth'])->group(function () {
     //Sendemail Controller
     Route::get('/dashboard/sendemail', [SendEmailController::class, 'sendemail'])->name('sendemail');
 
-
     //ChangePassword Controller
     Route::get('/dashboard/userprofile/changepassword', [ChangePasswordController::class, 'changepassword'])->name('changepassword');
-
+    
     Route::post('/dashboard/userprofile/updatepassword', [ChangePasswordController::class, 'updatepassword'])->name('updatepassword');
-
 });
