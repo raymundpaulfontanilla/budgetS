@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\BudgetController;
+use App\Http\Controllers\ChangePassword;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\GeneratePDFController;
 use Illuminate\Support\Facades\Route;
@@ -41,6 +42,8 @@ Route::post('/dashboard/editincome/{id}', [IncomeController::class, 'editincome'
 Route::post('/dashboard/editexpense/{id}', [ExpenseController::class, 'editexpense'])->name('editexpense');
 Route::get('/dashboard/userprofile', [UserController::class, 'displayuserprofile'])->name('userprofile');
 Route::post('/dashboard/edituserprofile', [UserController::class, 'edituserprofile'])->name('edituserprofile');
+Route::get('/dashboard/userprofile/changepassword', [ChangePassword::class, 'changepassword'])->name('changepassword');
+Route::post('/dashboard/userprofile/updatepassword', [ChangePassword::class, 'updatepassword'])->name('updatepassword');
 });
 
 Route::get('/', function () {
@@ -54,3 +57,7 @@ Route::get('/about', function () {
 Route::get('/getstarted', function () {
     return view('pages.getstarted');
 })->name('getstarted');
+
+Route::fallback(function(){
+    return redirect()->route('login');
+});
