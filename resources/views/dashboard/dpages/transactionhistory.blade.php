@@ -1,15 +1,15 @@
 <title>Transaction History</title>
 @extends('layouts.maindashboard')
 @section('content')
+
 <head>
     <link rel="stylesheet" href="{{ asset('general.css') }}">
     <link rel="stylesheet" href="{{ asset('transaction.css') }}">
     <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
 </head>
+
 <body onload=display_ct();>
-    <div class="time">
-        <h1 class="text-2xl w-full" id='ct'>Transaction History</h1>
-    </div>
+
     @if (session()->has('success'))
     <div id="alert-message"
         class="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-base text-blue-700 inline-flex items-center w-full mr-16"
@@ -27,10 +27,10 @@
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white mr-6">
             <a href={{route('generatepdf')}} target="_blank"
-                class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full"><span>Download
+                class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"><span>Download
                 </span><i class="fa-solid fa-file-pdf fa-xl"></i></a>
             <a href={{route('sendemail')}}
-                class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">Send
+                class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">Send
                 Email <i class="fa-regular fa-envelope fa-xl"></i></a>
             <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
                 <thead>

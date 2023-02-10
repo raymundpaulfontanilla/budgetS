@@ -74,6 +74,3 @@ Route::middleware(['auth'])->group(function () {
     
     Route::post('/dashboard/userprofile/updatepassword', [ChangePasswordController::class, 'updatepassword'])->name('updatepassword');
 });
-
-
-    
