@@ -1,4 +1,4 @@
-# BudgetS (Capstone Project)
+# BudgetS (Capstone Project - Group 7)
 > Budget management Solution, where he or she can monitor expenses every day/month.
 
 ## 💻 Tech Stacks
