@@ -68,7 +68,11 @@ Route::middleware(['auth'])->group(function () {
 
     //Sendemail Controller
     Route::get('/dashboard/sendemail', [SendEmailController::class, 'sendemail'])->name('sendemail');
+
+
+    //ChangePassword Controller
+    Route::get('/dashboard/userprofile/changepassword', [ChangePasswordController::class, 'changepassword'])->name('changepassword');
+
+    Route::post('/dashboard/userprofile/updatepassword', [ChangePasswordController::class, 'updatepassword'])->name('updatepassword');
+
 });
-
-
-    
