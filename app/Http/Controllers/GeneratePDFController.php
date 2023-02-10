@@ -9,14 +9,12 @@ class GeneratePDFController extends Controller
 {
     public function generatepdf()
     {
-
         $income = Income::all();
         $expense = Expense::all();
         $merges = $income->concat($expense);
         $data = [
             'merges' => $merges,
         ];
-
         $pdf = \Barryvdh\DomPDF\Facade\Pdf::loadView('generatepdf', $data);
         return $pdf->stream('transact_history.pdf');
     }

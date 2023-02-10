@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!--Flowbite CDN-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.css" rel="stylesheet" />
+    <!--Fontawesome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!--Chart CDN-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--Emoji CSS-->
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!--Regular Datatables CSS-->
     <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
     <!--Responsive Extension Datatables CSS-->
     <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet">
     <script type="text/javascript" src="{{asset('js/time.js')}}"></script>
+    <!--Main CSS-->
     <link rel="stylesheet" href="{{ asset('table.css') }}">
     <link rel="stylesheet" href="{{ asset('siebar.css') }}">
     <link rel="stylesheet" href="{{ asset('general.css') }}">
@@ -24,7 +28,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Dashboard</title>
 </head>
-
 <body>
     <nav>
         <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
@@ -128,29 +131,12 @@
             </div>
         </aside>
     </nav>
-    {{-- <div class="container ml-auto"> --}}
     <div class="container ml-auto py-10 md:w-4/5 w-11/12 maincontainer">
         @yield('content')
     </div>
     </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
     <script src="time.js"></script>
-
 </body>
-
 </html>
-
-
-{{-- <li class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-document.getElementById('logout-form').submit();">
-{{ __('Logout') }}
-</a>
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-    @csrf
-</form>
-
-</li> --}}
