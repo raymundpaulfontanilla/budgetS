@@ -1,9 +1,12 @@
-@media (min-width: 320px) {
+@media (max-width: 320px) {
     #alert-message {
         margin-right: 0px;
 
     }
 
+    .recipientcontainer {
+        overflow-x: scroll;
+    }
 
 }
 
@@ -40,6 +43,7 @@
     }
 
 
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -53,18 +57,19 @@
     .recipientcontainer {
         margin-left: 0.875rem;
         overflow-x: scroll;
+
     }
 
     #recipients {
         overflow-x: scroll;
         margin: 0;
         width: 100%;
+
     }
 
     .textgreen {
         text-align: center;
     }
-
 
 
 
@@ -99,6 +104,7 @@
         text-align: center;
     }
 
+
 }
 
 @media screen and (min-width: 800px) and (max-width: 1023px) {
@@ -122,6 +128,7 @@
     .textgreen {
         text-align: center;
     }
+
 
 
 }
@@ -156,6 +163,10 @@
 
     .textgreen {
         text-align: center;
+    }
+
+    .incomeheader {
+        margin-left: 300px;
     }
 
 

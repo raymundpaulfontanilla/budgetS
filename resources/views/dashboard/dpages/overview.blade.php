@@ -5,17 +5,26 @@
 <head>
   <link rel="stylesheet" href="{{ asset('homeblade.css') }}">
   <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
+
+
 </head>
 
 <body onload=display_ct();>
 
 
-
-  <div class="header">
-    {{-- <h1 class="text-2xl ml-6" id="username">Hello, {{ Auth::user()->name }}</h1> --}}
-    <h1 class="text-2xl ml-6" id="username">Hello, <strong>{{ ucfirst(Auth::user()->name) }}</strong></h1>
-    <p class="ml-6 text-lg" id='ct'></p>
+  <div class=" grid grid-cols-3 gap-4 header ml-6">
+    <div>
+      <h1 class="text-2xl" id="username">WELCOME BACK! </h1>
+      <h1 class="text-4xl "><strong>{{ ucfirst(Auth::user()->name) }}</strong></h1>
+    </div>
+    <div></div>
+    <div>
+      <h1 class="text-4xl font-bold" id="time"></h1>
+      <h1 class="text-2xl" id="date"></h1>
+    </div>
   </div>
+
+
   <div class="flex flex-wrap" id="bodyoverview">
     <div class="w-full md:w-1/2 xl:w-1/3 p-6 green">
       <!--Metric Card-->
@@ -48,11 +57,11 @@
     </div>
     <!--/Metric Card-->
     <div class="w-full md:w-1/2 xl:w-1/3 p-6 blue">
-      <div class=" bg-gradient-to-b from-indigo-200 to-indigo-100 border-b-4 border-indigo-500 rounded-lg shadow-xl
+      <div class=" bg-gradient-to-b from-purple-200 to-purple-100 border-b-4 border-purple-500 rounded-lg shadow-xl
       p-5">
         <div class="flex flex-row items-center">
           <div class="flex-shrink pr-4">
-            <div class="rounded-full p-5 bg-indigo-600">
+            <div class="rounded-full p-5 bg-purple-600">
               <i class="fas fa-tasks fa-2x fa-inverse"></i>
             </div>
           </div>
@@ -66,11 +75,11 @@
         </div>
       </div>
     </div>
-    <div class="w-full md:w-1/2 xl:w-1/3 piegraph">
+    <div class="w-full md:w-1/2 xl:w-1/3 piegraph p-3">
       {{-- Chart --}}
-      <div class="shadow-lg rounded-lg ml-5">
-        <h1 class="py-3 px-5 ">DATA REPORT
-        </h1>
+      <div class="shadow-lg rounded-lg text-center">
+        <strong class="py-3 px-5 text-center">BUDGET ANALYSIS
+        </strong>
         <canvas class="p-10 " id="chartPie"></canvas>
       </div>
       <script>
@@ -85,9 +94,9 @@
 
             data: [income, expense, ],
             backgroundColor: [
-              "rgb(0,255,127)",
-              "rgb(255, 0, 0)",
               "rgb(0, 255, 0)",
+              "rgb(255, 0, 0)",
+             
             ],
             hoverOffset: 4,
           }, ],
@@ -104,8 +113,6 @@
       </script>
       {{-- End of Chart --}}
     </div>
-
-
     <div class="container w-full md:w-4/5 xl:w-3/5 mx-auto px-2 tableview">
       <!--Card-->
       <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
@@ -128,17 +135,10 @@
           </tbody>
         </table>
       </div>
-      <!--/Card-->
-
-      {{-- Disabled FOR DESIGN PURPOSES --}}
-      {{-- <button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-2" id="button">
-        Add Income
-      </button><span><button class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full mt-2 ml-2"
-          id="button">
-          Add Expense
-        </button></button></span> --}}
     </div>
   </div>
+  {{-- Still Working --}}
+  {{-- <img src="{{ asset('images/logo.png') }}" alt="logo" width="700" class="float-right" id="picture" /> --}}
 
   <!-- jQuery -->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

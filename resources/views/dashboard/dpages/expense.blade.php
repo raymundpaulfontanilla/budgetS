@@ -8,8 +8,8 @@
 </head>
 
 <body onload=display_ct();>
+
   <div class="flex flex-wrap" id="expensebody">
-    <h1 class="text-2xl mb-2 ml-3.5 w-full time" id='ct'>Expense Page</h1>
     @php
     $key = session()->has('update') ? 'update' : (session()->has('expense') ? 'expense' : 'message');
     @endphp
@@ -50,8 +50,88 @@
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 recipientcontainer" style="width:200%">
       <!--Card-->
       <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white mr-12">
-        <button data-modal-target="expenseModal" data-modal-toggle="expenseModal"
-          class="bg-teal-400 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">Add Expense</button>
+        {{-- <button data-modal-target="expenseModal" data-modal-toggle="expenseModal"
+          class="bg-rose-600 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full">Add Expense</button> --}}
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item bg-white border border-red-700 mb-5">
+            <h2 class="accordion-header mb-0 " id="headingOne">
+              <button class="
+                  relative
+                  flex
+                  items-center
+                  w-full
+                  py-4
+                  px-5
+                  text-xl text-red-700 text-left font-bold
+                  bg-white
+                  border-0
+                  rounded-none
+                  transition
+                  focus:outline-none
+                " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                aria-controls="collapseOne">
+                ADD EXPENSE
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body py-4 px-5">
+                <div class="p-6 mb-6">
+                  <form class="space-y-6" method="POST" action="{{route('createexpense')}}">
+                    @csrf
+                    <div>
+                      <label for="expensename" class="block mb-2 text-base font-medium text-black">Select Expense
+                        Category</label>
+                      <select id="expensename" name="name"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
+                        <option value="Baby">Baby</option>
+                        <option value="Beauty">Beauty</option>
+                        <option value="Bills">Bills</option>
+                        <option value="Car">Car</option>
+                        <option value="Clothing">Clothing</option>
+                        <option value="Education">Education</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Food">Food</option>
+                        <option value="Health">Health</option>
+                        <option value="Home">Home</option>
+                        <option value="Insurance">Insurance</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="Social">Social</option>
+                        <option value="Sport">Sport</option>
+                        <option value="Tax">Tax</option>
+                        <option value="Telephone">Telephone</option>
+                        <option value="Transportation">Transportation</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label class="block mb-2 text-base font-medium text-black">Description</label>
+                      <input name="description" type="text"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        required value="{{ old('description') }}" />
+                    </div>
+                    <div>
+                      <label class="block mb-2 text-base font-medium text-black">Amount</label>
+                      <input name="amount" type="text"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        required />
+                    </div>
+                    @if ($errors->has('amount'))
+                    <h1 class="text-red-500 text-xl mt-2 ">{{ $errors->first('amount') }}
+                    </h1>
+                    @endif
+                    <!-- Modal footer -->
+                    <button data-modal-hide="" type="submit"
+                      class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Submit</button>
+                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                      aria-controls="collapseOne"
+                      class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
           <thead>
             <tr>
@@ -118,7 +198,7 @@
                 class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
                 <div class="relative w-full h-full max-w-lg md:h-auto">
                   <!-- Modal content -->
-                  <div class="relative bg-white rounded-lg shadow bg-emerald-300">
+                  <div class="relative bg-white rounded-lg shadow">
                     <!-- Modal header -->
                     <div class=" flex items-center justify-between p-5 border-b rounded-t border-white">
                       <h3 class="text-xl font-medium text-black">
@@ -137,37 +217,35 @@
                       </button>
                     </div>
                     <!-- Modal body -->
-                    <div class="px-6 py-6 lg:px-8">
+                    <div class="p-6 mb-6">
                       <form class="space-y-6" method="POST" action="{{route('editexpense',$expense->id)}}">
                         @csrf
-                        <div>
-                          <div>
-                            <label for="editexpensename" class="block mb-2 text-base font-medium text-black">Select
-                              Income
-                              Category</label>
-                            <select id="editexpensename" name="name" value="{{$expense->name}}"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                              <option value="Baby">Baby</option>
-                              <option value="Beauty">Beauty</option>
-                              <option value="Bills">Bills</option>
-                              <option value="Car">Car</option>
-                              <option value="Clothing">Clothing</option>
-                              <option value="Education">Education</option>
-                              <option value="Entertainment">Entertainment</option>
-                              <option value="Food">Food</option>
-                              <option value="Health">Health</option>
-                              <option value="Home">Home</option>
-                              <option value="Insurance">Insurance</option>
-                              <option value="Shopping">Shopping</option>
-                              <option value="Social">Social</option>
-                              <option value="Sport">Sport</option>
-                              <option value="Tax">Tax</option>
-                              <option value="Telephone">Telephone</option>
-                              <option value="Transportation">Transportation</option>
-                            </select>
-                          </div>
+                        <div class="pb-6">
+                          <label for="editexpensename" class="block mb-2 text-base font-medium text-black">Select
+                            Income
+                            Category</label>
+                          <select id="editexpensename" name="name" value="{{$expense->name}}"
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
+                            <option value="Baby">Baby</option>
+                            <option value="Beauty">Beauty</option>
+                            <option value="Bills">Bills</option>
+                            <option value="Car">Car</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Education">Education</option>
+                            <option value="Entertainment">Entertainment</option>
+                            <option value="Food">Food</option>
+                            <option value="Health">Health</option>
+                            <option value="Home">Home</option>
+                            <option value="Insurance">Insurance</option>
+                            <option value="Shopping">Shopping</option>
+                            <option value="Social">Social</option>
+                            <option value="Sport">Sport</option>
+                            <option value="Tax">Tax</option>
+                            <option value="Telephone">Telephone</option>
+                            <option value="Transportation">Transportation</option>
+                          </select>
                         </div>
-                        <div>
+                        <div class="pb-6">
                           <label class="block mb-2 text-base font-medium text-black">Description</label>
                           <input type="text" name="description" id="description" value="{{$expense->description}}"
                             class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
@@ -183,7 +261,7 @@
                     <!-- Modal footer -->
                     <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b border-white">
                       <button data-modal-hide="" type="submit" href="{{route('editexpense',$expense->id)}}"
-                        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                        class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Update</button>
                       <button data-modal-hide="editmodal{{ $expense->id }}" type="button"
                         class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
                     </div>
@@ -200,7 +278,7 @@
     </div>
   </div>
   {{-- EXPENSE MODAL --}}
-  <div id="expenseModal" data-modal-backdrop="static" tabindex="-1"
+  {{-- <div id="expenseModal" data-modal-backdrop="static" tabindex="-1"
     class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
     <div class="relative w-full h-full max-w-lg md:h-auto">
       <!-- Modal content -->
@@ -225,66 +303,65 @@
         <!-- Modal body -->
         <div class="p-6 mb-6">
           <form class="space-y-6" method="POST" action="{{route('createexpense')}}">
-            @csrf
-            <div>
-              <label for="expensename" class="block mb-2 text-base font-medium text-black">Select Expense
-                Category</label>
-              <select id="expensename" name="name"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option value="Baby">Baby</option>
-                <option value="Beauty">Beauty</option>
-                <option value="Bills">Bills</option>
-                <option value="Car">Car</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Education">Education</option>
-                <option value="Entertainment">Entertainment</option>
-                <option value="Food">Food</option>
-                <option value="Health">Health</option>
-                <option value="Home">Home</option>
-                <option value="Insurance">Insurance</option>
-                <option value="Shopping">Shopping</option>
-                <option value="Social">Social</option>
-                <option value="Sport">Sport</option>
-                <option value="Tax">Tax</option>
-                <option value="Telephone">Telephone</option>
-                <option value="Transportation">Transportation</option>
-              </select>
-            </div>
-            <div>
-              <label class="block mb-2 text-base font-medium text-black">Description</label>
-              <input name="description" type="text"
-                class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
-                required value="{{ old('description') }}" />
-            </div>
-            <div>
-              <label class="block mb-2 text-base font-medium text-black">Amount</label>
-              <input name="amount" type="text"
-                class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
-                required />
-              @if ($errors->has('amount'))
-              <div class="text-red-500 text-sm mt-2 ">{{ $errors->first('amount') }}</div>
-              @endif
-            </div>
-        </div>
-        <!-- Modal footer -->
-        <div class="flex items-center p-6 space-x-2 border-t rounded-b border-white">
-          <button data-modal-hide="" type="submit"
-            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
-          <button data-modal-hide="expenseModal" type="button"
-            class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
-        </div>
-        </form>
-      </div>
-    </div>
+  @csrf
+  <div>
+    <label for="expensename" class="block mb-2 text-base font-medium text-black">Select Expense
+      Category</label>
+    <select id="expensename" name="name"
+      class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
+      <option value="Baby">Baby</option>
+      <option value="Beauty">Beauty</option>
+      <option value="Bills">Bills</option>
+      <option value="Car">Car</option>
+      <option value="Clothing">Clothing</option>
+      <option value="Education">Education</option>
+      <option value="Entertainment">Entertainment</option>
+      <option value="Food">Food</option>
+      <option value="Health">Health</option>
+      <option value="Home">Home</option>
+      <option value="Insurance">Insurance</option>
+      <option value="Shopping">Shopping</option>
+      <option value="Social">Social</option>
+      <option value="Sport">Sport</option>
+      <option value="Tax">Tax</option>
+      <option value="Telephone">Telephone</option>
+      <option value="Transportation">Transportation</option>
+    </select>
   </div>
-  @if ($errors->any())
+  <div>
+    <label class="block mb-2 text-base font-medium text-black">Description</label>
+    <input name="description" type="text"
+      class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+      required value="{{ old('description') }}" />
+  </div>
+  <div>
+    <label class="block mb-2 text-base font-medium text-black">Amount</label>
+    <input name="amount" type="text"
+      class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+      required />
+    @if ($errors->has('amount'))
+    <div class="text-red-500 text-sm mt-2 ">{{ $errors->first('amount') }}</div>
+    @endif
+  </div>
+  </div>
+  <!-- Modal footer -->
+  <div class="flex items-center p-6 space-x-2 border-t rounded-b border-white">
+    <button data-modal-hide="" type="submit"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+    <button data-modal-hide="expenseModal" type="button"
+      class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
+  </div>
+  </form>
+  </div>
+  </div>
+  </div> --}}
+  {{-- @if ($errors->any()) --}}
   <script>
     // Keep the modal open if there are errors
-     let modal = document.querySelector("#expenseModal");
-     modal.classList.remove("hidden");
-
+    //  let modal = document.querySelector("#expenseModal");
+    //  modal.classList.remove("hidden");
   </script>
-  @endif
+  {{-- @endif --}}
 </body>
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
