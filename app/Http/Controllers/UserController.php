@@ -17,17 +17,15 @@ class UserController extends Controller
     public function edituserprofile(Request $request)
     {
         $user = Auth::user();
-
-        $request->validate([
-            'password' => 'required|confirmed',
-        ]);
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        if ($request->input('password')) {
+        if (Hash::check($request->input('password'), $user->password)) {
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
             $user->password = Hash::make($request->input('password'));
+            $user->save();
+            return redirect()->route('userprofile');
+        } else {
+            return redirect()->route('userprofile')->with('error', 'Password is Incorrect');
         }
-        $user->save();
-        return redirect()->route('userprofile');
     }
 }
 
