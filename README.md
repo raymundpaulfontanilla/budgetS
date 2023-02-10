@@ -4,7 +4,8 @@
 ## 💻 Tech Stacks
 Client Side
 > - HTML
-> - TailwindCSS
+> - Bootstrap
+> - Tailwind
 > - Javascript
 > - jQuery
 
