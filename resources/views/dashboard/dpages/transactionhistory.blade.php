@@ -23,7 +23,7 @@
         <strong>{{ session()->get('success') }}</strong>
     </div>
     @endif
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 tableviews" style="width:95%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 tableviews" style="width:100%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white mr-6">
             <a href={{route('generatepdf')}} target="_blank"
@@ -58,10 +58,30 @@
         <!--/Card-->
     </div>
 </body>
+
 <!-- jQuery -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <!--Datatables -->
 <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-<script src="{{ asset('jquery/transaction-table.js') }}"></script>
-<script src="{{ asset('js/transact-timeout.js') }}"></script>
+
+
+<script>
+    // Table JS
+    $(document).ready(function() {
+        var table = $('#example').DataTable({
+            responsive: true,
+            lengthChange: false,
+            pageLength: 10
+        });
+
+        $('#entriesPerPage').on('change', function() {
+            table.page.len(this.value).draw();
+        });
+    });
+
+    setTimeout(function() {
+    $('#alert-message').fadeOut('slow');
+  }, 6000); 
+
+</script>
 @endsection
