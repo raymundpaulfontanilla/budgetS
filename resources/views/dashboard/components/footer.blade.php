@@ -37,15 +37,18 @@
         </style>
     </head>
     <body>
-        <footer class="footer mt-auto py-3" style="background-color: #F2FFEE;">
-            <div class="row">
+
+        <footer class="footer mt-auto py-3 " style="background-color: #7fb86e;">
+            <div class="row align-items-center">
+
                 <div class="col-lg-3">
                     <div class = "img-fluid d-flex justify-content-center align-items-center">
                     <img src="{{('images/logo.png')}}" class="img-fluid " style="width: 100px"/>
                     </div>
-                    <p class="text-muted text-center">Lorem ipsum dolor, sit</p>
+                    <p class="text-muted text-center">Lorem ipsum dolor</p>
                 </div>
-                <div class="col-lg-3 col-md-3 mx-auto">
+
+                <div class="col-lg-3 col-md-4 col-sm-4 text-center">
                     <h5 class="ms-3">Company</h5>
                     <ul class="list-unstyled ms-3 ">
                         <li class="mb-2 ">
@@ -57,12 +60,10 @@
                         <li class="mb-2">
                             <a href="" class = "list">Contact Us</a>
                         </li>
-                        <li class="mb-2">
-                            <a href="" class = "list">BLogs</a>
-                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 ">
+
+                <div class="col-lg-3 col-md-4 col-sm-4 text-center">
                     <h5 class="ms-3">Help Center</h5>
                     <ul class="list-unstyled ms-3">
                         <li class="mb-2">
@@ -73,7 +74,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-lg-3">
+
+                <div class="col-lg-3 col-md-4 col-sm-4 text-center">
                     <h5 class="ms-3">Contact Info</h5>
                     <p class="ms-3">Phone: 12345678</p>
                     <p class="ms-3">Email: test@test.com</p>
@@ -89,11 +91,15 @@
                         <i class="fab fa-brands fa-instagram fa-2x mr-2 ms-3"></i>
                     </a>
                 </div>
+
             </div>
             <hr/>
-            <div class="container">
+
+            <div class="container text-center">
                 <p>© 2023 | All rights Reserved</p>
             </div>
+
         </footer>
     </body>
 </html>
+

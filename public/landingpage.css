@@ -1,0 +1,34 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 20px;
+    background-color: hwb(120 23% 76%);
+}
+
+.item {
+    transition: .35s;
+}
+
+.item:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.hero {
+    width: 100%;
+    height: 100%;
+    min-height: 760px;
+    background-size: cover;
+    background-size: 100% 100%;
+    background-position: 0px 0px,0px 0px;
+    background-image: conic-gradient(from 233deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%),conic-gradient(from 229deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%);
+}
+
+header {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(68, 68, 68, 0.73)),
+    url(https://blog.kyoceradocumentsolutions.com.au/hubfs/6-things-to-consider-when-you-set-an-it-budget.jpg);
+    background-size: cover;
+}
