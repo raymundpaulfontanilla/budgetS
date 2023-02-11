@@ -1,10 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    font-size: 18px;
-    line-height: 20px;
     background-color: hwb(120 23% 76%);
 }
+
+
 
 .item {
     transition: .35s;
@@ -28,7 +28,37 @@ body {
 header {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(68, 68, 68, 0.73)),
-    url(https://blog.kyoceradocumentsolutions.com.au/hubfs/6-things-to-consider-when-you-set-an-it-budget.jpg);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(68, 68, 68, 0.73));
     background-size: cover;
+}
+.navbar {
+    position: fixed;
+    transition: 0.5s;
+}
+.navbar-scrolled {
+    background-color: black;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-image a {
+    text-decoration: none;
+    color: #1B6202;
+    transition: 35s;
+}
+
+.card-image a:hover {
+    text-decoration: none;
+    color: #1c62029d;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.card-image:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#section-container {
+    color: #1B6202;
+    transition: 35s;
 }
