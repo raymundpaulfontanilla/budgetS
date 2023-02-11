@@ -13,19 +13,6 @@
     @php
     $key = session()->has('update') ? 'update' : (session()->has('expense') ? 'expense' : 'message');
     @endphp
-    @if (session()->has($key))
-    <div id="alert-message"
-      class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full mr-16"
-      role="alert">
-      <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
-        class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-        <path fill="currentColor"
-          d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
-        </path>
-      </svg>
-      <strong>{{session()->get($key)}}</strong>
-    </div>
-    @endif
     <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 expenseparent ">
       <!--Metric Card-->
       <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5 mt-6">
@@ -52,7 +39,19 @@
       <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white mr-12">
         {{-- <button data-modal-target="expenseModal" data-modal-toggle="expenseModal"
           class="bg-rose-600 hover:bg-rose-800 text-white font-bold py-2 px-4 rounded-full">Add Expense</button> --}}
-
+        @if (session()->has($key))
+        <div id="alert-message"
+          class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full mr-16"
+          role="alert">
+          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
+            class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path fill="currentColor"
+              d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z">
+            </path>
+          </svg>
+          <strong>{{session()->get($key)}}</strong>
+        </div>
+        @endif
         <div class="accordion" id="accordionExample">
           <div class="accordion-item bg-white border border-red-700 mb-5">
             <h2 class="accordion-header mb-0 " id="headingOne">
