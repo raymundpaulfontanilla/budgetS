@@ -88,7 +88,7 @@
                       <label for="incomename" class="block mb-2 text-base font-medium text-black">Select Income
                         Category</label>
                       <select id="incomename" name="name"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                         <option value="Awards">Awards</option>
                         <option value="Coupons">Coupons</option>
                         <option value="Grants">Grants</option>
@@ -99,13 +99,13 @@
                     <div>
                       <label class="block mb-2 text-base font-medium text-black">Description</label>
                       <input name="description" type="text"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                         required value="{{ old('description') }}" />
                     </div>
                     <div>
                       <label class="block text-base font-medium text-black">Amount</label>
                       <input name="amount" type="text"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                         required />
                     </div>
                     @if ($errors->has('amount'))
@@ -217,7 +217,7 @@
                             Income
                             Category</label>
                           <select id="editincomename" name="name" value="{{$income->name}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                             <option value="Awards">Awards</option>
                             <option value="Coupons">Coupons</option>
                             <option value="Grants">Grants</option>

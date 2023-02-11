@@ -23,7 +23,7 @@
         <strong>{{ session()->get('success') }}</strong>
     </div>
     @endif
-    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 tableviews" style="width:100%">
+    <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 tableviews" style="width:95%">
         <!--Card-->
         <div id='recipients' class="p-2 mt-6 lg:mt-0 rounded shadow bg-white mr-6">
             <a href={{route('generatepdf')}} target="_blank"
