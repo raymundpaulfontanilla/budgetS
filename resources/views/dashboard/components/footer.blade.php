@@ -34,6 +34,12 @@
                 text-decoration:none;
                 color : black;
             }
+            
+            .footer {
+                background-size: 100% 100%;
+                background-position: 0px 0px,0px 0px;
+                background-image: conic-gradient(from 233deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%),conic-gradient(from 229deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%);
+            }
         </style>
     </head>
     <body>
@@ -102,4 +108,5 @@
         </footer>
     </body>
 </html>
+
 
