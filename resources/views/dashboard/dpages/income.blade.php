@@ -238,6 +238,10 @@
                             class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                             required />
                         </div>
+                        @if ($errors->has('amountedit'))
+                        <h1 class="text-red-500 text-xl mt-2 ">{{ $errors->first('amountedit') }}
+                        </h1>
+                        @endif
                     </div>
                     <!-- Modal footer -->
                     <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b border-white">
