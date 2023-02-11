@@ -15,7 +15,7 @@
     @endphp
     @if (session()->has($key))
     <div id="alert-message"
-      class="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-base text-blue-700 inline-flex items-center w-full mr-16"
+      class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full mr-16"
       role="alert">
       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
         class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -84,7 +84,7 @@
                       <label for="expensename" class="block mb-2 text-base font-medium text-black">Select Expense
                         Category</label>
                       <select id="expensename" name="name"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                         <option value="Baby">Baby</option>
                         <option value="Beauty">Beauty</option>
                         <option value="Bills">Bills</option>
@@ -107,13 +107,13 @@
                     <div>
                       <label class="block mb-2 text-base font-medium text-black">Description</label>
                       <input name="description" type="text"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                         required value="{{ old('description') }}" />
                     </div>
                     <div>
                       <label class="block mb-2 text-base font-medium text-black">Amount</label>
                       <input name="amount" type="text"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-red-500 focus:border-red-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                         required />
                     </div>
                     @if ($errors->has('amount'))
@@ -225,7 +225,7 @@
                             Income
                             Category</label>
                           <select id="editexpensename" name="name" value="{{$expense->name}}"
-                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                             <option value="Baby">Baby</option>
                             <option value="Beauty">Beauty</option>
                             <option value="Bills">Bills</option>
@@ -248,13 +248,13 @@
                         <div class="pb-6">
                           <label class="block mb-2 text-base font-medium text-black">Description</label>
                           <input type="text" name="description" id="description" value="{{$expense->description}}"
-                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                             required />
                         </div>
                         <div>
                           <label class="block text-base font-medium text-black">Amount</label>
                           <input type="text" name="amount" id="amount" value="{{$expense->amount}}"
-                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                             required />
                         </div>
                     </div>

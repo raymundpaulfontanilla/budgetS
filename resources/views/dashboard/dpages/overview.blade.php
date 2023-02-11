@@ -11,16 +11,18 @@
 
 <body onload=display_ct();>
 
-
-  <div class=" grid grid-cols-3 gap-4 header ml-6">
-    <div>
-      <h1 class="text-2xl" id="username">WELCOME BACK! </h1>
-      <h1 class="text-4xl "><strong>{{ ucfirst(Auth::user()->name) }}</strong></h1>
+  <div class="grid grid-cols-3 gap-4 header max-[1024px]:grid-cols-2 max-[1024px]:grid-flow-row-dense">
+    <div class="col-span-2 ml-6">
+      <h1 class="text-2xl font-medium" id="username">WELCOME BACK! </h1>
+      <h1 class="text-4xl font-medium"><strong>{{ ucfirst(Auth::user()->name) }}</strong></h1>
     </div>
-    <div></div>
-    <div>
-      <h1 class="text-4xl font-bold" id="time"></h1>
-      <h1 class="text-2xl" id="date"></h1>
+    <div class="mr-6 max-[1024px]:ml-6">
+      <h1
+        class="text-4xl font-medium font-bold text-end max-[414px]:text-xl max-[1024px]:text-4xl max-[1024px]:block max-[1024px]:text-start"
+        id="time"></h1>
+      <h1
+        class="text-2xl font-medium text-end max-[640px]:block max-[412px]:text-base max-[1024px]:text-xl max-[1024px]:block max-[1024px]:text-start"
+        id="date"></h1>
     </div>
   </div>
 
@@ -94,7 +96,7 @@
 
             data: [income, expense, ],
             backgroundColor: [
-              "rgb(0, 255, 0)",
+              "rgb(24, 161, 77)",
               "rgb(255, 0, 0)",
              
             ],

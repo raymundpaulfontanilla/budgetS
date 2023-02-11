@@ -17,7 +17,7 @@
     @endphp
     @if (session()->has($key))
     <div id="alert-message"
-      class="bg-blue-100 rounded-lg py-5 px-6 mb-3 text-base text-blue-700 inline-flex items-center w-full mr-16"
+      class="bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full mr-16"
       role="alert">
       <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
         class="w-4 h-4 mr-2 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -88,7 +88,7 @@
                       <label for="incomename" class="block mb-2 text-base font-medium text-black">Select Income
                         Category</label>
                       <select id="incomename" name="name"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                         <option value="Awards">Awards</option>
                         <option value="Coupons">Coupons</option>
                         <option value="Grants">Grants</option>
@@ -99,13 +99,13 @@
                     <div>
                       <label class="block mb-2 text-base font-medium text-black">Description</label>
                       <input name="description" type="text"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                         required value="{{ old('description') }}" />
                     </div>
                     <div>
                       <label class="block text-base font-medium text-black">Amount</label>
                       <input name="amount" type="text"
-                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                        class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                         required />
                     </div>
                     @if ($errors->has('amount'))
@@ -217,7 +217,7 @@
                             Income
                             Category</label>
                           <select id="editincomename" name="name" value="{{$income->name}}"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black">
                             <option value="Awards">Awards</option>
                             <option value="Coupons">Coupons</option>
                             <option value="Grants">Grants</option>
@@ -228,13 +228,13 @@
                         <div class="pb-6">
                           <label class="block mb-2 text-base font-medium text-black">Description</label>
                           <input type="text" name="description" id="description" value="{{$income->description}}"
-                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                             required />
                         </div>
                         <div>
                           <label class="block text-base font-medium text-black">Amount</label>
                           <input type="text" name="amount" id="amount" value="{{$income->amount}}"
-                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
+                            class="bg-gray-200 border border-black text-gray-500 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5 dark:bg-gray-100 dark:border-black dark:placeholder-gray-200 dark:text-black"
                             required />
                         </div>
                     </div>
