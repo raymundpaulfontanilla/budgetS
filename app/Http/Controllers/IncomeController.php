@@ -31,9 +31,13 @@ class IncomeController extends Controller
         return view('dashboard.dpages.income', compact('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
             ->with('incomes', Income::orderByDesc('created_at')->get())
             ->with('totalincome', Income::sum('amount'));
+
     }
+
     public function createincome(Request $request)
     {
+
+
         $incomes = new Income;
         $incomes->name = $request->name;
         $incomes->description = $request->description;
@@ -44,14 +48,19 @@ class IncomeController extends Controller
         $incomes->save();
         $request->session()->flash('income', 'Income Recorded Successfully!');
         return redirect()->route('income');
+
+
     }
+
     public function deleteincome($id)
     {
+
         $income = Income::find($id);
         $income->delete();
         session()->flash('message', 'Income record successfully deleted');
         return redirect()->route('income');
     }
+
     public function editincome(Request $request)
     {
         $income = Income::find($request->id);
@@ -62,4 +71,6 @@ class IncomeController extends Controller
         session()->flash('update', 'Income record successfully updated');
         return redirect()->route('income');
     }
+
+
 }
