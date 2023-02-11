@@ -12,7 +12,7 @@ class UserController extends Controller
     public function displayuserprofile()
     {
         $user = Auth::user();
-        return view('dashboard.dpages.userprofile', ['name' => $user->name, 'email' => $user->email,'password' => $user->password]);
+        return view('dashboard.dpages.userprofile', ['name' => $user->name, 'email' => $user->email, 'password' => $user->password]);
     }
     public function edituserprofile(Request $request)
     {
@@ -22,11 +22,9 @@ class UserController extends Controller
             $user->email = $request->input('email');
             $user->password = Hash::make($request->input('password'));
             $user->save();
-            return redirect()->route('userprofile');
+            return redirect()->route('userprofile')->with('success', 'Profile is updated successfully!');
         } else {
             return redirect()->route('userprofile')->with('error', 'Password is Incorrect');
         }
     }
 }
-
-
