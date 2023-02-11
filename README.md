@@ -5,6 +5,8 @@ CLient Side
 > - HTML
 > - BootstrapCSS
 > - TailwindCSS
+> - Javascript
+> - jQuery
 
 Server Side
 > - PHP Laravel
