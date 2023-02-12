@@ -22,7 +22,7 @@
           </div>
           <div class="flex-1 text-right md:text-center textred">
             <h5 class="font-bold uppercase text-gray-600">Total Expense</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalexpense}}</h3>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i> {{ number_format($totalexpense, 2, '.', ',') }}</h3>
           </div>
         </div>
       </div>
