@@ -123,6 +123,7 @@
             <tr>
               <th data-priority="1">Category</th>
               <th data-priority="2">Name</th>
+              <th data-priority="3">Description</th>
               <th data-priority="3">Amount</th>
             </tr>
           </thead>
@@ -131,6 +132,7 @@
             <tr>
               <td>{{$merge->category}}</td>
               <td>{{$merge->name}}</td>
+              <td>{{$merge->description}}</td>
               <td>{{$merge->amount}}</td>
             </tr>
             @endforeach
