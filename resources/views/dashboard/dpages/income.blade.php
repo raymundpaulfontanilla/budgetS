@@ -26,7 +26,7 @@
           </div>
           <div class="flex-1 text-right md:text-center textgreen">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalincome}}</h3>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i> {{ number_format($totalincome, 2, '.', ',') }}</h3>
           </div>
         </div>
       </div>
