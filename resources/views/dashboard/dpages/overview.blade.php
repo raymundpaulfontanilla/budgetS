@@ -37,7 +37,7 @@
           </div>
           <div class="flex-1 text-right md:text-center greentext">
             <h5 class="font-bold uppercase text-gray-600">Total Income</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalincome}}</h3>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalincome_formatted}}</h3>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
           </div>
           <div class="flex-1 text-right md:text-center redtext">
             <h5 class="font-bold uppercase text-gray-600">Total Expense</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalexpense}}</h3>
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalexpense_formatted}}</h3>
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
           </div>
           <div class="flex-1 text-right md:text-center bluetext">
             <h5 class="font-bold uppercase text-gray-600">Total Budget</h5>
-            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget}} <span
+            <h3 class="font-bold text-3xl"><i class="fa-sharp fa-solid fa-peso-sign"></i>{{$totalbudget_formatted}} <span
                 class="text-green-500"></span>
               {{-- <i class="fas fa-caret-up"></i> --}}
             </h3>
@@ -91,7 +91,7 @@
         let percentageexpense = "{{$percentageexpense}}"
 
         const dataPie = {
-          labels: ["Total Income" + percentageincome + "%", "Total Expense" + percentageexpense + "%"],
+          labels: ["Total Income" + " -  " + percentageincome + "%", "Total Expense"+ " -  " + percentageexpense + "%"],
           datasets: [{
 
             data: [income, expense, ],
