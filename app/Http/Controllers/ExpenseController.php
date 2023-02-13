@@ -62,7 +62,9 @@ class ExpenseController extends Controller
         $expense->name = $request->name;
         $expense->description = $request->description;
         $expense->amount = $request->amount;
-        $request->validate(['expenseedit' => 'required|numeric',], ['expense.required' => 'The amount must be a number', 'expenseedit.numeric' => 'The amount must be a number']);
+        $request->validate([
+            'amount' => 'numeric',
+        ]);
         $expense->save();
         session()->flash('update', 'Expense record successfully updated');
         return redirect()->route('expense');
