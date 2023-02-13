@@ -1,10 +1,10 @@
-<title>Expense</title>
 @extends('layouts.maindashboard')
 @section('content')
 
 <head>
   <link rel="stylesheet" href="{{ asset('expense.css') }}">
   <link rel="stylesheet" href="{{ asset('general.css') }}">
+  @section('title', 'Expense')
 </head>
 
 <body onload=display_ct();>
