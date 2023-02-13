@@ -71,7 +71,7 @@
     </form>
     
     <div class = "col-lg-6 p-0 d-none d-lg-block">
-        <img src = "https://145335.fs1.hubspotusercontent-na1.net/hub/145335/hubfs/examples-of-company-profile-pages.jpg?length=1200&name=examples-of-company-profile-pages.jpg" class = "img-fluid" style = "height: 75vh; width: 900px; border-top-right-radius:30px; border-bottom-right-radius:30px;">
+        <img src = "https://img.freepik.com/premium-vector/online-registration-sign-up-login-account-smartphone-app-user-interface-with-secure-password-mobile-application-ui-web-banner-access-cartoon-people-vector-illustration_2175-1060.jpg?w=2000" class = "img-fluid" style = "height: 75vh; width: 900px; border-top-right-radius:30px; border-bottom-right-radius:30px;">
     </div>
 </div>
 </div>
