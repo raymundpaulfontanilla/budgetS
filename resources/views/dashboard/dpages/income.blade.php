@@ -260,7 +260,6 @@
         </table>
       </div>
     </div>
-    @endif
 </body>
 
 <!-- jQuery -->
