@@ -67,7 +67,9 @@ class IncomeController extends Controller
         $income->name = $request->name;
         $income->description = $request->description;
         $income->amount = $request->amount;
-        $request->validate(['amountedit' => 'required|numeric',], ['amountedit.required' => 'The amount must be a number', 'amountedit.numeric' => 'The amount must be a number']);
+        $request->validate([
+            'amount' => 'required|numeric',
+        ]);
         $income->save();
         session()->flash('update', 'Income record successfully updated');
         return redirect()->route('income');
