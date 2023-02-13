@@ -22,7 +22,7 @@
 </head>
 
 <body>
-
+    
     <div class="container ">
         <div class="header-background ">
             <nav class="navbar navbar-expand-lg fixed-top" style="padding: 20px;" >
@@ -31,26 +31,26 @@
                         <img src="{{ ('images/logo.png') }}" class="img-fluid" style="width: 60px">
                         <span class="fw-bold" style="color:#1B6202;">BudgetS</span>
                     </a>
-        
-                    <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
-                        aria-label="Toggle Navigation" style="background-color:#1c62027e;">
-                        <span class="navbar-toggler-icon" style="background-color: #1c62027e;"></span>
-                        <span></span>
-                    </button>
-        
-                    <div class="bg-nav collapse navbar-collapse text-center" id="navbarCollapse">
-                        <ul class="navbar-nav ms-auto mx-auto ">
-                            <li class="nav-item ">
-                                <a class="nav-link active fw-bold fs-5" aria-current="page"
-                                    href="{{route ('home')}}" style="letter-spacing:2px; color:#1B6202;">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-bold fs-5" href="{{route ('about')}}" style="letter-spacing:2px; color:#1B6202;">About</a>
-                            </li>
-                        </ul>
+                
+                            <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                                aria-label="Toggle Navigation" style="background-color:#1c62027e;">
+                                <span class="navbar-toggler-icon" style="background-color: #1c62027e;"></span>
+                                <span></span>
+                            </button>
+                
+                            <div class="bg-nav collapse navbar-collapse text-center" id="navbarCollapse">
+                                <ul class="navbar-nav ms-auto mx-auto ">
+                                    <li class="nav-item ">
+                                        <a class="nav-link active fw-bold fs-5" aria-current="page"
+                                            href="{{route ('home')}}" style="letter-spacing:2px; color:#1B6202;">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link fw-bold fs-5" href="{{route ('about')}}" style="letter-spacing:2px; color:#1B6202;">About</a>
+                                    </li>
+                                </ul>
                         <form class="align-items-center">
-                                <a class="btn btn-success" href="{{route ('register')}}">Get Started</a>
+                        <a class="btn btn-success" href="{{route ('register')}}">Get Started</a>
                         </form>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
         const navScroll = document.querySelector('.navbar');
 
         window.addEventListener('scroll', function () {
-            if (window.pageYOffset > 100 ) {
+            if (window.pageYOffset > 50 ) {
                 navScroll.classList.add('bg-light','shadow');
             } else {
                 navScroll.classList.remove('bg-light','shadow');
@@ -80,5 +80,3 @@
 </body>
 
 </html>
-
-
