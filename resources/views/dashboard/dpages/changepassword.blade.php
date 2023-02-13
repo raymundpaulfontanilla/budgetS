@@ -5,6 +5,7 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('userprofile.css') }}">
+    @section('title', 'Change Password')
 </head>
 
 <section class="">
