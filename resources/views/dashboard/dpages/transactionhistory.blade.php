@@ -1,4 +1,3 @@
-<title>Transaction History</title>
 @extends('layouts.maindashboard')
 @section('content')
 
@@ -6,6 +5,7 @@
     <link rel="stylesheet" href="{{ asset('general.css') }}">
     <link rel="stylesheet" href="{{ asset('transaction.css') }}">
     <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
+    @section('title', 'Transaction History')
 </head>
 
 <body onload=display_ct();>
