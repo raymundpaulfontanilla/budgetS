@@ -95,20 +95,26 @@
     </div>
 </section>
 
-<section class="vh-100 py-5">
+<section class="how-budget vh-100 py-5">
     <div class="container text-center" >
         <h1 class="fw-bold">How BudgetS Works</h1>
         <p class="text-muted">Simplify your spending decisions without sacrificing the finer things in life, like fancy coffee drinks with hard-to-pronounce names.</p>
     </div>
-    <div class="row py-5">
-        <div class="col-lg-4 align-items-center justify-content-center d-flex">
-            <img src="https://www-assets.youneedabudget.com/wp-content/uploads/2022/12/07195838/icon_home_phone-01.svg" class="img-fluid " style ="width: 300px; height: 200px;">
+    <div class="row py-5 align-items-center text-center ms-auto">
+        <div class="col-lg-4 col-md-4 justify-content-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/2037/2037710.png" class="img-fluid" style ="width: 30%;">
+            <h3>Enter your details</h3>
+            <p>Sign up for an account and start adding your income and expenses.</p>
         </div>
-        <div class="col-lg-4 align-items-center justify-content-center d-flex">
-            <img src="https://www-assets.youneedabudget.com/wp-content/uploads/2022/12/07195838/icon_home_phone-01.svg" class="img-fluid " style ="width: 300px; height: 200px;">
+        <div class="col-lg-4 col-md-4 justify-content-center">
+            <img src="https://icon-library.com/images/expenses-icon/expenses-icon-20.jpg" class="img-fluid" style ="width: 30%;">
+            <h3> Enter your income and expenses</h3>
+            <p>Log your income and expenses for the week/month.</p>
         </div>
-        <div class="col-lg-4 align-items-center justify-content-center d-flex">
-            <img src="https://www-assets.youneedabudget.com/wp-content/uploads/2022/12/07195838/icon_home_phone-01.svg" class="img-fluid " style ="width: 300px; height: 200px;">
+        <div class="col-lg-4 col-md-4 justify-content-center">
+            <img src="https://cdn-icons-png.flaticon.com/512/6821/6821002.png" class="img-fluid" style ="width: 30%;">
+            <h3>See where you stand</h3>
+            <p>Check out your progress at the end of the month to help make informed decisions about your spending.</p>
         </div>
     </div>
 </section>
