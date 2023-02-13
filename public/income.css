@@ -4,9 +4,9 @@
 
     }
 
-    .recipientcontainer {
+    /* .recipientcontainer {
         overflow-x: scroll;
-    }
+    } */
 
 }
 
@@ -42,7 +42,14 @@
         text-align: center;
     }
 
+    .recipientcontainer {
+        overflow-x: hidden;
 
+    }
+
+    #recipients {
+        overflow-x: scroll;
+    }
 
 }
 
@@ -56,7 +63,7 @@
 
     .recipientcontainer {
         margin-left: 0.875rem;
-        overflow-x: scroll;
+
 
     }
 
