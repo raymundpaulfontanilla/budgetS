@@ -61,7 +61,7 @@
                             class="bg-white border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                             placeholder="" required />
                         <button type="submit"
-                            class="text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">Save
+                            class="mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">Save
                             Changes</button>
                         <button type="button" id="clearbutton"
                             class=" mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">

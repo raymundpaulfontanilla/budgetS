@@ -55,11 +55,8 @@
     }
 }
 
-/* #recipients {
-    height: auto;
-} */
 
-@media only screen and (max-width: 384px) {
+@media only screen and (max-width: 600px) {
     #recipients {
         overflow-x: scroll;
     }
