@@ -8,7 +8,7 @@
 
 <section class="">
     <div class="flex flex-col items-center justify-center" id="ipadpromarginleft">
-        <div class="bg-gradient-to-r from-green-200 via-green-400 to-green-600 w-full p-6 rounded-lg shadow md:mt-0 max-w-3xl max-[1024px]:max-w-xl bg-white
+        <div class="bg-[#18A14D] w-full p-6 rounded-lg shadow md:mt-0 max-w-3xl max-[1024px]:max-w-xl
            sm:p-8">
             <h2 class="mb-1 text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
                 User Profile
@@ -56,15 +56,15 @@
                             required />
                     </div>
                     <div>
-                        <label for="password" class="block mb-2 text-sm font-medium text-white">Password</label>
+                        <label for="password" class="block mb-2 text-sm font-medium text-white">Confirm Password</label>
                         <input type="password" name="password" id="password"
                             class="bg-white border border-gray-300 text-black sm:text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                             placeholder="" required />
                         <button type="submit"
-                            class="mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">Save
+                            class="mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 border-2 border-white">Save
                             Changes</button>
                         <button type="button" id="clearbutton"
-                            class=" mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700">
+                            class="mt-5 text-white bg-green-700 hover:bg-green-800 focus:ring-2 focus:outline-none focus:ring-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 border-2 border-white">
                             Clear Changes</button>
                     </div>
                 </form>
