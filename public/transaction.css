@@ -1,9 +1,5 @@
 @media only screen and (max-width: 414px) {
 
-    .time {
-        margin-left: 15px;
-    }
-
     .tableviews {
         margin-left: 15px;
     }
@@ -12,10 +8,6 @@
 
 @media only screen and (max-width: 600px) {
 
-
-    .time {
-        margin-left: 15px;
-    }
 
     .tableviews {
         margin-left: 15px;
@@ -30,10 +22,6 @@
 
 @media (max-width:768px) {
 
-    .time {
-        margin-left: 25px;
-    }
-
     .tableviews {
         margin-left: 25px;
     }
@@ -41,27 +29,39 @@
 }
 
 
-@media screen and (min-width: 800px) and (max-width: 1023px) {}
+@media only screen and (max-width: 800px) {
+    .tableviews {
+        width: 100%;
+        margin-left: 15px;
+    }
 
-.time {
-    margin-left: 15px;
+
 }
 
-.tableviews {
-    margin-left: 15px;
+@media only screen and (max-width: 1280px) {
+
+    .tableviews {
+        margin-left: 15px;
+    }
 }
+
+
 
 
 
 @media screen and (min-width: 1024px) and (max-width: 1260px) {
-    .time {
-        margin-left: 275px;
-    }
-
     .tableviews {
         width: 75%;
         margin-left: 270px;
     }
 
+
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1920px) {
+
+    .tableviews {
+        width: 100%;
+    }
 
 }
