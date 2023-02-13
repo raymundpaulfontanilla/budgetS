@@ -44,6 +44,15 @@
         text-align: center;
     }
 
+    .recipientcontainer {
+        overflow-x: hidden;
+
+    }
+
+    #recipients {
+        overflow-x: scroll;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -56,7 +65,7 @@
 
     .recipientcontainer {
         margin-left: 0.875rem;
-        overflow-x: scroll;
+
     }
 
     #recipients {
