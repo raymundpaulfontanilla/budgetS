@@ -4,8 +4,6 @@ body {
     background-color: hwb(120 23% 76%);
 }
 
-
-
 .item {
     transition: .35s;
 }
@@ -25,15 +23,9 @@ body {
     background-image: conic-gradient(from 233deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%),conic-gradient(from 229deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%);
 }
 
-header {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), rgba(68, 68, 68, 0.73));
-    background-size: cover;
-}
 .navbar {
     position: fixed;
-    transition: 0.5s;
+    transition: 0.1s;
 }
 .navbar-scrolled {
     background-color: black;
@@ -61,4 +53,106 @@ header {
 #section-container {
     color: #1B6202;
     transition: 35s;
+}
+
+.image {
+    border-radius: 30px;
+    box-shadow: -23px 31px 17px rgba(36, 52, 38, 0.6);
+}
+
+.imageNobg {
+    mix-blend-mode: darken;
+    width: 30%;
+}
+
+.mvv {
+    background: #fcfdfc;
+    color: #fcfdfc;
+}
+
+.mvv-title {
+    color: #1B6202;
+    margin-top: 50px;
+}
+
+.section-title h2{
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+    line-height: 1px;
+    margin: 0 0 5px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1B6202;
+}
+
+.section-title h2 ::after {
+    content: "";
+    width: 120px;
+    height: 1px;
+    background: #1B6202;
+    display: inline-block;
+    margin: 4px 10px;
+}
+
+.section-title p {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #151515;
+}
+
+.team .member {
+    text-align: center;
+    background-color: #858585;
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0px 2px 25px rgba( 0 0 0 / 10%);
+}
+
+.team .member img {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.team .member h4 {
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 2px;
+    font-size: 20px;
+    color : white;
+}
+
+.team .member span {
+    font-style: italic;
+    display: block;
+    font-size: 14px;
+    color: white;
+}
+
+.team .member .social {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.team .member .social a {
+    color: rgb(233, 233, 233);
+    transition: 0.3s;
+    border-radius: 50%;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #bbbb;
+    padding: 5px;
 }
