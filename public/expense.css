@@ -160,3 +160,15 @@
         text-align: center;
     }
 }
+
+
+@media screen and (min-width: 1280px) and (max-width: 1280px) {
+
+    .recipientcontainer {
+        margin-left: 15px;
+    }
+
+    #recipients {
+        margin-right: 0;
+    }
+}
