@@ -1,10 +1,10 @@
 <title>Login</title>
 @extends('layouts.app')
 @section('content')
-<div class = "container-fluid vh-100 mt-5 pt-5">
+<div class = "container-fluid vh-100 mt-5 pt-5 px-5">
     <div class = "row bg-light shadow-lg m-0" style ="border-radius: 30px;">
     <div class = "col-lg-6 p-0 d-none d-lg-block">
-        <img src = "https://coincent.ai/images/login.png" class = "img-fluid" style = "height: 75vh; width: 900px; border-top-left-radius:30px; border-bottom-left-radius:30px;">
+        <img src = "https://coincent.ai/images/login.png" class = "img-fluid" style = "height: 75vh; width: 900px; border-top-left-radius:30px; border-bottom-left-radius:30px; object-fit:cover;">
     </div>
     <div class = "col-lg-6">
         <div class = "justify-content-center align-items-center d-flex">

@@ -5,7 +5,7 @@
 <head>
   <link rel="stylesheet" href="{{ asset('homeblade.css') }}">
   <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
-
+  @section('title', 'Dashboard')
 
 </head>
 
