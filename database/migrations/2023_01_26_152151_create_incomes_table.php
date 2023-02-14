@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('description');
             $table->double('amount');
             $table->timestamps();
+            $table->unsignedBigInteger('user_id');
             
         });
     }
