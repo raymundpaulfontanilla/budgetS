@@ -9,9 +9,9 @@ class GeneratePDFController extends Controller
 {
     public function generatepdf()
     {
-
-        $income = Income::all();
-        $expense = Expense::all();
+        $user = auth()->user();
+        $income = Income::where('user_id', $user->id)->get();
+        $expense = Expense::where('user_id', $user->id)->get();
         $merges = $income->concat($expense);
         $data = [
             'merges' => $merges,
