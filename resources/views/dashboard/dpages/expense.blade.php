@@ -14,7 +14,7 @@
     @php
     $key = session()->has('update') ? 'update' : (session()->has('expense') ? 'expense' : 'message');
     @endphp
-    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 expenseparent ">
+    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 expenseparent " data-aos="fade-right">
       <!--Metric Card-->
       <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5 mt-6">
         <div class="flex flex-row items-center">
@@ -33,14 +33,14 @@
       </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5 expbarchart" style="
-    width: 650px;">
+    width: 650px;" data-aos="fade-right">
       <canvas class="" id="expensebarchart"></canvas>
     </div>
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 recipientcontainer" style="width:200%">
       <!--Card-->
       <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white mr-12">
         @if (session()->has($key))
-        <div id="alert-message"
+        <div id="alert-message" data-aos="fade-right"
           class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full mr-16"
           role="alert">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
@@ -53,7 +53,7 @@
         </div>
         @endif
         <div class="accordion" id="accordionExample">
-          <div class="accordion-item bg-white border border-red-700 mb-5">
+          <div class="accordion-item bg-white border border-red-700 mb-5" data-aos="fade-right">
             <h2 class="accordion-header mb-0 " id="headingOne">
               <button class="
                   relative

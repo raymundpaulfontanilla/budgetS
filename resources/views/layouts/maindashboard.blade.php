@@ -24,6 +24,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!--Main CSS-->
     <link rel="stylesheet" href="{{ asset('table.css') }}">
     <link rel="stylesheet" href="{{ asset('siebar.css') }}">
@@ -45,7 +46,7 @@
     <aside id="logo-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:translate-x-0"
         aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-[#18A14D] rounded-r-[55px]">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-[#18A14D] rounded-r-[55px]" data-aos="fade-down">
             <a href="{{route('overview')}}" class="flex items-center pl-2.5 mb-5">
                 <img src="{{ asset('images/logo.png') }}" alt="logo" width="185" />
             </a>
@@ -169,6 +170,10 @@
     <script src="time.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script>
         const button = document.querySelector('[data-drawer-target="logo-sidebar"]');
 const sidebar = document.querySelector('#logo-sidebar');

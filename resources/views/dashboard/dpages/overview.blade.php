@@ -11,7 +11,8 @@
 
 <body onload=display_ct();>
 
-  <div class="grid grid-cols-3 gap-4 header max-[1024px]:grid-cols-2 max-[1024px]:grid-flow-row-dense">
+  <div class="grid grid-cols-3 gap-4 header max-[1024px]:grid-cols-2 max-[1024px]:grid-flow-row-dense"
+    data-aos="fade-left">
     <div class="col-span-2 ml-6">
       <h1 class="text-2xl font-medium" id="username">WELCOME BACK! </h1>
       <h1 class="text-4xl font-medium"><strong>{{ ucfirst(Auth::user()->name) }}</strong></h1>
@@ -27,7 +28,7 @@
   </div>
 
 
-  <div class="flex flex-wrap" id="bodyoverview">
+  <div class="flex flex-wrap" id="bodyoverview" data-aos="fade-down">
     <div class="w-full md:w-1/2 xl:w-1/3 p-6 green">
       <!--Metric Card-->
       <div class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5">
