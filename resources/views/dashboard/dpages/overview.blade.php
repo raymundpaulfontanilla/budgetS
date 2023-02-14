@@ -81,8 +81,6 @@
     <div class="w-full md:w-1/2 xl:w-1/3 piegraph p-3">
       {{-- Chart --}}
       <div class="shadow-lg rounded-lg text-center">
-        <strong class="py-3 px-5 text-center">BUDGET ANALYSIS
-        </strong>
         <canvas class="p-10 " id="chartPie"></canvas>
       </div>
       <script>
