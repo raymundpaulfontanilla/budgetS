@@ -28,10 +28,10 @@
         <div class="header-background blur-none">
             <nav class="navbar navbar-expand-lg fixed-top" style="padding: 20px;" >
                 <div class="container-fluid">
-                    <a class="navbar-brand text-dark" href="{{ route('home')}}">
-                        <img src="{{ ('images/logo.png') }}" class="img-fluid" style="width: 60px">
-                        <span class="fw-bold" style="color:#1B6202;">BudgetS</span>
-                    </a>
+                        <a class="navbar-brand text-dark" href="{{ route('home')}}">
+                            <img src="{{ ('images/logo.png') }}" class="img-fluid" style="width: 60px">
+                            <span class="fw-bold" style="color:#1B6202;">BudgetS</span>
+                        </a>
                     
                     <button class="navbar-toggler ml-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle Navigation">
                         <span class="navbar-toggler-icon">
@@ -39,20 +39,20 @@
                         </span>
                     </button>
                     
-                    <div class="collapse navbar-collapse text-center backdrop-blur" id="navbarCollapse">
-                        <ul class="navbar-nav ms-auto mx-auto ">
-                            <li class="nav-item ">
-                                <a class="nav-link active fw-bold fs-5" aria-current="page" href="{{route ('home')}}" style="letter-spacing:2px; color:#1B6202;">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fw-bold fs-5" href="{{route ('about')}}" style="letter-spacing:2px; color:#1B6202;">About</a>
-                            </li>
-                        </ul>
-                        <div class="align-items-center">
-                            <a class="btn btn-success" href="{{route ('register')}}">Get Started</a>
+                        <div class="collapse navbar-collapse text-center backdrop-blur" id="navbarCollapse">
+                            <ul class="navbar-nav ms-auto mx-auto ">
+                                <li class="nav-item ">
+                                    <a class="nav-link active fw-bold fs-5" aria-current="page" href="{{route ('home')}}" style="letter-spacing:2px; color:#1B6202;">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link fw-bold fs-5" href="{{route ('about')}}" style="letter-spacing:2px; color:#1B6202;">About</a>
+                                </li>
+                            </ul>
+                            <div class="align-items-center">
+                                <a class="btn btn-success" href="{{route ('register')}}">Get Started</a>
+                            </div>
                         </div>
                     </div>
-                </div>
             </nav>
         </div>
     </div>

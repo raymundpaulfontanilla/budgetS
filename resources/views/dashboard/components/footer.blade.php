@@ -51,34 +51,33 @@
                         <div class = "img-fluid d-flex justify-content-center align-items-center">
                             <img src="{{('images/logo.png')}}" class="img-fluid " style="width: 100px"/>
                         </div>
-                        <p class="ms-3 text-white">BudgetS is a tool for managing and tracking your income and expenses. It provides you with detailed reports about your situation, so that you can adjust it accordingly. You can also find out how much you have in your account at any given time.</p>
+                        <p class="m-3 text-white">BudgetS is a tool for managing and tracking your income and expenses. It provides you with detailed reports about your situation, so that you can adjust it accordingly. You can also find out how much you have in your account at any given time.</p>
                     </div>
                     
-                    <div class="col-lg-4 col-md-6 col-sm-6 pt-5 px-5 text-white">
-                        <h5 class="ps-5">Company</h5>
+                    <div class="col-lg-4 col-md-6 col-sm-6 pt-3 px-5 text-white">
+                        <h5 class="ps-5 text-center">Company</h5>
                         <div class = "ps-5">
                             <ul class="list-unstyled ">
-                                <li class="mb-2">
-                                    <a href="" class = "list text-white">About Us</a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="" class = "list text-white">Contact Us</a>
+                                <li class="mb-2 text-center">
+                                    <a href="{{ route('about') }}" class = "list text-white ">About Us</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     
                     <div class="col-lg-4 col-md-6 col-sm-6 px-5 text-white">
-                        <h5 class="ps-5">Social Links</h5>
-                        <a href="" class = "list text-white ps-3">
-                            <i class="fab fa-brands fa-facebook fa-2x mr-2 ms-3"></i>
-                        </a>
-                        <a href="" class = "list text-white">
-                            <i class="fab fa-brands fa-twitter fa-2x mr-2 ms-3"></i>
-                        </a>
-                        <a href="" class = "list text-white">
-                            <i class="fab fa-brands fa-instagram fa-2x mr-2 ms-3"></i>
-                        </a>
+                        <h5 class="ps-5 text-center">Social Links</h5>
+                        <div class="text-center">
+                            <a href="" class = "list text-white ps-3">
+                                <i class="fab fa-brands fa-facebook fa-2x mr-2 ms-3" ></i>
+                            </a>
+                            <a href="" class = "list text-white">
+                                <i class="fab fa-brands fa-twitter fa-2x mr-2 ms-3 "></i>
+                            </a>
+                            <a href="" class = "list text-white">
+                                <i class="fab fa-brands fa-instagram fa-2x mr-2 ms-3 "></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <hr style="color:white;"/>

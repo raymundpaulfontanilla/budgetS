@@ -5,11 +5,11 @@
 {{-- Hero Section --}}
 <section class = "hero bg-light">
     <div class = "container mb-5">
-        <div class = "row pb-5 align-items-center ">
+        <div class = "row pb-5 align-items-center pt-5 ">
             <div class = "col-md-12 col-lg-6 pt-5">
                 <div class = "title pt-5 my-auto px-5">
                     <div data-aos="fade-right">
-                        <h1 class = "heo-title mb-4 fw-bold mt-5 pt-5 display-4" style="margin-top: 100px; color:#1B6202;">Get Your Finances Under Control with <u>BudgetS</u></h1>
+                        <h1 class = "hero-title mb-4 fw-bold mt-5 pt-5 display-5" style="margin-top: 100px; color:#1B6202;">Get Your Finances Under Control with BudgetS</h1>
                         <p class=" text-dark fs-4">BudgetS is a free online budgeting app for managing and tracking income and expenses.</p>
                         <div class = "mt-4">
                             <a href = "{{route ('register') }}" class = "btn btn-success shadown-none fs-5 w-40">Get Started</a>
@@ -19,7 +19,7 @@
             </div>
 
             <div class = "col-md-12 col-lg-6 h-auto">
-                <div class = "justify-content-center">
+                <div class = "justify-content-center pt-5">
                     <div data-aos="zoom-in">
                         <img src = "{{ 'images/landingpage.png' }}" class = "landing-page-img img-fluid d-none d-lg-block d-sm-block">
                     </div>
@@ -36,7 +36,7 @@
     <div class="row py-5">
         <div class="col-12 text-center mt-4">
             <div data-aos="zoom-out">
-                <h1 class="text fw-bold display-4" style="color:#1B6202;" >Our Best Features</h1>
+                <h1 class="text fw-bold display-5" style="color:#1B6202;" >Our Best Features</h1>
             </div>
         </div>
     </div>
@@ -126,7 +126,7 @@
             </div>
         </div>
     </div>
-</section>
+</section>  
 
 {{-- End of Overview Section --}}
 
