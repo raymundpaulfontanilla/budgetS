@@ -15,12 +15,12 @@
                 Passsword Form
             </h2>
             @if (session('error'))
-            <div class="text-red-500 text-md">
+            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-0.5">
                 {{ session('error') }}
             </div>
             @endif
             @if (session('success'))
-            <div class="alert alert-success">
+            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-0.5">
                 {{ session('success') }}
             </div>
             @endif
@@ -35,7 +35,7 @@
                             class="bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                             required />
                         @if ($errors->has('current-password'))
-                        <span class="help-block text-red-500 text-md">
+                        <span class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-0.5">
                             <strong>{{ $errors->first('current-password') }}</strong>
                         </span>
                         @endif
@@ -47,7 +47,7 @@
                             class="bg-white border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                             required />
                         @if ($errors->has('new-password'))
-                        <span class="help-block text-red-500 text-md">
+                        <span class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-0.5">
                             <strong>{{ $errors->first('new-password') }}</strong>
                         </span>
                         @endif
