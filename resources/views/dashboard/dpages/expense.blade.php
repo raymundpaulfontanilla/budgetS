@@ -14,7 +14,7 @@
     @php
     $key = session()->has('update') ? 'update' : (session()->has('expense') ? 'expense' : 'message');
     @endphp
-    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 expenseparent ">
+    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 expenseparent " data-aos="fade-right">
       <!--Metric Card-->
       <div class="bg-gradient-to-b from-red-200 to-red-100 border-b-4 border-red-500 rounded-lg shadow-xl p-5 mt-6">
         <div class="flex flex-row items-center">
@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5 expbarchart" style="
-    width: 650px;">
+    width: 650px;" data-aos="fade-right">
       <canvas class="" id="expensebarchart"></canvas>
     </div>
     <div class="container w-full md:w-4/5 xl:w-3/5 mt-5 recipientcontainer" style="width:200%">
@@ -53,7 +53,7 @@
         </div>
         @endif
         <div class="accordion" id="accordionExample">
-          <div class="accordion-item bg-white border border-red-700 mb-5">
+          <div class="accordion-item bg-white border border-red-700 mb-5" data-aos="fade-right">
             <h2 class="accordion-header mb-0 " id="headingOne">
               <button class="
                   relative

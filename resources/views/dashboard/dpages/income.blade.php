@@ -16,7 +16,7 @@
     $key = session()->has('update') ? 'update' : (session()->has('income') ? 'income' : 'message');
     @endphp
 
-    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 incomeparent ">
+    <div class="w-full md:w-1/2 xl:w-1/3 ml-3.5 incomeparent" data-aos="fade-left">
       <!--Metric Card-->
       <div
         class="bg-gradient-to-b from-green-200 to-green-100 border-b-4 border-green-600 rounded-lg shadow-xl p-5 mt-6 incomechild incomechilds2">
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="shadow-lg rounded-lg overflow-hidden mx-auto mt-5 barchart" style="
-    width: 650px;">
+    width: 650px;" data-aos="fade-left">
       <canvas class="" id="incomebarchart"></canvas>
     </div>
 
@@ -58,7 +58,7 @@
         </div>
         @endif
         <div class="accordion" id="accordionExample">
-          <div class="accordion-item bg-white border border-green-700 mb-5">
+          <div class="accordion-item bg-white border border-green-700 mb-5" data-aos="fade-left">
             <h2 class="accordion-header mb-0 " id="headingOne">
               <button class="
                 relative

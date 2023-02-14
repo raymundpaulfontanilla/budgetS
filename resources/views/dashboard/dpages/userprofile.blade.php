@@ -9,7 +9,7 @@
 </head>
 
 <section class="">
-    <div class="flex flex-col items-center justify-center" id="ipadpromarginleft">
+    <div class="flex flex-col items-center justify-center" id="ipadpromarginleft" data-aos="fade-down">
         <div class="bg-[#18A14D] w-full p-6 rounded-lg shadow md:mt-0 max-w-3xl max-[1024px]:max-w-xl
            sm:p-8">
             <h2 class="mb-1 text-xl font-bold leading-tight tracking-tight text-white md:text-2xl">
