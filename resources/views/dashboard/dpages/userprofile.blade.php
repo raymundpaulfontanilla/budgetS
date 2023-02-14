@@ -4,6 +4,7 @@
 
 <head>
     <link rel="stylesheet" href="{{ asset('userprofile.css') }}">
+    <link rel="stylesheet" href="{{ asset('sidebar.css') }}">
     @section('title', 'User Profile')
 </head>
 

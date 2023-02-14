@@ -28,12 +28,12 @@
                 <strong>{{ session()->get('success') }}</strong>
             </div>
             @endif
-            <a href={{route('generatepdf')}} target="_blank"
-                class="mt-5 bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"><span>Download
-                </span><i class="fa-solid fa-file-pdf fa-xl"></i></a>
-            <a href={{route('sendemail')}}
-                class="mt-5 bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">Send
-                Email <i class="fa-regular fa-envelope fa-xl"></i></a>
+            <button class="mb-5 pl-5"><a href={{route('generatepdf')}} target="_blank"
+                    class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"><span>Download
+                    </span><i class="fa-solid fa-file-pdf fa-xl"></i></a></button>
+            <button class="mb-5"><a href={{route('sendemail')}}
+                    class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full">Send
+                    Email <i class="fa-regular fa-envelope fa-xl"></i></a></button>
             <table id="example" class="stripe hover  md:w-4/5 xl:w-3/5">
                 <thead>
                     <tr>

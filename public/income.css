@@ -4,9 +4,6 @@
 
     }
 
-    /* .recipientcontainer {
-        overflow-x: scroll;
-    } */
 
 }
 
@@ -83,7 +80,7 @@
 
 }
 
-@media (max-width:768px) {
+@media (max-width:800px) {
     #incomebody {
         justify-content: center;
     }
@@ -139,7 +136,7 @@
 
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1260px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
     .incomeparent {
         margin-left: 300px;
     }
