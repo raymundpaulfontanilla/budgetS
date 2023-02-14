@@ -1,7 +1,7 @@
 <title>Register</title>
 @extends('layouts.app')
 @section('content')
-<div class = "container-fluid vh-100 mt-5 pt-5 mb-5">
+<div class = "container-fluid vh-100 mt-5 pt-5 mb-5 px-5">
     <div class = "row bg-light shadow-lg m-0" style ="border-radius: 30px;">
     <div class = "col-lg-6">
         <div class = "justify-content-center align-items-center d-flex">
@@ -71,7 +71,7 @@
     </form>
     
     <div class = "col-lg-6 p-0 d-none d-lg-block">
-        <img src = "https://img.freepik.com/premium-vector/online-registration-sign-up-login-account-smartphone-app-user-interface-with-secure-password-mobile-application-ui-web-banner-access-cartoon-people-vector-illustration_2175-1060.jpg?w=2000" class = "img-fluid" style = "height: 75vh; width: 900px; border-top-right-radius:30px; border-bottom-right-radius:30px;">
+        <img src = "https://img.freepik.com/premium-vector/online-registration-sign-up-login-account-smartphone-app-user-interface-with-secure-password-mobile-application-ui-web-banner-access-cartoon-people-vector-illustration_2175-1060.jpg?w=2000" class = "img-fluid" style = "height: 75vh; width: 900px; border-top-right-radius:30px; border-bottom-right-radius:30px; object-fit:cover;">
     </div>
 </div>
 </div>

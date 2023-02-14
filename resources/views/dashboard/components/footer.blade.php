@@ -38,75 +38,58 @@
             .footer {
                 background-size: 100% 100%;
                 background-position: 0px 0px,0px 0px;
-                background-image: conic-gradient(from 233deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%),conic-gradient(from 229deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%);
             }
         </style>
     </head>
     <body>
+        
+        <div data-aos="fade-up" data-aos-duration="2000">
+            <footer class="footer mt-auto py-3 bg-success">
+                <div class="row align-items-center">
 
-        <footer class="footer mt-auto py-3 " style="background-color: #7fb86e;">
-            <div class="row align-items-center">
-
-                <div class="col-lg-3">
-                    <div class = "img-fluid d-flex justify-content-center align-items-center">
-                    <img src="{{('images/logo.png')}}" class="img-fluid " style="width: 100px"/>
+                    <div class="col-lg-4">
+                        <div class = "img-fluid d-flex justify-content-center align-items-center">
+                            <img src="{{('images/logo.png')}}" class="img-fluid " style="width: 100px"/>
+                        </div>
+                        <p class="ms-3 text-white">BudgetS is a tool for managing and tracking your income and expenses. It provides you with detailed reports about your situation, so that you can adjust it accordingly. You can also find out how much you have in your account at any given time.</p>
                     </div>
-                    <p class="text-muted text-center">Lorem ipsum dolor</p>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-6 pt-5 px-5 text-white">
+                        <h5 class="ps-5">Company</h5>
+                        <div class = "ps-5">
+                            <ul class="list-unstyled ">
+                                <li class="mb-2">
+                                    <a href="" class = "list text-white">About Us</a>
+                                </li>
+                                <li class="mb-2">
+                                    <a href="" class = "list text-white">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-6 px-5 text-white">
+                        <h5 class="ps-5">Social Links</h5>
+                        <a href="" class = "list text-white ps-3">
+                            <i class="fab fa-brands fa-facebook fa-2x mr-2 ms-3"></i>
+                        </a>
+                        <a href="" class = "list text-white">
+                            <i class="fab fa-brands fa-twitter fa-2x mr-2 ms-3"></i>
+                        </a>
+                        <a href="" class = "list text-white">
+                            <i class="fab fa-brands fa-instagram fa-2x mr-2 ms-3"></i>
+                        </a>
+                    </div>
                 </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-4 text-center">
-                    <h5 class="ms-3">Company</h5>
-                    <ul class="list-unstyled ms-3 ">
-                        <li class="mb-2 ">
-                            <a href="" class = "list">About Us</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="" class = "list">Legal Information</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="" class = "list">Contact Us</a>
-                        </li>
-                    </ul>
+                <hr style="color:white;"/>
+                
+                <div class="container text-center text-white">
+                    <p>© 2023 | All rights Reserved</p>
                 </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-4 text-center">
-                    <h5 class="ms-3">Help Center</h5>
-                    <ul class="list-unstyled ms-3">
-                        <li class="mb-2">
-                            <a href="" class = "list">Why Us</a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="" class = "list">FAQs</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-3 col-md-4 col-sm-4 text-center">
-                    <h5 class="ms-3">Contact Info</h5>
-                    <p class="ms-3">Phone: 12345678</p>
-                    <p class="ms-3">Email: test@test.com</p>
-                    <p class="ms-3">Location: Philippines</p>
-
-                    <a href="" class = "list ">
-                        <i class="fab fa-brands fa-facebook fa-2x mr-2 ms-3"></i>
-                    </a>
-                    <a href="" class = "list">
-                        <i class="fab fa-brands fa-twitter fa-2x mr-2 ms-3"></i>
-                    </a>
-                    <a href="" class = "list">
-                        <i class="fab fa-brands fa-instagram fa-2x mr-2 ms-3"></i>
-                    </a>
-                </div>
-
-            </div>
-            <hr/>
-
-            <div class="container text-center">
-                <p>© 2023 | All rights Reserved</p>
-            </div>
-
-        </footer>
+            </footer>
+        </div>
     </body>
 </html>
+
 
 
