@@ -11,21 +11,22 @@ class BudgetController extends Controller
 {
     public function displayoverview()
     {
-    
-        $income = Income::get()->map(function ($income) {
+        $user = auth()->user();
+        $income = Income::where('user_id', $user->id)->get()->map(function ($income) {
             $income['category'] = 'Income';
             return $income;
         });
+        
     
-        $expense = Expense::get()->map(function ($expense) {
+        $expense = Expense::where('user_id', $user->id)->get()->map(function ($expense) {
             $expense['category'] = 'Expense';
             return $expense;
         });
     
         $merges = $income->concat($expense);
         $merges = $merges->sortByDesc('created_at');
-        $totalincome = Income::sum('amount');
-        $totalexpense = Expense::sum('amount');
+        $totalincome = Income::where('user_id', $user->id)->sum('amount');
+        $totalexpense = Expense::where('user_id', $user->id)->sum('amount');
         $totalbudget = $totalincome - $totalexpense;
     
         $sum = ($totalincome + $totalexpense);
