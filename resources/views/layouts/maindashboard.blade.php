@@ -39,11 +39,7 @@
     <nav>
         <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar"
             type="button" class=" sticky top-0 inline-flex items-center p-2 mt-2 ml-3 rounded-lg lg:hidden">
-            <svg viewBox="0 0 100 80" width="40" height="40">
-                <rect width="100" height="20"></rect>
-                <rect y="30" width="100" height="20"></rect>
-                <rect y="60" width="100" height="20"></rect>
-            </svg>
+            <img src="{{ asset('images/logo.png') }}" alt="logo" width="55" />
         </button>
     </nav>
     <aside id="logo-sidebar"
