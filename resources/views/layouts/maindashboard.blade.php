@@ -46,7 +46,7 @@
     <aside id="logo-sidebar"
         class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full lg:translate-x-0"
         aria-label="Sidebar">
-        <div class="h-full px-3 py-4 overflow-y-auto bg-[#18A14D] rounded-r-[55px]">
+        <div class="h-full px-3 py-4 overflow-y-auto bg-[#18A14D] rounded-r-[55px]" data-aos="fade-down">
             <a href="{{route('overview')}}" class="flex items-center pl-2.5 mb-5">
                 <img src="{{ asset('images/logo.png') }}" alt="logo" width="185" />
             </a>

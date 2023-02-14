@@ -40,7 +40,7 @@
       <!--Card-->
       <div id='recipients' class="p-5 mt-6 lg:mt-0 rounded shadow bg-white mr-12">
         @if (session()->has($key))
-        <div id="alert-message"
+        <div id="alert-message" data-aos="fade-right"
           class="bg-red-100 rounded-lg py-5 px-6 mb-3 text-base text-red-700 inline-flex items-center w-full mr-16"
           role="alert">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"

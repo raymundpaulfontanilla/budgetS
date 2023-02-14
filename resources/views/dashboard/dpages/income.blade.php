@@ -45,7 +45,7 @@
       <div id='recipients' class="p-5 lg:mt-0 rounded shadow bg-white mr-12">
         {{-- Accordion--}}
         @if (session()->has($key))
-        <div id="alert-message"
+        <div id="alert-message" data-aos="fade-left"
           class="bg-green-100 rounded-lg py-5 px-6 mb-3 text-base text-green-700 inline-flex items-center w-full mr-16"
           role="alert">
           <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="check-circle"
