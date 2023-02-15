@@ -117,6 +117,14 @@
     <div class="container w-full md:w-4/5 xl:w-3/5 mx-auto px-2 tableview">
       <!--Card-->
       <div id='recipients' class="p-8 mt-6 lg:mt-0 rounded shadow-lg bg-white">
+        <button class="mb-5"><a href="{{route('income')}}" target="_blank"
+            class="bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"><span>Income
+            </span><i class="fa-solid fa-plus"></i></a></button>
+        <button class="mb-5">
+          <a href="{{route('expense')}}" target="_blank"
+            class=" bg-green-600 hover:bg-green-800 text-white font-bold py-2 px-4 rounded-full"><span>Expense
+            </span><i class="fa-solid fa-plus"></i></a>
+        </button>
         <table id="example" class="stripe hover " style="width:100%">
           <thead>
             <tr>
