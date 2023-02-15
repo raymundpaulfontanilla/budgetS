@@ -240,7 +240,7 @@
                     <div class="card-body text-center">
                         <div data-aos="fade-up">
                             <h5 class="card-title mb-0"style="color: #1B6202;">Angela Morales</h5>
-                            <div class="card-text text-black-50">Fullstack Web Developer</div>
+                            <div class="card-text text-black-50">Backend Developer</div>
                         </div>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                     <div class="card-body text-center">
                         <div data-aos="fade-up">
                             <h5 class="card-title mb-0" style="color: #1B6202;">Joshua Zafe</h5>
-                            <div class="card-text text-black-50">Fullstack Web Developer</div>
+                            <div class="card-text text-black-50">Frontend Developer</div>
                         </div>
                     </div>
                 </div>
@@ -269,7 +269,7 @@
                         <div class="card-body text-center">
                             <div data-aos="fade-up">
                                 <h5 class="card-title mb-0" style="color: #1B6202;">Danica Libres</h5>
-                                <div class="card-text text-black-50">Fullstack Web Developer</div>
+                                <div class="card-text text-black-50">Frontend Developer</div>
                             </div>
                         </div>
                     </div>
