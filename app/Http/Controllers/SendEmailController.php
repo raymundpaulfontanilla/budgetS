@@ -27,8 +27,8 @@ class SendEmailController extends Controller
             }
         }
         $mg->messages()->send(env('MAIL_DOMAIN'), [
-            'from' => 'postmaster@sandbox6078c67ea800437f82aa97aa3f249c3f.mailgun.org',
-            'to' => 'bethfontanilla639@gmail.com',
+            'from' => 'postmaster@sandbox5cf11de8080b4655ab88b2d1307ae86d.mailgun.org',
+            'to' => 'philippineskodego@gmail.com',
             'subject' => 'Transaction History',
             'text' => $text
         ]);
