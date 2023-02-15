@@ -20,7 +20,10 @@ body {
     object-fit: cover;
     background-size: 100% 100%;
     background-position: 0px 0px,0px 0px;
-    background-image: conic-gradient(from 233deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%),conic-gradient(from 229deg at 50% 50%, #FBFFFCFF 2%, #18A14D 100%);
+    background: #e0ffe0;
+    background: linear-gradient(334deg,#e0ffe0 50%, #baecba 90%);
+    background: -webkit-linear-gradient(334deg,#e0ffe0 50%, #baecba 90%);
+    background: -moz-linear-gradient(334deg,#e0ffe0 50%, #baecba 90%);
 }
 
 .landing-page-img {
