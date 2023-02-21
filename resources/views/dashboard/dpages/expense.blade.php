@@ -52,31 +52,20 @@
           <strong>{{session()->get($key)}}</strong>
         </div>
         @endif
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item bg-white border border-red-700 mb-5" data-aos="fade-right">
-            <h2 class="accordion-header mb-0 " id="headingOne">
+        <div id="accordionExample">
+          <div class="bg-white border border-green-700 mb-5 rounded-t-[15px]" data-aos="fade-left">
+            <h2 class="mb-0 " id="headingOne">
               <button class="
-                  relative
-                  flex
-                  items-center
-                  w-full
-                  py-4
-                  px-5
-                  text-xl text-red-700 text-left font-bold
-                  bg-white
-                  border-0
-                  rounded-none
-                  transition
-                  focus:outline-none
-                " type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                aria-controls="collapseOne">
+              group relative flex w-full items-center rounded-t-[15px] border-0 bg-white py-4 px-5 text-left text-base text-neutral-800 transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none dark:bg-neutral-800 dark:text-white [&:not([data-te-collapse-collapsed])]:bg-white [&:not([data-te-collapse-collapsed])]:text-white [&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(229,231,235)] dark:[&:not([data-te-collapse-collapsed])]:bg-neutral-800 dark:[&:not([data-te-collapse-collapsed])]:text-primary-400 dark:[&:not([data-te-collapse-collapsed])]:[box-shadow:inset_0_-1px_0_rgba(75,85,99)]
+              " data-te-collapse-init data-te-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"
+                type="button">
                 ADD EXPENSE
               </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample">
-              <div class="accordion-body py-4 px-5">
-                <div class="p-6 mb-6">
+            <div id="collapseOne" class="!visible" data-te-collapse-item data-te-collapse-show
+              aria-labelledby="headingOne" data-te-parent="#accordionExample">
+              <div class="py-4 px-5">
+                <div class="p-6 mb-6 font-light">
                   <form class="space-y-6" method="POST" action="{{route('createexpense')}}">
                     @csrf
                     <div>
@@ -122,7 +111,7 @@
                     <!-- Modal footer -->
                     <button data-modal-hide="" type="submit"
                       class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">Submit</button>
-                    <button type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                    <button type="button" data-te-collapse-init data-te-target="#collapseOne" aria-expanded="true"
                       aria-controls="collapseOne"
                       class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
                   </form>
